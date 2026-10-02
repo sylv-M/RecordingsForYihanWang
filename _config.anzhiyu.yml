@@ -699,17 +699,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: card_author:
-    enable: true
-    card_author:
-    enable: true
-    description: |
-      <div style="text-align:center;margin-top:10px;">
-        <div style="font-size:1.2rem;font-weight:bold;color:#fff;margin-bottom:6px;">王一涵</div>
-        <div style="font-size:0.85rem;color:rgba(255,255,255,0.85);margin-bottom:12px;">出生日期：2010-03-11</div>
-        <a href="/RecordingsForYihanWang/about/" style="display:inline-block;padding:4px 14px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.5);border-radius:20px;color:#fff;font-size:0.85rem;text-decoration:none;">点击查看更多 &rarr;</a>
-      </div>
-    name_link: /RecordingsForYihanWang/about/
+    description: "王一涵<br>出生日期：2010-03-11<br><a href='/RecordingsForYihanWang/about/' style='display:inline-block;margin-top:6px;padding:2px 10px;background:rgba(255,255,255,0.2);border-radius:12px;color:#fff;'>点击查看更多</a>"
     name_link: /RecordingsForYihanWang/about/
 
   card_announcement:
