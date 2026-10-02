@@ -1,1 +1,75 @@
+---
+title: 关于王一涵
+type: about
+---
 
+<div class="yihan-card">
+
+  <img class="yihan-kuromi" src="/RecordingsForYihanWang/img/kuromi.png" alt="库洛米">
+
+  <div class="yihan-flex">
+
+    <div class="yihan-text">
+      <p>王一涵，小名六六，出生于2010年3月11日，中国花样滑冰女子单人滑运动员，国家级运动健将，中国首位女子单人滑青年组大奖赛金牌获得者，中国首位在国际赛场短节目突破70分、总分突破200分的女子单人滑选手，中国女单国际赛场最高分保持者。</p>
+
+      <h3>主要成绩</h3>
+
+      <div class="yihan-season">
+        <h4>26/27赛季</h4>
+        <ul>
+          <li>JGP格鲁吉亚站冠军 🏆</li>
+          <li>JGP拉脱维亚站季军 🥉</li>
+        </ul>
+        <a class="yihan-link" href="/RecordingsForYihanWang/seasons/2026-27/">查看该赛季比赛详情 →</a>
+      </div>
+
+      <div class="yihan-season">
+        <h4>25/26赛季</h4>
+        <ul>
+          <li>塔林世青赛第五名</li>
+          <li>花样滑冰全国锦标赛青年组冠军 🥇</li>
+          <li>JGP阿塞拜疆站殿军</li>
+          <li>JGP意大利站季军 🥉</li>
+        </ul>
+        <a class="yihan-link" href="/RecordingsForYihanWang/seasons/2025-26/">查看该赛季比赛详情 →</a>
+      </div>
+
+      <div class="yihan-season">
+        <h4>24/25赛季</h4>
+        <ul>
+          <li>JGPF殿军</li>
+          <li>JGP无锡站季军 🥉</li>
+          <li>JGP泰国站冠军 🏆</li>
+        </ul>
+        <a class="yihan-link" href="/RecordingsForYihanWang/seasons/2024-25/">查看该赛季比赛详情 →</a>
+      </div>
+
+      <div class="yihan-season">
+        <h4>23/24赛季</h4>
+        <ul>
+          <li>JGP波兰站殿军</li>
+          <li>第十四届冬季运动会花样滑冰青年组冠军 🥇</li>
+          <li>花样滑冰全国锦标赛成年组冠军 🥇</li>
+          <li>花样滑冰全国锦标赛青年组季军 🥉</li>
+          <li>花样滑冰俱乐部联赛总决赛青年组冠军 🥇</li>
+        </ul>
+        <a class="yihan-link" href="/RecordingsForYihanWang/seasons/2023-24/">查看该赛季比赛详情 →</a>
+      </div>
+
+      <div class="yihan-season">
+        <h4>22/23赛季</h4>
+        <ul>
+          <li>花样滑冰冠军赛亚军 🥈</li>
+          <li>花样滑冰少年锦标赛亚军 🥈</li>
+        </ul>
+        <a class="yihan-link" href="/RecordingsForYihanWang/seasons/2022-23/">查看该赛季比赛详情 →</a>
+      </div>
+
+    </div>
+
+    <div class="yihan-photo">
+      <img src="/RecordingsForYihanWang/img/yihan-about.jpg" alt="王一涵">
+    </div>
+
+  </div>
+</div>
