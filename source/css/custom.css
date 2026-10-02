@@ -1,10 +1,10 @@
-/* 自定义开屏加载页面（preloader）的紫粉色背景 */
+/* 加载页紫粉背景（其实 inject.head 里已有，这里留作备份） */
 #loading-box {
   background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important;
 }
 
-/* 修复侧边栏作者卡片重叠问题：头像在上，简介在下垂直居中排列 */
-#aside-content .card-author {
+/* 作者卡片：头像在上，名字生日在下，垂直排列 */
+#aside-content .card-info {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -13,8 +13,8 @@
   text-align: center !important;
 }
 
-/* 头像取消绝对定位，居中并留出下边距 */
-#aside-content .card-author .author-avatar {
+/* 头像取消绝对定位，居中 */
+#aside-content .card-info .author-info-avatar {
   position: relative !important;
   margin: 0 auto 12px auto !important;
   top: auto !important;
@@ -22,26 +22,30 @@
   transform: none !important;
 }
 
-/* 名字与描述区域取消绝对定位，自然流式排在头像下方 */
-#aside-content .card-author .author-info,
-#aside-content .card-author .card-author__data,
-#aside-content .card-author .author-status-box {
+/* 描述区取消绝对定位，自然流式排在头像下方 */
+#aside-content .card-info .author-info__description {
   position: relative !important;
   top: auto !important;
   left: auto !important;
+  opacity: 1 !important;
   transform: none !important;
   width: 100% !important;
-}
-
-/* 简介文字样式与间距 */
-#aside-content .card-author .author-info__description {
   margin-top: 8px !important;
   line-height: 1.6 !important;
 }
 
-/*手机屏幕自适应*/
-@media (max-width: 768px) {
+/* 手机端强制显示侧边栏 */
+@media (max-width: 1024px) {
   #aside-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #rightside,
+  #sidebar {
     display: block !important;
   }
 }
