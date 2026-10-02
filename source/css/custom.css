@@ -243,3 +243,21 @@
     left: -10px;
   }
 }
+
+.yihan-card {
+  background: linear-gradient(135deg, #e0c3fc 0%, #c8b6ff 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 24px !important;
+  padding: 36px 28px 28px 28px !important;
+}
+
+.yihan-card *,
+.yihan-text,
+.yihan-text p,
+.yihan-season,
+.yihan-season h4,
+.yihan-season ul,
+.yihan-season li {
+  color: #fff !important;
+}
