@@ -5,7 +5,7 @@ type: about
 
 <div class="yihan-card">
 
-  <img class="yihan-kuromi" src="/RecordingsForYihanWang/img/kuromi.png" alt="库洛米">
+  <img class="yihan-kuromi" src="/RecordingsForYihanWang/img/kuromi1.png" alt="库洛米">
 
   <div class="yihan-flex">
 
@@ -68,7 +68,7 @@ type: about
     </div>
 
     <div class="yihan-photo">
-      <img src="/RecordingsForYihanWang/img/yihan-about.jpg" alt="王一涵">
+      <img src="/RecordingsForYihanWang/img/informationpage.jpg" alt="王一涵">
     </div>
 
   </div>
