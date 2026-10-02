@@ -519,19 +519,14 @@ footer:
       #       link: /cookies/
       #     - title: 版权协议
       #       link: /copyright/
-  footerBar:
+ footerBar:
     enable: true
     authorLink: /
     cc:
       enable: false
       link: /copyright
-    linkList:
-      #- link: https://github.com/anzhiyu-c/hexo-theme-anzhiyu
-       # text: 主题
-      # - link: https://image.anheyu.com
-      #   text: 图床
-      # - link: https://beian.miit.gov.cn/
-      #   text: 湘ICP备-xxxxxxx号
+    linkList: []
+    
     subTitle:
       enable: false
       # Typewriter Effect (打字效果)
