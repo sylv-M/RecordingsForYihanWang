@@ -1127,11 +1127,11 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author{display:flex!important;flex-direction:column!important;align-items:center!important;padding:25px 15px!important;height:auto!important;min-height:260px!important;}#aside-content .card-author .author-avatar{position:relative!important;margin:0 auto 10px!important;top:auto!important;left:auto!important;transform:none!important;}#aside-content .card-author .author-info,#aside-content .card-author .author-info__description,#aside-content .card-author .card-author__data{position:relative!important;top:auto!important;left:auto!important;transform:none!important;width:100%!important;text-align:center!important;margin-top:5px!important;}</style>
+    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author .author-avatar{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;}#aside-content .card-author:hover .author-avatar{opacity:1!important;visibility:visible!important;transform:none!important;}#aside-content .card-author .author-info__description{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
-
+    
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
