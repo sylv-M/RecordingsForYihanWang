@@ -1127,7 +1127,7 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author *{transition:none!important;animation:none!important;}#aside-content .card-author .author-avatar,#aside-content .card-author:hover .author-avatar,#aside-content .card-author img{opacity:1!important;visibility:visible!important;display:block!important;transform:none!important;clip-path:none!important;}#aside-content .card-author .author-info__description,#aside-content .card-author:hover .author-info__description,#aside-content .card-author .card-author__data{opacity:1!important;visibility:visible!important;display:block!important;transform:none!important;clip-path:none!important;pointer-events:auto!important;}</style>
+    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author{background:linear-gradient(135deg,#d8b4e2 0%,#b19ffb 100%)!important;background-color:#c8b6ff!important;box-shadow:0 8px 16px -4px rgba(177,159,251,0.3)!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
