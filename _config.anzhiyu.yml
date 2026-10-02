@@ -1136,7 +1136,7 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
+    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#89f7fe 0%,#66a6ff 100%)!important;background-color:#74b9ff!important;}#aside-content>.card-widget.card-announcement::before{background:transparent!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
