@@ -1127,11 +1127,10 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author{background:linear-gradient(135deg,#d8b4e2 0%,#b19ffb 100%)!important;background-color:#c8b6ff!important;box-shadow:0 8px 16px -4px rgba(177,159,251,0.3)!important;}</style>
+    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
-    
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
