@@ -701,7 +701,7 @@ aside:
     enable: true
     description: "王一涵<br>出生日期：2010-03-11<br><a href='/RecordingsForYihanWang/about/' style='display:inline-block;margin-top:8px;padding:3px 12px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.5);border-radius:15px;color:#fff;text-decoration:none;font-size:0.85rem;'>点击查看更多 ➜</a>"
     name_link: /RecordingsForYihanWang/about/
-
+    
   card_announcement:
     enable: false
     content: 欢迎来看我的博客鸭~
@@ -1125,13 +1125,9 @@ dynamicEffect:
   pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
-# Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
-# 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # 自定义css
-    - <link rel="stylesheet" href="https://sylv-m.github.io/RecordingsForYihanWang/css/custom.css">
-
+    - <style>#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author{display:flex!important;flex-direction:column!important;align-items:center!important;padding:24px 16px!important;}#aside-content .card-author .author-avatar{position:relative!important;margin:0 auto 12px auto!important;top:auto!important;left:auto!important;transform:none!important;}#aside-content .card-author .author-info,#aside-content .card-author .card-author__data{position:relative!important;top:auto!important;left:auto!important;width:100%!important;text-align:center!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
