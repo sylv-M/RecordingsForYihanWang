@@ -1,6 +1,5 @@
 ---
 title: 关于王一涵
-type: about
 ---
 
 <div class="yihan-card">
