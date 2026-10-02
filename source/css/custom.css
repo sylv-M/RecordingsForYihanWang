@@ -34,21 +34,20 @@
   line-height: 1.6 !important;
 }
 
-/* 手机端：强制显示侧边栏 + 取消负边距 */
+/* 桌面端头像姓名间距 */
+#aside-content .card-info .author-info__description {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+  width: 100% !important;
+  margin-top: -100px !important;
+  line-height: 1.6 !important;
+}
+
+/* 手机端间距 */
 @media (max-width: 1024px) {
-  #aside-content {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-  #rightside,
-  #sidebar {
-    display: block !important;
-  }
-  /* 手机端取消负边距，让文字自然排在头像下面 */
   #aside-content .card-info .author-info__description {
     margin-top: 8px !important;
   }
