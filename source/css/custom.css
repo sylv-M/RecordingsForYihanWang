@@ -1,1 +1,4 @@
-
+/* 自定义开屏加载页面（preloader）的紫粉色背景 */
+#loading-box {
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important;
+}
