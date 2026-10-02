@@ -139,7 +139,7 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: /RecordingsForYihanWang/img/avatar.jpg
+  img: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar.jpg
   effect: true
 
 # Disable all banner image
@@ -682,7 +682,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: /RecordingsForYihanWang/img/avatar.jpg
+  avatar: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar.jpg
 
 # aside (侧边栏)
 # --------------------------------------
