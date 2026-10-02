@@ -65,7 +65,7 @@
   }
 }
 
-/* 默认（大桌面，>1600px）：-100px 正好 */
+/* 默认（大桌面，>1280px）：-100px 正好 */
 #aside-content .card-info .author-info__description {
   position: relative !important;
   top: auto !important;
@@ -77,17 +77,10 @@
   line-height: 1.6 !important;
 }
 
-/* 中桌面 1280-1600px：稍减一点 */
+/* 中小桌面 1024-1280px：稍减一点 */
 @media (max-width: 1600px) {
   #aside-content .card-info .author-info__description {
     margin-top: -80px !important;
-  }
-}
-
-/* 小笔记本 1024-1280px */
-@media (max-width: 1280px) {
-  #aside-content .card-info .author-info__description {
-    margin-top: -60px !important;
   }
 }
 
@@ -106,7 +99,7 @@
     display: block !important;
   }
   #aside-content .card-info .author-info__description {
-    margin-top: -40px !important;
+    margin-top: -60px !important;
   }
 }
 
