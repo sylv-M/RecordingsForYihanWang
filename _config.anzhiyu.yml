@@ -1128,7 +1128,7 @@ dynamicEffect:
 inject:
   head:
     - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
-    - <style>#loading-box .loading-bg,.loading-bg{background:linear-gradient(135deg,#e0c3fc 0%,#fbc2eb 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#flip-wrapper{display:none!important;}</style>
+    - <style>#loading-box .loading-bg,.loading-bg{background:linear-gradient(135deg,#e0c3fc 0%,#fbc2eb 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#card-wechat,.card-widget.card-wechat{display:none!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
