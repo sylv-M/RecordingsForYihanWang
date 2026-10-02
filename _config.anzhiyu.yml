@@ -702,7 +702,7 @@ aside:
     description: "<div style='margin-top:125px;text-align:center;'><div style='font-size:1.2rem;font-weight:bold;color:#fff;margin-bottom:6px;'>王一涵</div><div style='font-size:0.85rem;color:rgba(255,255,255,0.85);margin-bottom:12px;'>出生日期：2010-03-11</div><a href='/RecordingsForYihanWang/about/' style='display:inline-block;padding:3px 12px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.5);border-radius:15px;color:#fff;text-decoration:none;font-size:0.85rem;'>点击查看更多 ➜</a></div>"
     name_link: /RecordingsForYihanWang/about/
     
-card_announcement:
+  card_announcement:
     enable: true
     content: "<div style='cursor:pointer;user-select:all;text-align:center;' onclick=\"navigator.clipboard.writeText('mshydrogenbond@outlook.com');alert('已成功复制邮箱：mshydrogenbond@outlook.com');\" title='点击一键复制邮箱'><div style='font-size:1.1rem;font-weight:bold;color:#0369a1;margin-bottom:8px;'>联系我们 &rarr;</div><div style='font-size:0.85rem;color:#0284c7;background:rgba(255,255,255,0.6);padding:6px 10px;border-radius:12px;display:inline-block;word-break:break-all;'>mshydrogenbond@outlook.com</div><div style='font-size:0.75rem;color:#0369a1;margin-top:6px;opacity:0.8;'>（点击一键复制）</div></div>"
   card_weixin:
