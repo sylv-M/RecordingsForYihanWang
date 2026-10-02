@@ -1127,10 +1127,11 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
+    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded,.pace,.pace .pace-progress{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
+   
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
