@@ -441,7 +441,9 @@ footer:
     cc:
       enable: false
       link: /copyright
-    linkList: []
+    linkList:
+      - link: '#'
+        text: ''
     subTitle:
       enable: false
 # Analysis
