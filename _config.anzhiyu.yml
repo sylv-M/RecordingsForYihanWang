@@ -703,8 +703,17 @@ aside:
     name_link: /RecordingsForYihanWang/about/
     
   card_announcement:
-    enable: false
-    content: 欢迎来看我的博客鸭~
+    enable: true
+    content: |
+      <div style="cursor:pointer;padding:6px 0;" onclick="navigator.clipboard.writeText('mshydrogenbond@outlook.com').then(()=>{alert('已成功复制联系邮箱：mshydrogenbond@outlook.com');}).catch(()=>{window.location.href='mailto:mshydrogenbond@outlook.com';});" title="点击一键复制邮箱">
+        <div style="display:flex;align-items:center;justify-content:space-between;font-size:1.05rem;font-weight:bold;color:#fff;margin-bottom:6px;">
+          <span>联系我们</span>
+          <span style="font-size:1.2rem;">&rarr;</span>
+        </div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);word-break:break-all;user-select:all;">
+          mshydrogenbond@outlook.com
+        </div>
+      </div>~
   card_weixin:
     enable: true
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
