@@ -38,3 +38,10 @@
   margin-top: 8px !important;
   line-height: 1.6 !important;
 }
+
+/*手机屏幕自适应*/
+@media (max-width: 768px) {
+  #aside-content {
+    display: block !important;
+  }
+}
