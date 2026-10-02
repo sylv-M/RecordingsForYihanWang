@@ -139,8 +139,8 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar.jpg
-  effect: true
+  img: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar_inside.jpg
+  effect: false
 
 # Disable all banner image
 disable_top_img: false
