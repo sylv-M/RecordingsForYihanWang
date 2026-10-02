@@ -2,3 +2,39 @@
 #loading-box {
   background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important;
 }
+
+/* 修复侧边栏作者卡片重叠问题：头像在上，简介在下垂直居中排列 */
+#aside-content .card-author {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px 16px !important;
+  text-align: center !important;
+}
+
+/* 头像取消绝对定位，居中并留出下边距 */
+#aside-content .card-author .author-avatar {
+  position: relative !important;
+  margin: 0 auto 12px auto !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* 名字与描述区域取消绝对定位，自然流式排在头像下方 */
+#aside-content .card-author .author-info,
+#aside-content .card-author .card-author__data,
+#aside-content .card-author .author-status-box {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+/* 简介文字样式与间距 */
+#aside-content .card-author .author-info__description {
+  margin-top: 8px !important;
+  line-height: 1.6 !important;
+}
