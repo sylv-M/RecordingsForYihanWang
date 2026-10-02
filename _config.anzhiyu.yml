@@ -139,7 +139,7 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar_inside.jpg
+  img: https://sylv-m.github.io/RecordingsForYihanWang/img/avatar_inside.png
   effect: false
 
 # Disable all banner image
