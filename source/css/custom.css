@@ -1,9 +1,9 @@
-/* 加载页紫粉背景（其实 inject.head 里已有，这里留作备份） */
+/* 加载页紫粉背景*/
 #loading-box {
   background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important;
 }
 
-/* 作者卡片：头像在上，名字生日在下，垂直排列 */
+/* 个人信息卡片 */
 #aside-content .card-info {
   display: flex !important;
   flex-direction: column !important;
@@ -30,11 +30,11 @@
   opacity: 1 !important;
   transform: none !important;
   width: 100% !important;
-  margin-top: 8px !important;
+  margin-top: -100px !important;   /* 桌面端：向上拉，靠近头像 */
   line-height: 1.6 !important;
 }
 
-/* 手机端强制显示侧边栏 */
+/* 手机端：强制显示侧边栏 + 取消负边距 */
 @media (max-width: 1024px) {
   #aside-content {
     display: block !important;
@@ -47,5 +47,9 @@
   #rightside,
   #sidebar {
     display: block !important;
+  }
+  /* 手机端取消负边距，让文字自然排在头像下面 */
+  #aside-content .card-info .author-info__description {
+    margin-top: 8px !important;
   }
 }
