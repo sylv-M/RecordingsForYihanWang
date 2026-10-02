@@ -703,7 +703,7 @@ aside:
     name_link: /RecordingsForYihanWang/about/
     
   card_announcement:
-    enable: true
+    enable: false
     content: "<div style='cursor:pointer;user-select:all;text-align:center;' onclick=\"navigator.clipboard.writeText('mshydrogenbond@outlook.com');alert('已成功复制邮箱：mshydrogenbond@outlook.com');\" title='点击一键复制邮箱'><div style='font-size:1.1rem;font-weight:bold;color:#0369a1;margin-bottom:8px;'>联系我们</div><div style='font-size:0.85rem;color:#0284c7;background:rgba(255,255,255,0.6);padding:6px 10px;border-radius:12px;display:inline-block;word-break:break-all;'>mshydrogenbond@outlook.com</div><div style='font-size:0.75rem;color:#0369a1;margin-top:6px;opacity:0.8;'>（点击一键复制）</div></div>"
   card_weixin:
     enable: true
