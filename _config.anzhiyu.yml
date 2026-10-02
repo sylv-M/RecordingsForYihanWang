@@ -702,18 +702,9 @@ aside:
     description: "<div style='margin-top:125px;text-align:center;'><div style='font-size:1.2rem;font-weight:bold;color:#fff;margin-bottom:6px;'>王一涵</div><div style='font-size:0.85rem;color:rgba(255,255,255,0.85);margin-bottom:12px;'>出生日期：2010-03-11</div><a href='/RecordingsForYihanWang/about/' style='display:inline-block;padding:3px 12px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.5);border-radius:15px;color:#fff;text-decoration:none;font-size:0.85rem;'>点击查看更多 ➜</a></div>"
     name_link: /RecordingsForYihanWang/about/
     
-  card_announcement:
+card_announcement:
     enable: true
-    content: |
-      <div style="cursor:pointer;padding:6px 0;" onclick="navigator.clipboard.writeText('mshydrogenbond@outlook.com').then(()=>{alert('已成功复制联系邮箱：mshydrogenbond@outlook.com');}).catch(()=>{window.location.href='mailto:mshydrogenbond@outlook.com';});" title="点击一键复制邮箱">
-        <div style="display:flex;align-items:center;justify-content:space-between;font-size:1.05rem;font-weight:bold;color:#fff;margin-bottom:6px;">
-          <span>联系我们</span>
-          <span style="font-size:1.2rem;">&rarr;</span>
-        </div>
-        <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);word-break:break-all;user-select:all;">
-          mshydrogenbond@outlook.com
-        </div>
-      </div>~
+    content: "<div style='cursor:pointer;user-select:all;text-align:center;' onclick=\"navigator.clipboard.writeText('mshydrogenbond@outlook.com');alert('已成功复制邮箱：mshydrogenbond@outlook.com');\" title='点击一键复制邮箱'><div style='font-size:1.1rem;font-weight:bold;color:#0369a1;margin-bottom:8px;'>联系我们 &rarr;</div><div style='font-size:0.85rem;color:#0284c7;background:rgba(255,255,255,0.6);padding:6px 10px;border-radius:12px;display:inline-block;word-break:break-all;'>mshydrogenbond@outlook.com</div><div style='font-size:0.75rem;color:#0369a1;margin-top:6px;opacity:0.8;'>（点击一键复制）</div></div>"
   card_weixin:
     enable: true
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
@@ -1136,7 +1127,7 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#89f7fe 0%,#66a6ff 100%)!important;background-color:#74b9ff!important;}#aside-content>.card-widget.card-announcement::before{background:transparent!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
+    - <style>#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#loading-box{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
