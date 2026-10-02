@@ -46,9 +46,80 @@
   line-height: 1.6 !important;
 }
 
-/* 手机端间距 */
-@media (max-width: 1024px) {
+/*ipad端自适应*/
+@media (max-width: 1280px) {
+  #aside-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #rightside,
+  #sidebar {
+    display: block !important;
+  }
   #aside-content .card-info .author-info__description {
     margin-top: 8px !important;
+  }
+}
+
+/* 默认（大桌面，>1600px）：-100px 正好 */
+#aside-content .card-info .author-info__description {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+  width: 100% !important;
+  margin-top: -100px !important;
+  line-height: 1.6 !important;
+}
+
+/* 中桌面 1280-1600px：稍减一点 */
+@media (max-width: 1600px) {
+  #aside-content .card-info .author-info__description {
+    margin-top: -80px !important;
+  }
+}
+
+/* 小笔记本 1024-1280px */
+@media (max-width: 1280px) {
+  #aside-content .card-info .author-info__description {
+    margin-top: -60px !important;
+  }
+}
+
+/* 平板 768-1024px（含 iPad 竖屏） */
+@media (max-width: 1024px) {
+  #aside-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #rightside,
+  #sidebar {
+    display: block !important;
+  }
+  #aside-content .card-info .author-info__description {
+    margin-top: -40px !important;
+  }
+}
+
+/* 手机 480-768px */
+@media (max-width: 768px) {
+  #aside-content .card-info .author-info__description {
+    margin-top: 8px !important;
+  }
+}
+
+/* 小手机 <480px */
+@media (max-width: 480px) {
+  #aside-content .card-info .author-info__description {
+    margin-top: 12px !important;
   }
 }
