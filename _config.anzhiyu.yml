@@ -1127,7 +1127,7 @@ dynamicEffect:
 # Inject
 inject:
   head:
-    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author .author-avatar{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;}#aside-content .card-author:hover .author-avatar{opacity:1!important;visibility:visible!important;transform:none!important;}#aside-content .card-author .author-info__description{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important;}</style>
+    - <style>#loading-box,#loading-box .loading-bg,#loading-box.loaded{background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)!important;}#aside-content .card-author *{transition:none!important;animation:none!important;}#aside-content .card-author .author-avatar,#aside-content .card-author:hover .author-avatar,#aside-content .card-author img{opacity:1!important;visibility:visible!important;display:block!important;transform:none!important;clip-path:none!important;}#aside-content .card-author .author-info__description,#aside-content .card-author:hover .author-info__description,#aside-content .card-author .card-author__data{opacity:1!important;visibility:visible!important;display:block!important;transform:none!important;clip-path:none!important;pointer-events:auto!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
