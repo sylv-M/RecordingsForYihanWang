@@ -262,7 +262,12 @@
   color: #fff !important;
 }
 
-/* 隐藏第三个板块 */
-.home_top .category-group .category-item:nth-child(3) {
+/* 1. 如果电脑端依然渲染了第 3 个项，强制隐藏第 3 个胶囊 */
+#home_top .category-group .category-item:nth-child(3) {
   display: none !important;
+}
+
+/* 2. 将电脑端的 3 列平分改为 2 列平分，让“场下”和“冰迷朋友有话说”撑满左侧 */
+#home_top .category-group {
+  grid-template-columns: repeat(2, 1fr) !important;
 }
