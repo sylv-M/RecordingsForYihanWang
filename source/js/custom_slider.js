@@ -12,8 +12,9 @@ function initCustomGalleryCard() {
 
     // 1. 这里填入你想轮播的所有选手照片（后续有新照片直接往数组里加）
     const photos = [
+        '/RecordingsForYihanWang/img/image_surface.jpg',
         '/RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg',
-        // 后续上传新图直接加在这里：'/RecordingsForYihanWang/img/第二张照片.jpg',
+        '/RecordingsForYihanWang/img/gettyimages-2233180446-594x594.jpg',
     ];
 
     // 图集跳转的目标网址
