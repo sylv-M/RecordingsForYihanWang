@@ -412,11 +412,47 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* 隐藏顶部轮播图上的文字标题卡片，露出整张选手大图 */
+/* 遮挡板删除 */
 #swiper_container .blog-slider__content {
+    background: rgba(255, 255, 255, 0.25) !important; /* 轻微半透明毛玻璃底色，透出选手照片 */
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    padding: 6px 14px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    min-height: unset !important;
+    text-align: center !important;
+}
+
+/* 2. 隐藏卡片内部原本的全部标题、日期、分类等元素 */
+#swiper_container .blog-slider__content > * {
     display: none !important;
 }
+
+/* 3. 在小卡片上生成纯白色的“图集”文字 */
+#swiper_container .blog-slider__content::after {
+    content: "图集" !important;
+    display: inline-block !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important; /* 文字阴影，即使背景是浅色冰面也能看清 */
+}
+
+/* 4. 恢复选手照片全幅平铺展示 */
 #swiper_container .blog-slider__img {
     width: 100% !important;
     height: 100% !important;
+    transform: none !important;
+}
+#swiper_container .blog-slider__img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
