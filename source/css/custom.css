@@ -262,20 +262,25 @@
   color: #fff !important;
 }
 
-/* ================= 1. 彻底删除推荐模块与无用文字 ================= */
+/* ================= 1. 彻底删除“推荐”卡片及遮挡物 ================= */
 
-/* 删除推荐文章卡片（正是它在手机端盖住了选手照片） */
+/* 强制隐藏右上角白色的“荐 / Hello World”推荐卡片 */
 .topGroup .recent-post-top,
 .topGroup .top-post-item,
 #home_top .recent-post-top,
 #home_top .top-post-item,
+.todayCard,
+#todayCard,
+[class*="todayCard"],
+[class*="recommend"],
 .banners-post,
-.recent-post-item:has(.badge),
-div:has(> .banner-button-group) {
+/* 针对带有“荐”角标的容器做精准隐藏 */
+div:has(> .banner-badge),
+div:has(> [class*="badge"]) {
   display: none !important;
 }
 
-/* 彻底删除“新品主题”四个字 (精准匹配文字与类名) */
+/* 彻底删除“新品主题”四个字 */
 .banners-title-small,
 .banner-tips,
 .banners-tips,
@@ -283,10 +288,9 @@ div:has(> .banner-button-group) {
   display: none !important;
 }
 
-/* 删除右下角的“更多推荐”按钮 */
+/* 删除右下角“更多推荐”胶囊按钮 */
 .banner-button-group,
 .banner-button,
-a:has(> span:contains("更多推荐")),
 a[href*="categories"] {
   display: none !important;
 }
@@ -299,43 +303,38 @@ a[href*="life"],
   display: none !important;
 }
 
-/* 隐藏原有的 404 火箭占位图 */
+/* 隐藏原有 404 火箭占位图 */
 a[href*="gallery"] img,
 div:has(> a[href*="gallery"]) img,
 [class*="banner"] img {
   display: none !important;
 }
 
-
-/* ================= 2. 选手照片卡片样式 ================= */
-
-/* 让右侧图集卡片成为纯粹的选手展示位 */
+/* 选手照片作为图集背景铺满 */
 a[href*="gallery"],
 div:has(> a[href*="gallery"]),
 .bannerGroup,
 [class*="banner"] {
   background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
   background-size: cover !important;
-  background-position: center top !important; /* 保证面部完整居中 */
+  background-position: center top !important;
   background-repeat: no-repeat !important;
   border-radius: 12px !important;
 }
 
 
-/* ================= 3. 电脑端适配 (宽度 > 768px) ================= */
+/* ================= 2. 电脑端 (宽度 > 768px)：横向对齐铺满 ================= */
 @media screen and (min-width: 769px) {
-  /* 解决问题 1：打破安知鱼原先 3 列固定栅格宽度限制，彻底撑满横向空位 */
+  /* 左侧分类容器：横向 1:1 撑满整个左半区 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 强制两列 50%/50% 平分 */
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 100% !important;
-    max-width: 100% !important;
     gap: 16px !important;
   }
 
-  /* 消除子卡片原有的固定宽度，让其 100% 占满各自分配到的格子 */
   .categoryGroup > a,
   .category-group > a,
   .categoryItem,
@@ -348,16 +347,36 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 4. 手机端适配 (宽度 <= 768px) ================= */
-@media screen and (max-width: 960px) {
-  /* 解决问题 2：分类胶囊竖向整齐排列 */
+/* ================= 3. 手机端 (宽度 <= 768px)：纵向整齐拉长对齐 ================= */
+@media screen and (max-width: 768px) {
+  /* 打破原先左右卡死的布局，改为上下整齐排列的大卡片流 */
+  .topGroup,
+  #home_top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 选手照片：完整展示在上方，不被任何卡片遮挡，留足展示高度 */
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]),
+  .bannerGroup {
+    width: 100% !important;
+    min-height: 220px !important;
+    margin-bottom: 12px !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* 两个分类胶囊：横向撑满整行，上下纵向排列，高度与宽度整齐拉长对齐 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 10px !important;
+    gap: 12px !important;
   }
 
   .categoryGroup > a,
@@ -366,16 +385,10 @@ div:has(> a[href*="gallery"]),
   .category-item,
   div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 54px !important;
+    height: 56px !important; /* 竖向拉长拉高，手指容易点击 */
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 18px !important;
     box-sizing: border-box !important;
-  }
-
-  /* 解决问题 3：因为遮挡文章已被隐藏，给选手照片留出充足的展示高度 */
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]),
-  .bannerGroup {
-    width: 100% !important;
-    min-height: 240px !important;
-    margin-bottom: 12px !important;
   }
 }
