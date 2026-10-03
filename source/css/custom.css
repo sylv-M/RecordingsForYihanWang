@@ -262,12 +262,33 @@
   color: #fff !important;
 }
 
-/* 1. 如果电脑端依然渲染了第 3 个项，强制隐藏第 3 个胶囊 */
+/* ================= 首页顶部强行覆盖样式 ================= */
+
+/* 1. 隐藏第三个“生活”卡片 */
 #home_top .category-group .category-item:nth-child(3) {
   display: none !important;
 }
 
-/* 2. 将电脑端的 3 列平分改为 2 列平分，让“场下”和“冰迷朋友有话说”撑满左侧 */
+/* 2. 让剩下的两个分类胶囊在电脑端二等分平分，保持美观 */
 #home_top .category-group {
   grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* 3. 强行把右侧的 404 背景图换成选手的照片 */
+#home_top .bannerGroup {
+  background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 4. 如果原有的 404 火箭 img 标签挡住了背景，将它隐藏只露出背景图 */
+#home_top .bannerGroup img {
+  display: none !important;
+}
+
+/* 5. （可选）如果你希望文字在照片上更清晰，可以给文字加一点文字阴影 */
+#home_top .bannerGroup .banner-title,
+#home_top .bannerGroup .banner-link {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
 }
