@@ -262,22 +262,32 @@
   color: #fff !important;
 }
 
-/* ================= 1. 彻底消灭 Hello World 与遮挡文字 ================= */
+/* ================= 1. 恢复滑动交互，透明化遮挡文字 ================= */
 
-/* 凡是内容包含 Hello World、或者在这个区域内的文章卡片全部抹掉 */
+/* 保证轮播滑动容器完好存在，不禁用滑动 */
+.topGroup .recent-top-post,
+.topGroup .swiper-container,
+.topGroup .swiper-wrapper {
+  display: flex !important;
+  overflow: visible !important;
+}
+
+/* 仅将挡住选手的“Hello World”文字与白底透明化，不破坏滑动结构 */
+.topGroup .todayCard,
 .topGroup .recent-post-top,
 .topGroup .top-post-item,
-.topGroup .swiper-slide a,
-.topGroup [class*="recent"],
-.topGroup [class*="today"],
-.topGroup [class*="post-item"],
-/* 强力命中带白底背景的推荐容器 */
-.topGroup div[style*="background-color: rgb(255, 255, 255)"],
-.topGroup div[style*="background:#fff"] {
+.topGroup .post_cover {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.topGroup .todayCard-title,
+.topGroup .todayCard-tips,
+.topGroup .recent-post-top .post-title,
+.topGroup .recent-post-top .post_info,
+.topGroup .banner-badge {
   display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
 }
 
 /* 彻底删除“新品主题”与“更多推荐” */
@@ -291,7 +301,7 @@ a[href*="categories"] {
   display: none !important;
 }
 
-/* 隐藏第三个“生活”卡片及原有 404 图片 */
+/* 隐藏第三个“生活”卡片及原有 404 火箭占位图 */
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
@@ -317,7 +327,6 @@ div:has(> a[href*="gallery"]),
 @media screen and (min-width: 769px) {
   .categoryGroup,
   .category-group,
-  div:has(> .categoryItem),
   div:has(> a[title*="场下"]) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -325,10 +334,11 @@ div:has(> a[href*="gallery"]),
     gap: 16px !important;
   }
 
+  .categoryGroup > a,
+  .category-group > a,
   .categoryItem,
   .category-item,
-  .categoryGroup > a,
-  .categoryButton {
+  div:has(> a[title*="场下"]) > a {
     width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
@@ -336,58 +346,56 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 3. 手机端 (强制解除安知鱼布局锁) ================= */
+/* ================= 3. 手机端 (带入 120px 尺寸 & 开启右滑) ================= */
 @media screen and (max-width: 768px) {
-  /* 强制打散顶部骨架：不再分左右两半，变成自上而下的流 */
-  #home_top,
+  /* 允许整个顶部横向右滑，平滑滚动手势 */
   .topGroup,
-  .top-group {
+  #home_top {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
     width: 100% !important;
-    height: auto !important;
+    gap: 12px !important;
   }
 
-  /* 顶部轮播与选手大图：固定高 230px，完整展示，保留轮播逻辑 */
-  #home_top > *:not(.categoryGroup):not(.category-group):not(div:has(> a[title*="场下"])) {
-    width: 100% !important;
-    height: 230px !important;
-    min-height: 230px !important;
-    position: relative !important;
-  }
-
-  /* 分类大容器：强制横向 100% 顶满屏幕两边 */
+  /* 左侧两个胶囊容器 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
+    flex-shrink: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    gap: 12px !important;
-    margin: 12px 0 0 0 !important;
+    gap: 10px !important;
+    width: 48vw !important;
   }
 
-  /* 核心：用通配选择器直接打穿里面的每一个胶囊容器及 a 标签，写死高度 75px，宽度 100% */
-  .categoryGroup *,
-  .category-group *,
-  div:has(> a[title*="场下"]) * {
-    max-width: 100% !important;
-  }
-
+  /* 【带入 120px 数值】“场下”与“冰迷朋友有话说”固定高度 120px */
   .categoryItem,
   .category-item,
-  div:has(> a[title*="场下"]) > a,
+  .categoryButton,
   .categoryGroup > a,
-  .category-group > a {
+  div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 100px !important;
+    height: 120px !important;
     min-height: 120px !important;
     max-height: 120px !important;
     display: flex !important;
     align-items: center !important;
-    border-radius: 14px !important;
+    padding: 0 16px !important;
+    border-radius: 12px !important;
     box-sizing: border-box !important;
-    margin: 0 !important;
+  }
+
+  /* 右侧选手照片卡片：高度设为 250px（120px*2 + 10px间距），与左侧高度绝对对齐 */
+  .topGroup .recent-top-post,
+  .topGroup .bannerGroup,
+  a[href*="gallery"] {
+    flex-shrink: 0 !important;
+    width: 78vw !important;
+    min-width: 260px !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    border-radius: 12px !important;
   }
 }
