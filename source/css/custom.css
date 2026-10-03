@@ -262,9 +262,36 @@
   color: #fff !important;
 }
 
-/* ================= 1. 基础隐藏与清理 ================= */
+/* ================= 1. 彻底删除推荐模块与无用文字 ================= */
 
-/* 彻底隐藏第三个“生活”卡片 */
+/* 删除推荐文章卡片（正是它在手机端盖住了选手照片） */
+.topGroup .recent-post-top,
+.topGroup .top-post-item,
+#home_top .recent-post-top,
+#home_top .top-post-item,
+.banners-post,
+.recent-post-item:has(.badge),
+div:has(> .banner-button-group) {
+  display: none !important;
+}
+
+/* 彻底删除“新品主题”四个字 (精准匹配文字与类名) */
+.banners-title-small,
+.banner-tips,
+.banners-tips,
+.banner-subtitle {
+  display: none !important;
+}
+
+/* 删除右下角的“更多推荐”按钮 */
+.banner-button-group,
+.banner-button,
+a:has(> span:contains("更多推荐")),
+a[href*="categories"] {
+  display: none !important;
+}
+
+/* 隐藏第三个“生活”卡片 */
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
@@ -272,78 +299,83 @@ a[href*="life"],
   display: none !important;
 }
 
-/* 去掉“新品主题”四个字 */
-.banner-tips,
-.banners-tips,
-.banner-subtitle,
-[class*="banner"] .tips {
-  display: none !important;
-}
-
-/* 隐藏原有 404 火箭占位图 */
+/* 隐藏原有的 404 火箭占位图 */
 a[href*="gallery"] img,
 div:has(> a[href*="gallery"]) img,
 [class*="banner"] img {
   display: none !important;
 }
 
-/* 统一设置选手照片为卡片背景 */
+
+/* ================= 2. 选手照片卡片样式 ================= */
+
+/* 让右侧图集卡片成为纯粹的选手展示位 */
 a[href*="gallery"],
 div:has(> a[href*="gallery"]),
 .bannerGroup,
 [class*="banner"] {
   background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
   background-size: cover !important;
-  background-position: center top !important; /* 优先对齐头部和面部 */
+  background-position: center top !important; /* 保证面部完整居中 */
   background-repeat: no-repeat !important;
+  border-radius: 12px !important;
 }
 
 
-/* ================= 2. 电脑端适配 (宽度 > 768px) ================= */
+/* ================= 3. 电脑端适配 (宽度 > 768px) ================= */
 @media screen and (min-width: 769px) {
-  /* 让左下角分类卡片容器使用 flex 平分铺满 */
-  div:has(> a[title*="场下"]),
+  /* 解决问题 1：打破安知鱼原先 3 列固定栅格宽度限制，彻底撑满横向空位 */
   .categoryGroup,
-  .category-group {
-    display: flex !important;
-    gap: 12px !important;
+  .category-group,
+  div:has(> a[title*="场下"]) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* 强制两列 50%/50% 平分 */
     width: 100% !important;
+    max-width: 100% !important;
+    gap: 16px !important;
   }
 
-  /* 两个胶囊各占 50%，横向撑满整块空地，字体自然舒展 */
-  div:has(> a[title*="场下"]) > a,
+  /* 消除子卡片原有的固定宽度，让其 100% 占满各自分配到的格子 */
   .categoryGroup > a,
-  .category-group > a {
-    flex: 1 1 0% !important;
+  .category-group > a,
+  .categoryItem,
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
+    width: 100% !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 }
 
 
-/* ================= 3. 手机端适配 (宽度 <= 768px) ================= */
-@media screen and (max-width: 768px) {
-  /* 手机端让两个分类胶囊竖向排列，保持整齐美观 */
-  div:has(> a[title*="场下"]),
+/* ================= 4. 手机端适配 (宽度 <= 768px) ================= */
+@media screen and (max-width: 960px) {
+  /* 解决问题 2：分类胶囊竖向整齐排列 */
   .categoryGroup,
-  .category-group {
+  .category-group,
+  div:has(> a[title*="场下"]) {
     display: flex !important;
     flex-direction: column !important;
+    width: 100% !important;
     gap: 10px !important;
-    width: 100% !important;
   }
 
-  div:has(> a[title*="场下"]) > a,
   .categoryGroup > a,
-  .category-group > a {
+  .category-group > a,
+  .categoryItem,
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 60px !important; /* 给足高度 */
+    height: 54px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 解决手机端照片被推荐卡片完全遮挡的问题：
-     给顶部 banner 留出独立展示高度，并让推荐文章卡片下移，不重叠遮挡面部 */
-  .topGroup,
-  #home_top {
-    display: flex !important;
-    flex-direction: column !important;
+  /* 解决问题 3：因为遮挡文章已被隐藏，给选手照片留出充足的展示高度 */
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]),
+  .bannerGroup {
+    width: 100% !important;
+    min-height: 240px !important;
+    margin-bottom: 12px !important;
   }
 }
