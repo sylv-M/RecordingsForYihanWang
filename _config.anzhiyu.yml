@@ -962,7 +962,7 @@ home_top:
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
     title: 图集
-    image: /RecordingsForYihanWang/blob/main/source/img/image_surface.jpg
+    image:     image: /RecordingsForYihanWang/img/image_surface.jpg
     link: https://docs.anheyu.com/
 
 # 朋友圈配置
