@@ -412,10 +412,11 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* 隐藏顶部推荐分类卡片文字前面的装饰横线 */
-#home_top .category-group .category-item a::before,
-#home_top .category-group a::before,
-.category-item-text::before {
+/* 隐藏顶部轮播图上的文字标题卡片，露出整张选手大图 */
+#swiper_container .blog-slider__content {
     display: none !important;
-    content: none !important;
+}
+#swiper_container .blog-slider__img {
+    width: 100% !important;
+    height: 100% !important;
 }
