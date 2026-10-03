@@ -262,21 +262,16 @@
   color: #fff !important;
 }
 
-/* ================= 1. 彻底删除“推荐”卡片及遮挡物 ================= */
+/* ================= 1. 全局清理与隐藏 ================= */
 
-/* 强制隐藏右上角白色的“荐 / Hello World”推荐卡片 */
-.topGroup .recent-post-top,
-.topGroup .top-post-item,
-#home_top .recent-post-top,
-#home_top .top-post-item,
-.todayCard,
+/* 彻底隐藏挡在照片上的“Hello World / 荐”推荐卡片 */
+.topGroup .todayCard,
+#home_top .todayCard,
 #todayCard,
-[class*="todayCard"],
-[class*="recommend"],
-.banners-post,
-/* 针对带有“荐”角标的容器做精准隐藏 */
-div:has(> .banner-badge),
-div:has(> [class*="badge"]) {
+.todayCard,
+.recent-post-top,
+.top-post-item,
+[class*="todayCard"] {
   display: none !important;
 }
 
@@ -288,14 +283,14 @@ div:has(> [class*="badge"]) {
   display: none !important;
 }
 
-/* 删除右下角“更多推荐”胶囊按钮 */
+/* 删除右下角的“更多推荐”按钮 */
 .banner-button-group,
 .banner-button,
 a[href*="categories"] {
   display: none !important;
 }
 
-/* 隐藏第三个“生活”卡片 */
+/* 彻底隐藏第三个“生活”卡片 */
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
@@ -325,12 +320,11 @@ div:has(> a[href*="gallery"]),
 
 /* ================= 2. 电脑端 (宽度 > 768px)：横向对齐铺满 ================= */
 @media screen and (min-width: 769px) {
-  /* 左侧分类容器：横向 1:1 撑满整个左半区 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr 1fr !important; /* 强制两列 50%/50% 平分 */
     width: 100% !important;
     gap: 16px !important;
   }
@@ -347,29 +341,29 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 3. 手机端 (宽度 <= 768px)：纵向整齐拉长对齐 ================= */
+/* ================= 3. 手机端 (宽度 <= 768px)：纵向拉长、完全对齐 ================= */
 @media screen and (max-width: 768px) {
-  /* 打破原先左右卡死的布局，改为上下整齐排列的大卡片流 */
+  /* 强制解除安知鱼原生的左右双列 Grid，改为上下整齐的大卡片流 */
   .topGroup,
   #home_top {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     height: auto !important;
+    gap: 14px !important;
   }
 
-  /* 选手照片：完整展示在上方，不被任何卡片遮挡，留足展示高度 */
+  /* 1. 选手照片：横向 100% 撑满整行，完全独立，不再受任何阻挡 */
   a[href*="gallery"],
   div:has(> a[href*="gallery"]),
   .bannerGroup {
     width: 100% !important;
-    min-height: 220px !important;
-    margin-bottom: 12px !important;
-    position: relative !important;
-    z-index: 1 !important;
+    min-height: 240px !important;
+    display: block !important;
+    margin: 0 !important;
   }
 
-  /* 两个分类胶囊：横向撑满整行，上下纵向排列，高度与宽度整齐拉长对齐 */
+  /* 2. 分类容器：占满 100% 宽度，垂直排布 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
@@ -377,18 +371,22 @@ div:has(> a[href*="gallery"]),
     flex-direction: column !important;
     width: 100% !important;
     gap: 12px !important;
+    margin: 0 !important;
   }
 
+  /* 3. “场下”与“冰迷朋友有话说”：横向 100% 铺满整行，竖向高度拉长拉宽，完全对齐 */
   .categoryGroup > a,
   .category-group > a,
   .categoryItem,
   .category-item,
   div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 56px !important; /* 竖向拉长拉高，手指容易点击 */
+    height: 64px !important; /* 竖向拉长加高，饱满居中 */
     display: flex !important;
     align-items: center !important;
-    padding: 0 18px !important;
+    justify-content: flex-start !important;
+    padding: 0 20px !important;
+    border-radius: 12px !important;
     box-sizing: border-box !important;
   }
 }
