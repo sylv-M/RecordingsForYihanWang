@@ -262,49 +262,45 @@
   color: #fff !important;
 }
 
-/* ================= 1. 保留轮播，仅删除盖在图上的文字卡片与杂项 ================= */
+/* ================= 1. 彻底消灭 Hello World 与遮挡文字 ================= */
 
-/* 仅隐藏遮挡图片的“Hello World 推荐文章卡片”与“荐”角标，保留下方的轮播图容器 */
-.recent-top-post .recent-post-item,
-.recent-top-post .post-content,
+/* 凡是内容包含 Hello World、或者在这个区域内的文章卡片全部抹掉 */
 .topGroup .recent-post-top,
 .topGroup .top-post-item,
-[class*="banner-badge"],
-[class*="todayCard"] {
+.topGroup .swiper-slide a,
+.topGroup [class*="recent"],
+.topGroup [class*="today"],
+.topGroup [class*="post-item"],
+/* 强力命中带白底背景的推荐容器 */
+.topGroup div[style*="background-color: rgb(255, 255, 255)"],
+.topGroup div[style*="background:#fff"] {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
-/* 彻底删除“新品主题”四个字 */
+/* 彻底删除“新品主题”与“更多推荐” */
 .banners-title-small,
 .banner-tips,
 .banners-tips,
-.banner-subtitle {
-  display: none !important;
-}
-
-/* 彻底删除右下角的“更多推荐”按钮 */
+.banner-subtitle,
 .banner-button-group,
 .banner-button,
 a[href*="categories"] {
   display: none !important;
 }
 
-/* 彻底隐藏第三个“生活”卡片 */
+/* 隐藏第三个“生活”卡片及原有 404 图片 */
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
-.category-item:nth-child(3) {
-  display: none !important;
-}
-
-/* 隐藏原有 404 火箭占位图 */
-a[href*="gallery"] img,
-div:has(> a[href*="gallery"]) img,
+.category-item:nth-child(3),
 [class*="banner"] img {
   display: none !important;
 }
 
-/* 当前单图的背景图设置（后续开启完整 Swiper 多图时，图片会由轮播原生渲染） */
+/* 统一背景图 */
 a[href*="gallery"],
 div:has(> a[href*="gallery"]),
 .bannerGroup,
@@ -317,14 +313,14 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 2. 电脑端适配 (宽度 > 768px)：横向对齐铺满 ================= */
+/* ================= 2. 电脑端 (宽度 > 768px) ================= */
 @media screen and (min-width: 769px) {
   .categoryGroup,
   .category-group,
   div:has(> .categoryItem),
   div:has(> a[title*="场下"]) {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 强制两列 50%/50% 平分铺满 */
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 100% !important;
     gap: 16px !important;
   }
@@ -340,56 +336,58 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 3. 手机端适配 (宽度 <= 768px)：固定数值精准拉长与对齐 ================= */
+/* ================= 3. 手机端 (强制解除安知鱼布局锁) ================= */
 @media screen and (max-width: 768px) {
-  /* 破除左右双列锁定，改为上下单列 */
+  /* 强制打散顶部骨架：不再分左右两半，变成自上而下的流 */
+  #home_top,
   .topGroup,
-  #home_top {
+  .top-group {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     height: auto !important;
-    gap: 14px !important;
   }
 
-  /* 轮播/照片区域：固定高度 240px，完整展示，保留轮播手势与动画 */
-  .topGroup .recent-top-post,
-  .topGroup .swiper-container,
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]),
-  .bannerGroup {
+  /* 顶部轮播与选手大图：固定高 230px，完整展示，保留轮播逻辑 */
+  #home_top > *:not(.categoryGroup):not(.category-group):not(div:has(> a[title*="场下"])) {
     width: 100% !important;
-    height: 240px !important;
-    min-height: 240px !important;
-    display: block !important;
+    height: 230px !important;
+    min-height: 230px !important;
     position: relative !important;
-    z-index: 1 !important;
-    margin: 0 !important;
   }
 
-  /* 分类胶囊容器：纵向排布 */
+  /* 分类大容器：强制横向 100% 顶满屏幕两边 */
   .categoryGroup,
   .category-group,
-  div:has(> .categoryItem) {
+  div:has(> a[title*="场下"]) {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 12px !important; /* 上下卡片之间的纵向间距 */
+    max-width: 100% !important;
+    gap: 12px !important;
+    margin: 12px 0 0 0 !important;
   }
 
-  /* 【手机端数值设置】“场下”与“冰迷朋友有话说”：固定高度 75px，宽度 100% 顶格拉齐 */
+  /* 核心：用通配选择器直接打穿里面的每一个胶囊容器及 a 标签，写死高度 75px，宽度 100% */
+  .categoryGroup *,
+  .category-group *,
+  div:has(> a[title*="场下"]) * {
+    max-width: 100% !important;
+  }
+
   .categoryItem,
   .category-item,
-  .categoryButton,
   div:has(> a[title*="场下"]) > a,
-  .categoryGroup > a {
+  .categoryGroup > a,
+  .category-group > a {
     width: 100% !important;
-    height: 75px !important;       /* 纵向高度固定拉长到 75px */
-    line-height: 75px !important;  /* 内部文字垂直居中 */
+    height: 100px !important;
+    min-height: 100px !important;
+    max-height: 100px !important;
     display: flex !important;
     align-items: center !important;
-    padding: 0 20px !important;
     border-radius: 14px !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
   }
 }
