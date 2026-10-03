@@ -382,8 +382,8 @@ div:has(> a[href*="gallery"]),
   .category-group > a {
     width: 100% !important;
     height: 100px !important;
-    min-height: 100px !important;
-    max-height: 100px !important;
+    min-height: 120px !important;
+    max-height: 120px !important;
     display: flex !important;
     align-items: center !important;
     border-radius: 14px !important;
