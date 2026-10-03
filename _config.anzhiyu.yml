@@ -1122,18 +1122,7 @@ dynamicEffect:
 inject:
   head:
     - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
-    - <style>#loading-box .loading-bg,.loading-bg{background:linear-gradient(135deg,#e0c3fc 0%,#fbc2eb 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#card-wechat,.card-widget.card-wechat{display:none!important;}
-      /* --- 1. 彻底隐藏包含“生活”文字的卡片，或者隐藏第三个胶囊 --- */
-      .category-item:nth-child(3), a.category-item[title*="生活"], a.category-item[href*="life"] { display: none !important; }
-      /* --- 2. 让分类栏两等分撑满 --- */
-      .category-group, #home_top .category-group { grid-template-columns: repeat(2, 1fr) !important; }
-      /* --- 3. 强行把图集卡片的背景换成选手的照片 --- */
-      .bannerGroup, #home_top .bannerGroup, .topGroup .bannerGroup {
-        background: url('/RecordingsForYihanWang/img/image_surface.jpg') center center / cover no-repeat !important;
-      }
-      /* --- 4. 把原先占位的 404 火箭图片彻底隐藏，露出背景图 --- */
-      .bannerGroup img, #home_top .bannerGroup img { display: none !important; }
-      </style>
+    - <style>#loading-box .loading-bg,.loading-bg{background:linear-gradient(135deg,#e0c3fc 0%,#fbc2eb 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#card-wechat,.card-widget.card-wechat{display:none!important;}</style>
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
