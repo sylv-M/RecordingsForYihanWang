@@ -262,33 +262,34 @@
   color: #fff !important;
 }
 
-/* ================= 首页顶部强行覆盖样式 ================= */
-
-/* 1. 隐藏第三个“生活”卡片 */
-#home_top .category-group .category-item:nth-child(3) {
+/* 1. 强制按文字精准隐藏“生活”胶囊 */
+a[title*="生活"],
+a[href*="life"],
+.categoryItem:nth-child(3),
+.category-item:nth-child(3) {
   display: none !important;
 }
 
-/* 2. 让剩下的两个分类胶囊在电脑端二等分平分，保持美观 */
-#home_top .category-group {
+/* 2. 无论父容器叫什么名字，只要里面装了胶囊按钮，强制 2 列平分 */
+div:has(> a[title*="场下"]),
+div:has(> a[title*="冰迷朋友有话说"]),
+.categoryGroup,
+.category-group {
+  display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
 }
 
-/* 3. 强行把右侧的 404 背景图换成选手的照片 */
-#home_top .bannerGroup {
+/* 3. 精准定位右侧包含“图集”链接的卡片，强制设为选手背景图 */
+a[href*="gallery"],
+div:has(> a[href*="gallery"]) {
   background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
   background-size: cover !important;
-  background-position: center center !important;
+  background-position: center !important;
   background-repeat: no-repeat !important;
 }
 
-/* 4. 如果原有的 404 火箭 img 标签挡住了背景，将它隐藏只露出背景图 */
-#home_top .bannerGroup img {
+/* 4. 隐藏图集卡片里的所有原有图片（把 404 火箭干掉） */
+a[href*="gallery"] img,
+div:has(> a[href*="gallery"]) img {
   display: none !important;
-}
-
-/* 5. （可选）如果你希望文字在照片上更清晰，可以给文字加一点文字阴影 */
-#home_top .bannerGroup .banner-title,
-#home_top .bannerGroup .banner-link {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
 }
