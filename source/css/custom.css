@@ -261,3 +261,8 @@
 .yihan-season li {
   color: #fff !important;
 }
+
+/* 隐藏第三个板块 */
+.home_top .category-group .category-item:nth-child(3) {
+  display: none !important;
+}
