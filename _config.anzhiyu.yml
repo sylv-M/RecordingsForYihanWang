@@ -950,7 +950,6 @@ home_top:
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
-
     - name: 冰迷朋友有话说
       path: /RecordingsForYihanWang/message/
       shadow: var(--anzhiyu-shadow-red)
@@ -963,7 +962,7 @@ home_top:
   banner:
     title: 图集
     image: /RecordingsForYihanWang/img/image_surface.jpg
-    link: /RecordingsForYihanWang/gallery/
+    link: /gallery/
 
 # 朋友圈配置
 friends_vue:
