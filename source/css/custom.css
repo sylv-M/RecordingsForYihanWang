@@ -262,7 +262,9 @@
   color: #fff !important;
 }
 
-/* 1. 强制按文字精准隐藏“生活”胶囊 */
+/* ================= 1. 基础隐藏与清理 ================= */
+
+/* 彻底隐藏第三个“生活”卡片 */
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
@@ -270,26 +272,78 @@ a[href*="life"],
   display: none !important;
 }
 
-/* 2. 无论父容器叫什么名字，只要里面装了胶囊按钮，强制 2 列平分 */
-div:has(> a[title*="场下"]),
-div:has(> a[title*="冰迷朋友有话说"]),
-.categoryGroup,
-.category-group {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
+/* 去掉“新品主题”四个字 */
+.banner-tips,
+.banners-tips,
+.banner-subtitle,
+[class*="banner"] .tips {
+  display: none !important;
 }
 
-/* 3. 精准定位右侧包含“图集”链接的卡片，强制设为选手背景图 */
+/* 隐藏原有 404 火箭占位图 */
+a[href*="gallery"] img,
+div:has(> a[href*="gallery"]) img,
+[class*="banner"] img {
+  display: none !important;
+}
+
+/* 统一设置选手照片为卡片背景 */
 a[href*="gallery"],
-div:has(> a[href*="gallery"]) {
+div:has(> a[href*="gallery"]),
+.bannerGroup,
+[class*="banner"] {
   background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: center top !important; /* 优先对齐头部和面部 */
   background-repeat: no-repeat !important;
 }
 
-/* 4. 隐藏图集卡片里的所有原有图片（把 404 火箭干掉） */
-a[href*="gallery"] img,
-div:has(> a[href*="gallery"]) img {
-  display: none !important;
+
+/* ================= 2. 电脑端适配 (宽度 > 768px) ================= */
+@media screen and (min-width: 769px) {
+  /* 让左下角分类卡片容器使用 flex 平分铺满 */
+  div:has(> a[title*="场下"]),
+  .categoryGroup,
+  .category-group {
+    display: flex !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* 两个胶囊各占 50%，横向撑满整块空地，字体自然舒展 */
+  div:has(> a[title*="场下"]) > a,
+  .categoryGroup > a,
+  .category-group > a {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+  }
+}
+
+
+/* ================= 3. 手机端适配 (宽度 <= 768px) ================= */
+@media screen and (max-width: 768px) {
+  /* 手机端让两个分类胶囊竖向排列，保持整齐美观 */
+  div:has(> a[title*="场下"]),
+  .categoryGroup,
+  .category-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  div:has(> a[title*="场下"]) > a,
+  .categoryGroup > a,
+  .category-group > a {
+    width: 100% !important;
+    height: 60px !important; /* 给足高度 */
+  }
+
+  /* 解决手机端照片被推荐卡片完全遮挡的问题：
+     给顶部 banner 留出独立展示高度，并让推荐文章卡片下移，不重叠遮挡面部 */
+  .topGroup,
+  #home_top {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
