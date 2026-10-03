@@ -938,6 +938,7 @@ Open_Graph_meta: true
 css_prefix: true
 
 # 首页顶部相关配置
+# 首页顶部相关配置
 home_top:
   enable: true
   timemode: date
@@ -955,15 +956,19 @@ home_top:
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
+  # 开启主题自带轮播
   swiper:
-    enable: false
+    enable: true
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js
+  # 配置轮播图片与文字
   banner:
     title: 图集
-    image: /RecordingsForYihanWang/img/image_surface.jpg
-    link: /gallery/
-
+    image: 
+      - /RecordingsForYihanWang/img/image_surface.jpg
+      - /RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg
+      - /RecordingsForYihanWang/img/gettyimages-2233180446-594x594.jpg
+    link: /RecordingsForYihanWang/gallery/
 # 朋友圈配置
 friends_vue:
   enable: false
