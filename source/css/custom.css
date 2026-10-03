@@ -262,15 +262,14 @@
   color: #fff !important;
 }
 
-/* ================= 1. 全局清理与隐藏 ================= */
+/* ================= 1. 保留轮播，仅删除盖在图上的文字卡片与杂项 ================= */
 
-/* 彻底隐藏挡在照片上的“Hello World / 荐”推荐卡片 */
-.topGroup .todayCard,
-#home_top .todayCard,
-#todayCard,
-.todayCard,
-.recent-post-top,
-.top-post-item,
+/* 仅隐藏遮挡图片的“Hello World 推荐文章卡片”与“荐”角标，保留下方的轮播图容器 */
+.recent-top-post .recent-post-item,
+.recent-top-post .post-content,
+.topGroup .recent-post-top,
+.topGroup .top-post-item,
+[class*="banner-badge"],
 [class*="todayCard"] {
   display: none !important;
 }
@@ -283,7 +282,7 @@
   display: none !important;
 }
 
-/* 删除右下角的“更多推荐”按钮 */
+/* 彻底删除右下角的“更多推荐”按钮 */
 .banner-button-group,
 .banner-button,
 a[href*="categories"] {
@@ -305,7 +304,7 @@ div:has(> a[href*="gallery"]) img,
   display: none !important;
 }
 
-/* 选手照片作为图集背景铺满 */
+/* 当前单图的背景图设置（后续开启完整 Swiper 多图时，图片会由轮播原生渲染） */
 a[href*="gallery"],
 div:has(> a[href*="gallery"]),
 .bannerGroup,
@@ -318,22 +317,22 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 2. 电脑端 (宽度 > 768px)：横向对齐铺满 ================= */
+/* ================= 2. 电脑端适配 (宽度 > 768px)：横向对齐铺满 ================= */
 @media screen and (min-width: 769px) {
   .categoryGroup,
   .category-group,
+  div:has(> .categoryItem),
   div:has(> a[title*="场下"]) {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 强制两列 50%/50% 平分 */
+    grid-template-columns: repeat(2, 1fr) !important; /* 强制两列 50%/50% 平分铺满 */
     width: 100% !important;
     gap: 16px !important;
   }
 
-  .categoryGroup > a,
-  .category-group > a,
   .categoryItem,
   .category-item,
-  div:has(> a[title*="场下"]) > a {
+  .categoryGroup > a,
+  .categoryButton {
     width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
@@ -341,9 +340,9 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 3. 手机端 (宽度 <= 768px)：纵向拉长、完全对齐 ================= */
+/* ================= 3. 手机端适配 (宽度 <= 768px)：固定数值精准拉长与对齐 ================= */
 @media screen and (max-width: 768px) {
-  /* 强制解除安知鱼原生的左右双列 Grid，改为上下整齐的大卡片流 */
+  /* 破除左右双列锁定，改为上下单列 */
   .topGroup,
   #home_top {
     display: flex !important;
@@ -353,40 +352,44 @@ div:has(> a[href*="gallery"]),
     gap: 14px !important;
   }
 
-  /* 1. 选手照片：横向 100% 撑满整行，完全独立，不再受任何阻挡 */
+  /* 轮播/照片区域：固定高度 240px，完整展示，保留轮播手势与动画 */
+  .topGroup .recent-top-post,
+  .topGroup .swiper-container,
   a[href*="gallery"],
   div:has(> a[href*="gallery"]),
   .bannerGroup {
     width: 100% !important;
+    height: 240px !important;
     min-height: 240px !important;
     display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
     margin: 0 !important;
   }
 
-  /* 2. 分类容器：占满 100% 宽度，垂直排布 */
+  /* 分类胶囊容器：纵向排布 */
   .categoryGroup,
   .category-group,
-  div:has(> a[title*="场下"]) {
+  div:has(> .categoryItem) {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 12px !important;
-    margin: 0 !important;
+    gap: 12px !important; /* 上下卡片之间的纵向间距 */
   }
 
-  /* 3. “场下”与“冰迷朋友有话说”：横向 100% 铺满整行，竖向高度拉长拉宽，完全对齐 */
-  .categoryGroup > a,
-  .category-group > a,
+  /* 【手机端数值设置】“场下”与“冰迷朋友有话说”：固定高度 75px，宽度 100% 顶格拉齐 */
   .categoryItem,
   .category-item,
-  div:has(> a[title*="场下"]) > a {
+  .categoryButton,
+  div:has(> a[title*="场下"]) > a,
+  .categoryGroup > a {
     width: 100% !important;
-    height: 64px !important; /* 竖向拉长加高，饱满居中 */
+    height: 75px !important;       /* 纵向高度固定拉长到 75px */
+    line-height: 75px !important;  /* 内部文字垂直居中 */
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
     padding: 0 20px !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     box-sizing: border-box !important;
   }
 }
