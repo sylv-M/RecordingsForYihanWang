@@ -944,6 +944,12 @@ home_top:
   title: 生活明朗
   subTitle: 万物可爱。
   siteText: anheyu.com
+home_top:
+  enable: true
+  timemode: date
+  title: 生活明朗
+  subTitle: 万物可爱。
+  siteText: anheyu.com
   category:
     - name: 场下
       path: /RecordingsForYihanWang/offstage/
@@ -958,12 +964,12 @@ home_top:
       icon: anzhiyu-icon-fire
   swiper:
     enable: false
-    swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
-    swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
+    swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css
+    swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js
   banner:
     title: 图集
     image: /RecordingsForYihanWang/img/image_surface.jpg
-    link: https://docs.anheyu.com/
+    link: /RecordingsForYihanWang/gallery/
 
 # 朋友圈配置
 friends_vue:
