@@ -125,10 +125,14 @@ theme_config:
     swiper:
       enable: false
     banner:
+      enable: true
       title: 图集
-      image: /RecordingsForYihanWang/img/image_surface.jpg
+      url: /RecordingsForYihanWang/gallery/
       link: /RecordingsForYihanWang/gallery/
+      bg: /RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg
+      image: /RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg
 
-inject:
-  head:
-    - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
+  # inject 必须缩进在 theme_config 下面，且安知鱼的标准写法为数组路径
+  inject:
+    head:
+      - /RecordingsForYihanWang/css/custom.css
