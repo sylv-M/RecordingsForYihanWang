@@ -940,22 +940,7 @@ css_prefix: true
 # 首页顶部相关配置
 home_top:
   enable: true
-  timemode: date
-  title: 生活明朗
-  subTitle: 万物可爱。
-  siteText: anheyu.com
-  category:
-    - name: 场下
-      path: /RecordingsForYihanWang/offstage/
-      shadow: var(--anzhiyu-shadow-blue)
-      class: blue
-      icon: anzhiyu-icon-dove
-
-    - name: 冰迷朋友有话说
-      path: /RecordingsForYihanWang/message/
-      shadow: var(--anzhiyu-shadow-red)
-      class: red
-      icon: anzhiyu-icon-fire
+  title: 测试标题
   swiper:
     enable: false
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css
