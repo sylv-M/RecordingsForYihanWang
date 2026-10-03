@@ -950,12 +950,12 @@ home_top:
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
+
     - name: 冰迷朋友有话说
       path: /RecordingsForYihanWang/message/
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
-  default_descr: 再怎么看我也不知道怎么描述它的啦！
   swiper:
     enable: false
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
