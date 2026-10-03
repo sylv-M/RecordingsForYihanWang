@@ -606,3 +606,36 @@ div:has(> a[href*="gallery"]),
   padding-left: 10px !important;
   border-left: 4px solid #425AEF !important;
 }
+
+/* ================= 图集页面三列网格（终极强制版） ================= */
+.photo-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin-bottom: 40px !important;
+}
+.photo-grid img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  display: block !important;
+  margin: 0 !important;
+}
+/* 手机端一行两个 */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+/* 小手机一行一个 */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .photo-grid img {
+    height: auto !important;
+    max-height: 400px !important;
+  }
+}
