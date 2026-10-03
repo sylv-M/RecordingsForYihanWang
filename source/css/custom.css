@@ -365,11 +365,6 @@ div:has(> a[href*="gallery"]),
     padding-bottom: 8px !important;
   }
 
-  /* 隐藏底部可能出现的默认丑陋滚动条 */
-  #home_top::-webkit-scrollbar,
-  .topGroup::-webkit-scrollbar {
-    display: none !important;
-  }
 
   /* 2. 左侧两个胶囊容器：固定在第一屏 */
   .categoryGroup,
@@ -415,4 +410,12 @@ div:has(> a[href*="gallery"]),
     scroll-snap-align: start !important;
     touch-action: pan-x !important;
   }
+}
+
+/* 隐藏顶部推荐分类卡片文字前面的装饰横线 */
+#home_top .category-group .category-item a::before,
+#home_top .category-group a::before,
+.category-item-text::before {
+    display: none !important;
+    content: none !important;
 }
