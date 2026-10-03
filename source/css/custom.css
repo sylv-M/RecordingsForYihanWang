@@ -412,40 +412,7 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* 遮挡板删除 */
-#swiper_container .blog-slider__content {
-    background: rgba(255, 255, 255, 0.25) !important; /* 轻微半透明毛玻璃底色，透出选手照片 */
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    padding: 6px 14px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    position: absolute !important;
-    bottom: 16px !important;
-    left: 16px !important;
-    width: auto !important;
-    max-width: fit-content !important;
-    min-height: unset !important;
-    text-align: center !important;
-}
-
-/* 2. 隐藏卡片内部原本的全部标题、日期、分类等元素 */
-#swiper_container .blog-slider__content > * {
-    display: none !important;
-}
-
-/* 3. 在小卡片上生成纯白色的“图集”文字 */
-#swiper_container .blog-slider__content::after {
-    content: "图集" !important;
-    display: inline-block !important;
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    letter-spacing: 2px !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important; /* 文字阴影，即使背景是浅色冰面也能看清 */
-}
-
-/* 4. 恢复选手照片全幅平铺展示 */
+/* 1. 选手照片铺满整个卡片区域，不被挤压 */
 #swiper_container .blog-slider__img {
     width: 100% !important;
     height: 100% !important;
@@ -455,4 +422,33 @@ div:has(> a[href*="gallery"]),
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+}
+
+/* 2. 彻底移除白色遮挡底色与卡片阴影，只作为文字容器悬浮在照片角落 */
+#swiper_container .blog-slider__content {
+    background: transparent !important;       /* 去掉大白块遮挡 */
+    box-shadow: none !important;              /* 去掉白色卡片的投影 */
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 20px !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;          /* 避免遮挡卡片点击 */
+}
+
+/* 3. 只保留纯白色的“图集”标题，并加上微阴影防止冰面反光看不清 */
+#swiper_container .blog-slider__title {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important; /* 黑色轻阴影，白色冰面上也能清晰看清文字 */
+}
+
+/* 4. 隐藏掉遮挡画面的其他杂乱信息（比如发布日期、更新时间、分类等） */
+#swiper_container .blog-slider__code,
+#swiper_container .blog-slider__text,
+#swiper_container .blog-slider__button {
+    display: none !important;
 }
