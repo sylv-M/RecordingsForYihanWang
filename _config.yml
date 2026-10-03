@@ -128,3 +128,7 @@ theme_config:
       title: 图集
       image: /RecordingsForYihanWang/img/image_surface.jpg
       link: /RecordingsForYihanWang/gallery/
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
