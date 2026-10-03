@@ -122,17 +122,3 @@ theme_config:
         shadow: var(--anzhiyu-shadow-red)
         class: red
         icon: anzhiyu-icon-fire
-    swiper:
-      enable: false
-    banner:
-      enable: true
-      title: 图集
-      url: /RecordingsForYihanWang/gallery/
-      link: /RecordingsForYihanWang/gallery/
-      bg: /RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg
-      image: /RecordingsForYihanWang/img/gettyimages-2296699948-594x594.jpg
-
-  # inject 必须缩进在 theme_config 下面，且安知鱼的标准写法为数组路径
-  inject:
-    head:
-      - /RecordingsForYihanWang/css/custom.css
