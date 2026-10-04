@@ -936,7 +936,6 @@ Open_Graph_meta: true
 css_prefix: true
 
 # 首页顶部相关配置
-# 首页顶部相关配置
 home_top:
   enable: true
   timemode: date
