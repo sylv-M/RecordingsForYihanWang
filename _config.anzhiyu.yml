@@ -358,7 +358,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://bright-strudel-9020d2.netlify.app/.netlify/functions/twikoo
+  envId: https://bright-strudel-9020d2.netlify.app
   visitor: true
 
 # Artalk
