@@ -1120,7 +1120,6 @@ dynamicEffect:
   pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
-# Inject
 inject:
   head:
     - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
@@ -1201,8 +1200,7 @@ inject:
           display: none !important;
         }
 
-        /* ================= 比赛合集卡片（左下角超大标题） ================= */
-        /* 1. 彻底隐藏默认生活明朗标语、画布及纸飞机 */
+        /* ================= 电脑端比赛合集卡片 ================= */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1211,7 +1209,6 @@ inject:
           display: none !important;
         }
 
-        /* 2. 背景图片铺满，并强化底部暗色渐变确保大字清晰易读 */
         #random-banner,
         #random-hover {
           position: relative !important;
@@ -1223,7 +1220,6 @@ inject:
           height: 100% !important;
         }
 
-        /* 3. 绝对定位强制锁定在左下角 */
         #random-banner .bannerText {
           position: absolute !important;
           left: 24px !important;
@@ -1240,7 +1236,6 @@ inject:
           z-index: 10 !important;
         }
 
-        /* 4. 加大字号（2.2rem）并增强文字阴影质感 */
         #random-banner .bannerText::before {
           content: "比赛合集 ➔" !important;
           font-size: 2.2rem !important;
@@ -1251,12 +1246,48 @@ inject:
           display: inline-block !important;
           white-space: nowrap !important;
         }
+
+        /* ================= 移动端与 iPad 专属“比赛合集”卡片 ================= */
+        /* 电脑端默认彻底隐藏，不占任何位置 */
+        .mobile-competition-card {
+          display: none;
+        }
+
+        /* 平板(iPad)与手机端（宽度小于等于 1024px）独占一整行显示 */
+        @media screen and (max-width: 1280px) {
+          .mobile-competition-card {
+            display: block !important;
+            position: relative !important;
+            width: 100% !important;
+            height: 160px !important;
+            margin-bottom: 20px !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            clear: both !important;
+            box-shadow: var(--anzhiyu-shadow-border) !important;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%),
+                        url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
+            text-decoration: none !important;
+          }
+
+          .mobile-competition-card .card-title {
+            position: absolute !important;
+            left: 20px !important;
+            bottom: 16px !important;
+            color: #ffffff !important;
+            font-size: 1.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: 1.5px !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+          }
+        }
       </style>
   bottom:
     - <script src="/RecordingsForYihanWang/js/custom_slider.js"></script>
     - |
       <script>
-        function bindCompetitionCard() {
+        function setupCompetitionCards() {
+          // 1. 电脑端绑定原有卡片跳转
           var randomLink = document.getElementById("random-hover");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1267,13 +1298,24 @@ inject:
               window.location.href = "/RecordingsForYihanWang/competitions/";
             };
           }
+
+          // 2. 移动端/iPad 端：将比赛合集卡片独立插在整个文章列表（#recent-posts）的最上方，独占一整行
+          var recentPosts = document.getElementById("recent-posts");
+          if (recentPosts && !document.querySelector(".mobile-competition-card")) {
+            var mobileCard = document.createElement("a");
+            mobileCard.className = "mobile-competition-card";
+            mobileCard.href = "/RecordingsForYihanWang/competitions/";
+            mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
+            // 作为独立大容器直接插入在 #recent-posts 正上方
+            recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
+          }
         }
-        document.addEventListener("DOMContentLoaded", bindCompetitionCard);
-        document.addEventListener("pjax:complete", bindCompetitionCard);
-        setTimeout(bindCompetitionCard, 300);
-        setTimeout(bindCompetitionCard, 1000);
+
+        document.addEventListener("DOMContentLoaded", setupCompetitionCards);
+        document.addEventListener("pjax:complete", setupCompetitionCards);
+        setTimeout(setupCompetitionCards, 300);
+        setTimeout(setupCompetitionCards, 1000);
       </script>
-      
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
