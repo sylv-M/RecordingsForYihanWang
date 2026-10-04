@@ -5,59 +5,55 @@ type: "gallery"
 ---
 
 <style>
-/* 页面标题样式 */
-.gallery-title {
-  font-size: 1.5rem;
-  color: #425AEF;
-  font-weight: bold;
-  margin: 30px 0 15px 0;
-  padding-left: 10px;
-  border-left: 4px solid #425AEF;
+/* 避免 Markdown 空行产生段落 margin 干扰 */
+.photo-grid p {
+  margin: 0 !important;
+  display: contents !important; /* 消除 p 标签对网格结构的破坏 */
 }
 
-/* 网格布局 */
+/* 网格容器：电脑端默认三列 */
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 三列 */
-  gap: 16px;
-  margin-bottom: 40px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin-bottom: 40px !important;
 }
 
-/* 图片卡片样式 */
+/* 图片及可能存在的超链接包裹层 */
+.photo-grid img,
+.photo-grid a {
+  width: 100% !important;
+  display: block !important;
+}
+
 .photo-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  margin: 0 !important;
 }
 
 .photo-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transform: scale(1.03) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 响应式：手机端两列 */
+/* 响应式：768px 及以下所有手机屏幕均保持两列，自适应高度 */
 @media (max-width: 768px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 响应式：小手机一列 */
-@media (max-width: 480px) {
-  .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
   }
   .photo-grid img {
-    height: auto;
-    max-height: 400px;
+    height: 150px !important; /* 手机端两列适当降低固定高度，比例更协调 */
+    border-radius: 8px !important;
   }
 }
 </style>
-
 
 <img src="/RecordingsForYihanWang/img/avatar_inside.png">
 <img src="/RecordingsForYihanWang/img/gettyimages-2296703911-594x594.jpg">
