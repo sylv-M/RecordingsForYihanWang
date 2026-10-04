@@ -346,26 +346,19 @@ div:has(> a[href*="gallery"]),
 
 /* ================= iPad端 (宽度 > 768px) ================= */
 @media screen and (min-width: 769px) and (max-width: 1400px){
-  /* 左侧两个小卡片（场下、冰迷）：网格布局 */
+   /* 2. 左侧两个胶囊容器：固定在第一屏 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    width: 100% !important;
-    gap: 16px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    width: 40vw !important;              /* 占屏幕宽度的 48% */
+    scroll-snap-align: start !important;
   }
-
-  .categoryGroup > a,
-  .category-group > a,
-  .categoryItem,
-  .category-item,
-  div:has(> a[title*="场下"]) > a {
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-
+  
   /* 【新增】右侧图集卡片：在 iPad 和电脑端占据剩余空间 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
