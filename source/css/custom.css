@@ -323,13 +323,12 @@ div:has(> a[href*="gallery"]),
 }
 
 /* =========================================================
-   终极统一布局：电脑 / iPad / 手机 全部统一
-   左半部分：上1（比赛合集）下2（场下、冰迷）
-   右半部分：图集
-   左右比例：1:1
+   终极统一布局：电脑 / iPad / 手机
+   电脑/iPad：左侧上1下2，右侧图集，左右 1:1
+   手机端：左侧上下排布，右侧图集，左右滑动
    ========================================================= */
 
-/* --- 1. 基础布局（左右并排，1:1）--- */
+/* ================= 1. 基础布局（电脑 & iPad 通用） ================= */
 .topGroup {
   display: flex !important;
   flex-direction: row !important;
@@ -404,9 +403,9 @@ div:has(> a[href*="gallery"]) {
 }
 
 
-/* --- 2. 手机端专属：开启横向滑动（左右 1:1 且滑动查看）--- */
+/* ================= 2. 手机端专属：改回原来的样子（上下排布 + 横向滑动） ================= */
 @media screen and (max-width: 768px) {
-  /* 1. 打通安知鱼父级容器的溢出锁，允许内部横向滚动 */
+  /* 1. 打通父级容器，开启横向滑动 */
   #home_top,
   .topGroup,
   .top-group {
@@ -414,50 +413,54 @@ div:has(> a[href*="gallery"]) {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    overflow-x: auto !important;          /* 强制开启横向滚动条 */
+    overflow-x: auto !important;          
     overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important; /* iOS 原生平滑惯性手势 */
-    touch-action: pan-x pan-y !important; /* 强制放行横向拖拽手势 */
-    scroll-snap-type: x mandatory !important;     /* 磁贴效果：滑过去自动对齐 */
+    -webkit-overflow-scrolling: touch !important; 
+    touch-action: pan-x pan-y !important; 
+    scroll-snap-type: x mandatory !important;     
     gap: 12px !important;
     padding-bottom: 8px !important;
   }
 
-  /* 2. 左侧两个胶囊容器（变成 2x2 网格，宽度占 50vw） */
+  /* 2. 左侧两个胶囊容器：改回上下排布（和之前一模一样） */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
-    flex: 0 0 50vw !important; /* 固定占 50% 视口宽 */
-    width: 50vw !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: auto auto !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important; /* 【核心】上下排布 */
+    justify-content: space-between !important;
     gap: 10px !important;
+    width: 48vw !important;              /* 占屏幕宽度的 48% */
     scroll-snap-align: start !important;
-    height: auto !important;
   }
 
-  /* 手机端卡片高度控制 */
-  .categoryGroup > a,
-  .category-group > a,
+  /* 左侧卡片的高度与尺寸：恢复原来的 120px */
   .categoryItem,
   .category-item,
+  .categoryButton,
+  .categoryGroup > a,
   div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    min-height: 80px !important;
-    padding: 12px !important;
+    height: 120px !important;
+    min-height: 120px !important;
+    max-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 16px !important;
     border-radius: 12px !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. 右侧图集卡片：固定占 50vw，横向滑出 */
+  /* 3. 右侧图集卡片：宽度设为 82vw（稍微大一点），滑动查看 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
   a[href*="gallery"],
   div:has(> a[href*="gallery"]) {
-    flex: 0 0 50vw !important; /* 固定占 50% 视口宽，配合滑动 */
-    width: 50vw !important;
-    height: 100% !important;
+    flex-shrink: 0 !important;
+    width: 82vw !important;              /* 图集比左侧大一点，一滑就能看清 */
+    min-width: 280px !important;
+    height: 250px !important;            /* 与左侧 120px*2+10px 间距对齐 */
     min-height: 250px !important;
     border-radius: 12px !important;
     scroll-snap-align: start !important;
