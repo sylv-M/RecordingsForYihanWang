@@ -103,22 +103,3 @@ theme: anzhiyu
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-
-theme_config:
-  home_top:
-    enable: true
-    timemode: date
-    title: 生活明朗
-    subTitle: 万物可爱。
-    siteText: anheyu.com
-    category:
-      - name: 场下
-        path: /RecordingsForYihanWang/offstage/
-        shadow: var(--anzhiyu-shadow-blue)
-        class: blue
-        icon: anzhiyu-icon-dove
-      - name: 冰迷朋友有话说
-        path: /comments/
-        shadow: var(--anzhiyu-shadow-red)
-        class: red
-        icon: anzhiyu-icon-fire
