@@ -1201,22 +1201,41 @@ inject:
           display: none !important;
         }
 
-        /* ================= 比赛合集卡片重构 ================= */
-        /* 1. 将整个容器的背景设置为选手照片，并加暗色渐变确保文字对比度 */
+        /* ================= 比赛合集卡片精准优化 ================= */
+        /* 1. 彻底隐藏“生活明朗，万物可爱”标题 */
+        #random-banner .banners-title,
+        .banners-title {
+          display: none !important;
+        }
+
+        /* 2. 隐藏画布及纸飞机图标 */
+        #random-banner #peoplecanvas,
+        #random-banner .anzhiyu-icon-paper-plane,
+        #random-banner .bannerText .anzhiyu-icon-arrow-right {
+          display: none !important;
+        }
+
+        /* 3. 选手大图背景铺满与圆角 */
         #random-banner,
         #random-hover {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%),
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 60%),
                       url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
           border-radius: 12px !important;
           overflow: hidden !important;
         }
 
-        /* 2. 彻底隐藏画布，防止干扰背景 */
-        #random-banner #peoplecanvas {
-          display: none !important;
+        /* 4. 让链接容器在底部左对齐 */
+        #random-hover {
+          display: flex !important;
+          justify-content: flex-start !important;
+          align-items: flex-end !important;
+          width: 100% !important;
+          height: 100% !important;
+          padding: 0 0 16px 20px !important;
+          box-sizing: border-box !important;
         }
 
-        /* 3. 清理那条横缝：去掉 .bannerText 默认的胶囊底色、边框、阴影和撑满宽度 */
+        /* 5. 清除横条残留，文字居左 */
         #random-banner .bannerText {
           background: transparent !important;
           border: none !important;
@@ -1226,11 +1245,11 @@ inject:
           font-size: 0 !important;
           color: transparent !important;
           margin: 0 !important;
-          padding: 0 0 16px 20px !important;
-          align-self: flex-end !important; /* 沉底显示 */
+          padding: 0 !important;
+          text-align: left !important;
         }
 
-        /* 4. 注入清晰的“比赛合集 ➔”文字 */
+        /* 6. 比赛合集文字高亮显示在左下角 */
         #random-banner .bannerText::before {
           content: "比赛合集 ➔" !important;
           font-size: 1.6rem !important;
@@ -1239,12 +1258,6 @@ inject:
           text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
           letter-spacing: 1px !important;
           display: inline-block !important;
-        }
-
-        /* 5. 隐藏多余的原生纸飞机和箭头图标 */
-        #random-banner .anzhiyu-icon-paper-plane,
-        #random-banner .bannerText .anzhiyu-icon-arrow-right {
-          display: none !important;
         }
       </style>
   bottom:
@@ -1268,6 +1281,7 @@ inject:
         setTimeout(bindCompetitionCard, 300);
         setTimeout(bindCompetitionCard, 1000);
       </script>
+      
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
