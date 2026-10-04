@@ -1,9 +1,9 @@
-/* 加载页紫粉背景*/
+/* ================= 1. 加载页紫粉背景 ================= */
 #loading-box {
   background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important;
 }
 
-/* 个人信息卡片 */
+/* ================= 2. 个人信息卡片 ================= */
 #aside-content .card-info {
   display: flex !important;
   flex-direction: column !important;
@@ -22,7 +22,7 @@
   transform: none !important;
 }
 
-/* 描述区取消绝对定位，自然流式排在头像下方 */
+/* 描述区取消绝对定位，流式排布 */
 #aside-content .card-info .author-info__description {
   position: relative !important;
   top: auto !important;
@@ -34,19 +34,13 @@
   line-height: 1.6 !important;
 }
 
-/* 桌面端头像姓名间距 */
-#aside-content .card-info .author-info__description {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  opacity: 1 !important;
-  transform: none !important;
-  width: 100% !important;
-  margin-top: -100px !important;
-  line-height: 1.6 !important;
+/* 屏幕自适应媒体查询（按从小到大/从大到小严格级联） */
+@media (max-width: 1600px) {
+  #aside-content .card-info .author-info__description {
+    margin-top: -80px !important;
+  }
 }
 
-/*ipad端自适应*/
 @media (max-width: 1280px) {
   #aside-content {
     display: block !important;
@@ -65,70 +59,37 @@
   }
 }
 
-/* 默认（大桌面，>1280px）：-100px 正好 */
-#aside-content .card-info .author-info__description {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  opacity: 1 !important;
-  transform: none !important;
-  width: 100% !important;
-  margin-top: -100px !important;
-  line-height: 1.6 !important;
-}
-
-/* 中小桌面 1024-1280px：稍减一点 */
-@media (max-width: 1600px) {
-  #aside-content .card-info .author-info__description {
-    margin-top: -80px !important;
-  }
-}
-
-/* 平板 768-1024px（含 iPad 竖屏） */
 @media (max-width: 1024px) {
-  #aside-content {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-  #rightside,
-  #sidebar {
-    display: block !important;
-  }
   #aside-content .card-info .author-info__description {
     margin-top: -60px !important;
   }
 }
 
-/* 手机 480-768px */
 @media (max-width: 768px) {
   #aside-content .card-info .author-info__description {
     margin-top: 8px !important;
   }
 }
 
-/* 小手机 <480px */
 @media (max-width: 480px) {
   #aside-content .card-info .author-info__description {
     margin-top: 12px !important;
   }
 }
 
-/* ========== 王一涵关于页面卡片 ========== */
+/* ================= 3. 王一涵关于页面卡片 ================= */
 .yihan-card {
   position: relative;
-  background: linear-gradient(135deg, #e0c3fc 0%, #c8b6ff 100%);
-  border-radius: 24px;
-  padding: 36px 28px 28px 28px;
+  background: linear-gradient(135deg, #e0c3fc 0%, #c8b6ff 100%) !important;
+  border-radius: 24px !important;
+  padding: 36px 28px 28px 28px !important;
   margin: 20px 0;
   box-shadow: 0 8px 24px rgba(180, 150, 220, 0.25);
-  color: #fff;
+  color: #fff !important;
+  border: none !important;
 }
 
-/* 库洛米：扒在卡片左上角 */
+/* 库洛米1：扒在关于页卡片左上角 */
 .yihan-kuromi {
   position: absolute;
   top: -30px;
@@ -140,7 +101,6 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
 }
 
-/* 布局容器：默认横排（照片在右） */
 .yihan-flex {
   display: flex;
   flex-direction: row;
@@ -151,18 +111,18 @@
 .yihan-text {
   flex: 1 1 0;
   min-width: 0;
-  color: #fff;
+  color: #fff !important;
   font-size: 1rem;
   line-height: 1.8;
 }
 
 .yihan-text p {
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 16px;
 }
 
 .yihan-text h3 {
-  color: #fff;
+  color: #fff !important;
   font-size: 1.2rem;
   margin: 20px 0 12px;
   border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
@@ -177,7 +137,7 @@
 }
 
 .yihan-season h4 {
-  color: #fff;
+  color: #fff !important;
   font-size: 1.05rem;
   margin: 0 0 8px;
 }
@@ -185,11 +145,11 @@
 .yihan-season ul {
   margin: 0 0 10px;
   padding-left: 20px;
-  color: #fff;
+  color: #fff !important;
 }
 
 .yihan-season li {
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 4px;
 }
 
@@ -224,7 +184,6 @@
   display: block;
 }
 
-/* 竖屏 / 窄屏：照片移到文字下方 */
 @media (max-width: 768px) {
   .yihan-flex {
     flex-direction: column;
@@ -235,7 +194,7 @@
     margin: 16px auto 0;
   }
   .yihan-card {
-    padding: 30px 18px 20px 18px;
+    padding: 30px 18px 20px 18px !important;
   }
   .yihan-kuromi {
     width: 70px;
@@ -244,85 +203,29 @@
   }
 }
 
-.yihan-card {
-  background: linear-gradient(135deg, #e0c3fc 0%, #c8b6ff 100%) !important;
-  color: #fff !important;
-  border: none !important;
-  border-radius: 24px !important;
-  padding: 36px 28px 28px 28px !important;
-}
-
-.yihan-card *,
-.yihan-text,
-.yihan-text p,
-.yihan-season,
-.yihan-season h4,
-.yihan-season ul,
-.yihan-season li {
-  color: #fff !important;
-}
-
-/* ================= 1. 恢复滑动交互，透明化遮挡文字 ================= */
-
-/* 保证轮播滑动容器完好存在，不禁用滑动 */
-.topGroup .recent-top-post,
-.topGroup .swiper-container,
-.topGroup .swiper-wrapper {
-  display: flex !important;
-  overflow: visible !important;
-}
-
-/* 仅将挡住选手的“Hello World”文字与白底透明化，不破坏滑动结构 */
-.topGroup .todayCard,
-.topGroup .recent-post-top,
-.topGroup .top-post-item,
-.topGroup .post_cover {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.topGroup .todayCard-title,
-.topGroup .todayCard-tips,
-.topGroup .recent-post-top .post-title,
-.topGroup .recent-post-top .post_info,
-.topGroup .banner-badge {
-  display: none !important;
-}
-
-/* 彻底删除“新品主题”与“更多推荐” */
+/* ================= 4. 首页顶部分类与轮播图集 ================= */
 .banners-title-small,
 .banner-tips,
 .banners-tips,
 .banner-subtitle,
 .banner-button-group,
 .banner-button,
-a[href*="categories"] {
-  display: none !important;
-}
-
-/* 隐藏第三个“生活”卡片及原有 404 火箭占位图 */
+a[href*="categories"],
 a[title*="生活"],
 a[href*="life"],
 .categoryItem:nth-child(3),
 .category-item:nth-child(3),
-[class*="banner"] img {
+[class*="banner"] img,
+#swiper_container_blog .blog-slider,
+#home_top .category-group a::before,
+.category-item-text::before,
+.topGroup .bannerGroup,
+.topGroup .recent-top-post,
+.topGroup .todayCard {
   display: none !important;
 }
 
-/* 统一背景图 */
-a[href*="gallery"],
-div:has(> a[href*="gallery"]),
-.bannerGroup,
-[class*="banner"] {
-  background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
-  background-size: cover !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
-  border-radius: 12px !important;
-}
-
-/* ================= 2. 电脑端 (宽度 > 1400px) ================= */
+/* 电脑端 (宽度 > 1400px) */
 @media screen and (min-width: 1401px) {
   .categoryGroup,
   .category-group,
@@ -332,7 +235,6 @@ div:has(> a[href*="gallery"]),
     width: 100% !important;
     gap: 16px !important;
   }
-
   .categoryGroup > a,
   .category-group > a,
   .categoryItem,
@@ -344,56 +246,32 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* ================= 2. iPad / 平板端 (宽度 769px - 1399px) ================= */
+/* iPad / 平板端 (宽度 769px - 1399px) */
 @media screen and (min-width: 769px) and (max-width: 1399px) {
-  /* 1. 左侧两个小卡片：改为上下排布（和手机一样） */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
     display: flex !important;
-    flex-direction: column !important; /* 【核心修改】垂直排列，上下堆叠 */
+    flex-direction: column !important;
     justify-content: space-between !important;
     width: 100% !important;
-    gap: 16px !important; /* 上下卡片之间的间距 */
-    height: 100% !important; /* 撑满左侧高度 */
+    gap: 16px !important;
+    height: 100% !important;
   }
-
-  /* 2. 左侧的小卡片：自适应高度，平分上下空间 */
   .categoryGroup > a,
   .category-group > a,
   .categoryItem,
   .category-item,
   div:has(> a[title*="场下"]) > a {
-    flex: 1 !important; /* 上下两个卡片各占一半高度 */
+    flex: 1 !important;
     width: 40vw !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
   }
-
-  /* 3. 右侧图集卡片：占据剩余空间，高度与左侧对齐 */
-  .topGroup .recent-top-post,
-  .topGroup .bannerGroup,
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]) {
-    display: block !important;
-    flex: 1 !important;           
-    min-width: 0 !important;      
-    height: 100% !important;      
-    min-height: 190px !important; 
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    position: relative !important;
-  }
-  
-  #custom-gallery-card {
-    min-height: 190px !important;
-    height: 100% !important;
-    width: 100% !important;
-  }
 }
-/* ================= 3. 手机端 (打通手势链 & 开启横向滑动画卷) ================= */
+
+/* 手机端横向滑动画卷 */
 @media screen and (max-width: 768px) {
-  /* 1. 打通安知鱼父级容器的溢出锁，允许内部横向滚动 */
   #home_top,
   .topGroup,
   .top-group {
@@ -401,17 +279,14 @@ div:has(> a[href*="gallery"]),
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    overflow-x: auto !important;          /* 强制开启横向滚动条 */
+    overflow-x: auto !important;
     overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important; /* 开启 iOS 原生弹性平滑惯性手势 */
-    touch-action: pan-x pan-y !important; /* 强制浏览器放行横向拖拽手势 */
-    scroll-snap-type: x mandatory !important;     /* 磁贴效果：滑过去自动对齐卡片 */
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+    scroll-snap-type: x mandatory !important;
     gap: 12px !important;
     padding-bottom: 8px !important;
   }
-
-
-  /* 2. 左侧两个胶囊容器：固定在第一屏 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
@@ -420,11 +295,9 @@ div:has(> a[href*="gallery"]),
     flex-direction: column !important;
     justify-content: space-between !important;
     gap: 10px !important;
-    width: 48vw !important;              /* 占屏幕宽度的 48% */
+    width: 48vw !important;
     scroll-snap-align: start !important;
   }
-
-  /* 【数值 120px】两个胶囊的高度与尺寸 */
   .categoryItem,
   .category-item,
   .categoryButton,
@@ -440,179 +313,82 @@ div:has(> a[href*="gallery"]),
     border-radius: 12px !important;
     box-sizing: border-box !important;
   }
-
-  /* 3. 右侧选手照片卡片：宽度设为 80vw（超出屏幕），滑动就能完全拖出来 */
-  .topGroup .recent-top-post,
-  .topGroup .bannerGroup,
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]) {
-    flex-shrink: 0 !important;
-    width: 82vw !important;              /* 给足 82% 视口宽，横向露出一半，右手一滑即可全屏看清 */
-    min-width: 280px !important;
-    height: 250px !important;            /* 120px * 2 + 10px 间距，高度与左边严丝合缝对齐 */
-    min-height: 250px !important;
-    border-radius: 12px !important;
-    scroll-snap-align: start !important;
-    touch-action: pan-x !important;
-  }
-}
-/* 隐藏原来主题自带的杂乱遮罩、404背景和横线 */
-#swiper_container_blog .blog-slider,
-#home_top .category-group a::before,
-.category-item-text::before {
-    display: none !important;
-    content: none !important;
 }
 
-/* 自定义图集大卡片基础样式 */
+/* 自定义图集卡片样式 */
 #custom-gallery-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 190px;
-    display: block;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* 轮播照片全铺满与渐变切换 */
 .gallery-slide-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.8s ease-in-out;
-}
-
-/* 底部防反光微暗蒙层，确保文字清晰 */
-.gallery-mask {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
-    pointer-events: none;
-}
-
-/* 左下角“图集 →”排版与动效 */
-.gallery-info {
-    position: absolute;
-    bottom: 14px;
-    left: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
-
-/* 鼠标悬浮小箭头微移动效果 */
-#custom-gallery-card:hover .gallery-info {
-    transform: translateX(4px);
-}
-.gallery-arrow {
-    font-size: 22px;
-    transition: transform 0.3s;
-}
-#custom-gallery-card:hover .gallery-arrow {
-    transform: translateX(3px);
-}
-
-/* ================= 图集轮播卡片最终修复版 ================= */
-
-/* 1. 强制隐藏主题自带的顶部卡片组（防止覆盖） */
-.topGroup .bannerGroup,
-.topGroup .recent-top-post,
-.topGroup .todayCard {
-    display: none !important;
-}
-
-/* 2. 容器的基础设置 */
-#custom-gallery-card {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 190px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* 3. 轮播图片的初始状态 */
-.gallery-slide-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
 }
 
 .gallery-slide-bg.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* 4. 底部渐变遮罩 */
 .gallery-mask {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-    pointer-events: none;
-    z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
+  z-index: 2;
 }
 
-/* 5. 左下角“图集 →”排版 */
 .gallery-info {
-    position: absolute;
-    bottom: 14px;
-    left: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    pointer-events: none;
-    transition: transform 0.3s ease;
-    z-index: 3;
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  z-index: 3;
 }
 
 #custom-gallery-card:hover .gallery-info {
-    transform: translateX(4px);
+  transform: translateX(4px);
 }
 .gallery-arrow {
-    font-size: 22px;
-    transition: transform 0.3s;
+  font-size: 22px;
+  transition: transform 0.3s;
 }
 #custom-gallery-card:hover .gallery-arrow {
-    transform: translateX(3px);
+  transform: translateX(3px);
 }
 
-/* ================= 图集页面三列网格 ================= */
+/* ================= 5. 图集页面三列网格 ================= */
 .photo-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 16px !important;
+  width: 100% !important;
   margin-bottom: 40px !important;
 }
 .photo-grid img {
@@ -623,6 +399,8 @@ div:has(> a[href*="gallery"]),
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   cursor: pointer !important;
+  display: block !important;
+  margin: 0 !important;
 }
 .photo-grid img:hover {
   transform: scale(1.03) !important;
@@ -651,41 +429,7 @@ div:has(> a[href*="gallery"]),
   border-left: 4px solid #425AEF !important;
 }
 
-/* ================= 图集页面三列网格（终极强制版） ================= */
-.photo-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 16px !important;
-  width: 100% !important;
-  margin-bottom: 40px !important;
-}
-.photo-grid img {
-  width: 100% !important;
-  height: 220px !important;
-  object-fit: cover !important;
-  border-radius: 12px !important;
-  display: block !important;
-  margin: 0 !important;
-}
-/* 手机端一行两个 */
-@media (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-/* 小手机一行一个 */
-@media (max-width: 480px) {
-  .photo-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .photo-grid img {
-    height: auto !important;
-    max-height: 400px !important;
-  }
-}
-/* ================= 冰迷朋友有话说（淡紫色 + 库洛米贴纸） ================= */
-
-/* 1. 彻底抹除主题自带的橙红色渐变伪元素 */
+/* ================= 6. 首页：冰迷朋友有话说（kuromi2） ================= */
 #home_top a[href*="comments"]::before,
 #home_top a[href*="comments"]::after,
 #home_top .category-group a.red::before,
@@ -696,26 +440,23 @@ div:has(> a[href*="gallery"]),
   content: none !important;
 }
 
-/* 2. 给卡片主体上淡紫色，并放入库洛米贴纸 */
 #home_top a[href*="comments"],
 #home_top .category-group a.red {
   background-color: #e6d7f5 !important;
   background-image: url('/RecordingsForYihanWang/img/kuromi2.png') !important;
   background-repeat: no-repeat !important;
   background-position: right 12px bottom 6px !important;
-  background-size: 120px auto !important; /* 贴纸大小，可按需微调 */
+  background-size: 120px auto !important;
   box-shadow: 0 4px 12px rgba(190, 160, 230, 0.4) !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
-/* 3. 压暗/隐藏背景原本自带的大火苗背景图标，防止与贴纸打架叠加 */
 #home_top a[href*="comments"] i,
 #home_top .category-group a.red i {
-  opacity: 0.15 !important; /* 调淡火苗，或者直接写 display: none !important; 彻底隐藏 */
+  opacity: 0.15 !important;
 }
 
-/* 4. 保证文字在贴纸上清晰可见 */
 #home_top a[href*="comments"] span,
 #home_top .category-group a.red span {
   position: relative !important;
@@ -724,9 +465,9 @@ div:has(> a[href*="gallery"]),
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* 仅留言板页面显示 kuromi3 */
-body[data-type="comments"] .page-title::after,
-#page.comments .page-title::after {
+/* ================= 7. 留言板标题贴纸（精准独占 kuromi3） ================= */
+/* 仅在包含评论系统的页面渲染 kuromi3，绝不误伤比赛合集 */
+#page:has(#twikoo, #waline, #artalk, .comment-wrap) .page-title::after {
   content: "" !important;
   display: inline-block !important;
   width: 2.5em !important;  
@@ -737,37 +478,4 @@ body[data-type="comments"] .page-title::after,
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-}
-
-/* 1. 隐藏原有的“随便逛逛”文字与箭头 */
-.todayCard .todayCard-title,
-.topGroup .todayCard-title,
-.topGroup .recent-post-item .card-random-title,
-#todayCard .todayCard-title {
-  font-size: 0 !important;
-  visibility: hidden !important;
-  position: relative !important;
-  display: inline-block !important;
-}
-
-/* 2. 伪元素注入新标题：比赛合集 ➔ */
-.todayCard .todayCard-title::after,
-.topGroup .todayCard-title::after,
-.topGroup .recent-post-item .card-random-title::after,
-#todayCard .todayCard-title::after {
-  content: "比赛合集" !important;
-  font-size: 1.6rem !important;
-  visibility: visible !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
-  display: inline-block !important;
-  letter-spacing: 1px !important;
-}
-
-/* 3. 隐藏左上角默认的纸飞机图标（让画面更干净） */
-.todayCard .todayCard-icon,
-.topGroup .todayCard-icon,
-.topGroup .recent-post-item .todayCard-icon {
-  display: none !important;
 }
