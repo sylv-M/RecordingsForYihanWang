@@ -723,3 +723,18 @@ div:has(> a[href*="gallery"]),
   color: #fff !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
+
+/* 给留言板页面的主标题右侧加上库洛米贴纸 */
+#page .page-title::after,
+.page-title::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 1.2em !important;            /* 贴纸宽度，自适应文字大小 */
+  height: 1.2em !important;           /* 贴纸高度，自适应文字大小 */
+  margin-left: 8px !important;        /* 与文字的间距 */
+  vertical-align: -0.15em !important;  /* 垂直对齐微调 */
+  background-image: url('/RecordingsForYihanWang/img/kuromi3.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
