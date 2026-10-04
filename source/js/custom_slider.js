@@ -48,3 +48,32 @@ function initCustomGalleryCard() {
         }, 3000);
     }
 }
+
+function changeRandomToCompetition() {
+  const selectors = [
+    '.todayCard',
+    '#todayCard',
+    '.topGroup .recent-post-item a[onclick*="toRandomPost"]',
+    '.topGroup .recent-post-item.todayCard'
+  ];
+  
+  selectors.forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) {
+      el.removeAttribute('onclick');
+      el.setAttribute('href', '/RecordingsForYihanWang/competitions/');
+      el.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof pjax !== 'undefined' && pjax.loadUrl) {
+          pjax.loadUrl('/RecordingsForYihanWang/competitions/');
+        } else {
+          window.location.href = '/RecordingsForYihanWang/competitions/';
+        }
+      };
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', changeRandomToCompetition);
+document.addEventListener('pjax:complete', changeRandomToCompetition);
