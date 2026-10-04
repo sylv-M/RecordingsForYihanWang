@@ -322,81 +322,76 @@ div:has(> a[href*="gallery"]),
   border-radius: 12px !important;
 }
 
-/* =========================================================
-   终极重置版：电脑/iPad 与 手机端彻底分离
-   ========================================================= */
-
-/* ================= 1. 电脑 & iPad 端 (宽度 >= 769px) ================= */
-@media screen and (min-width: 769px) {
-  /* 顶部整体：左右并排，1:1 比例 */
-  .topGroup {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: stretch !important;
-    gap: 16px !important;
-    width: 100% !important;
-  }
-
-  /* 左侧容器：2x2 网格 */
+/* ================= 2. 电脑端 (宽度 > 1400px) ================= */
+@media screen and (min-width: 1401px) {
   .categoryGroup,
-  .category-group {
+  .category-group,
+  div:has(> a[title*="场下"]) {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 两列 */
-    grid-template-rows: auto auto !important;  /* 两行 */
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
     gap: 16px !important;
-    flex: 1 1 50% !important; /* 占据左侧 50% */
-    min-width: 0 !important;
   }
 
-  /* 左侧所有卡片（兼容直接是a标签或包了一层的情况） */
-  .categoryGroup a,
-  .category-group a,
+  .categoryGroup > a,
+  .category-group > a,
   .categoryItem,
-  .category-item {
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
     width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    height: auto !important;
+  }
+}
+
+/* ================= iPad端 (宽度 > 768px) ================= */
+@media screen and (min-width: 769px) and (max-width: 1400px){
+  /* 左侧两个小卡片（场下、冰迷）：网格布局 */
+  .categoryGroup,
+  .category-group,
+  div:has(> a[title*="场下"]) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
+    gap: 16px !important;
   }
 
-  /* 第一张卡片（比赛合集）横跨两列，占满第一行 */
-  .categoryGroup > a:first-child,
-  .categoryGroup > .categoryItem:first-child,
-  .categoryGroup > *:first-child,
-  .category-group > *:first-child {
-    grid-column: span 2 !important;
-    grid-row: 1 !important;
+  .categoryGroup > a,
+  .category-group > a,
+  .categoryItem,
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  /* 下方的卡片（场下、冰迷）分别占据第二行的左右两边 */
-  .categoryGroup > *:nth-child(2),
-  .category-group > *:nth-child(2) {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-  }
-  .categoryGroup > *:nth-child(3),
-  .category-group > *:nth-child(3) {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
-  }
-
-  /* 右侧图集卡片：占据剩余 50%，高度自动对齐 */
+  /* 【新增】右侧图集卡片：在 iPad 和电脑端占据剩余空间 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
-  a[href*="gallery"] {
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]) {
     display: block !important;
-    flex: 1 1 50% !important;
-    width: auto !important;
-    min-height: 100% !important;
+    flex: 1 !important;           /* 占据右侧剩余宽度 */
+    min-width: 0 !important;      /* 防止内容撑破 */
+    height: 100% !important;      /* 高度拉伸与左侧对齐 */
+    min-height: 190px !important; /* 保证最小高度 */
     border-radius: 12px !important;
     overflow: hidden !important;
     position: relative !important;
   }
+  
+  /* 确保自定义图集卡片的内部布局在 iPad 下也正常 */
+  #custom-gallery-card {
+    min-height: 190px !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
 
-/* ================= 2. 手机端专属 (宽度 <= 768px) ================= */
+/* ================= 3. 手机端 (打通手势链 & 开启横向滑动画卷) ================= */
 @media screen and (max-width: 768px) {
-  /* 1. 解锁父级容器，开启横向滑动 */
+  /* 1. 打通安知鱼父级容器的溢出锁，允许内部横向滚动 */
   #home_top,
   .topGroup,
   .top-group {
@@ -404,42 +399,37 @@ div:has(> a[href*="gallery"]),
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    overflow-x: auto !important;          
+    overflow-x: auto !important;          /* 强制开启横向滚动条 */
     overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important; 
-    touch-action: pan-x pan-y !important; 
-    scroll-snap-type: x mandatory !important;     
+    -webkit-overflow-scrolling: touch !important; /* 开启 iOS 原生弹性平滑惯性手势 */
+    touch-action: pan-x pan-y !important; /* 强制浏览器放行横向拖拽手势 */
+    scroll-snap-type: x mandatory !important;     /* 磁贴效果：滑过去自动对齐卡片 */
     gap: 12px !important;
     padding-bottom: 8px !important;
-    align-items: stretch !important;
   }
 
-  /* 2. 【绝对排他】强制左侧容器彻底变成上下排布的 Flex */
+
+  /* 2. 左侧两个胶囊容器：固定在第一屏 */
   .categoryGroup,
-  .category-group {
-    display: flex !important;              
-    flex-direction: column !important;     
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    width: 48vw !important;                
-    height: auto !important;               
+  .category-group,
+  div:has(> a[title*="场下"]) {
     flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    width: 48vw !important;              /* 占屏幕宽度的 48% */
     scroll-snap-align: start !important;
-    /* 彻底杀死电脑端的网格设定 */
-    grid-template-columns: unset !important;
-    grid-template-rows: unset !important;
   }
 
-  /* 3. 左侧卡片：强制恢复最初 120px 的高度 */
-  .categoryGroup > a,
-  .categoryGroup > .categoryItem,
-  .categoryGroup > *,
-  .category-group > *,
+  /* 【数值 120px】两个胶囊的高度与尺寸 */
   .categoryItem,
   .category-item,
-  .categoryButton {
+  .categoryButton,
+  .categoryGroup > a,
+  div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 120px !important;              
+    height: 120px !important;
     min-height: 120px !important;
     max-height: 120px !important;
     display: flex !important;
@@ -447,20 +437,17 @@ div:has(> a[href*="gallery"]),
     padding: 0 16px !important;
     border-radius: 12px !important;
     box-sizing: border-box !important;
-    margin-bottom: 0 !important;
-    /* 彻底杀死电脑端的网格位置设定 */
-    grid-column: unset !important;
-    grid-row: unset !important;
   }
 
-  /* 4. 右侧图集卡片：82vw，滑动查看 */
+  /* 3. 右侧选手照片卡片：宽度设为 80vw（超出屏幕），滑动就能完全拖出来 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
-  a[href*="gallery"] {
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]) {
     flex-shrink: 0 !important;
-    width: 82vw !important;              
+    width: 82vw !important;              /* 给足 82% 视口宽，横向露出一半，右手一滑即可全屏看清 */
     min-width: 280px !important;
-    height: 250px !important;            
+    height: 250px !important;            /* 120px * 2 + 10px 间距，高度与左边严丝合缝对齐 */
     min-height: 250px !important;
     border-radius: 12px !important;
     scroll-snap-align: start !important;
