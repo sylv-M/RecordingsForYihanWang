@@ -344,44 +344,53 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* ================= iPad端 (宽度 > 768px) ================= */
-@media screen and (min-width: 769px) and (max-width: 1400px){
-   /* 2. 左侧两个胶囊容器：固定在第一屏 */
+/* ================= 2. iPad / 平板端 (宽度 769px - 1399px) ================= */
+@media screen and (min-width: 769px) and (max-width: 1399px) {
+  /* 1. 左侧两个小卡片：改为上下排布（和手机一样） */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
-    flex-shrink: 0 !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column !important; /* 【核心修改】垂直排列，上下堆叠 */
     justify-content: space-between !important;
-    gap: 10px !important;
-    width: 40vw !important;              /* 占屏幕宽度的 48% */
-    scroll-snap-align: start !important;
+    width: 100% !important;
+    gap: 16px !important; /* 上下卡片之间的间距 */
+    height: 100% !important; /* 撑满左侧高度 */
   }
-  
-  /* 【新增】右侧图集卡片：在 iPad 和电脑端占据剩余空间 */
+
+  /* 2. 左侧的小卡片：自适应高度，平分上下空间 */
+  .categoryGroup > a,
+  .category-group > a,
+  .categoryItem,
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
+    flex: 1 !important; /* 上下两个卡片各占一半高度 */
+    width: 48vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. 右侧图集卡片：占据剩余空间，高度与左侧对齐 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
   a[href*="gallery"],
   div:has(> a[href*="gallery"]) {
     display: block !important;
-    flex: 1 !important;           /* 占据右侧剩余宽度 */
-    min-width: 0 !important;      /* 防止内容撑破 */
-    height: 100% !important;      /* 高度拉伸与左侧对齐 */
-    min-height: 190px !important; /* 保证最小高度 */
+    flex: 1 !important;           
+    min-width: 0 !important;      
+    height: 100% !important;      
+    min-height: 190px !important; 
     border-radius: 12px !important;
     overflow: hidden !important;
     position: relative !important;
   }
   
-  /* 确保自定义图集卡片的内部布局在 iPad 下也正常 */
   #custom-gallery-card {
     min-height: 190px !important;
     height: 100% !important;
     width: 100% !important;
   }
 }
-
 /* ================= 3. 手机端 (打通手势链 & 开启横向滑动画卷) ================= */
 @media screen and (max-width: 768px) {
   /* 1. 打通安知鱼父级容器的溢出锁，允许内部横向滚动 */
