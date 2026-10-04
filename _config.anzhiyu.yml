@@ -1164,7 +1164,7 @@ inject:
           content: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片（仅>1024px生效，绝不污染移动端） ================= */
+        /* ================= 电脑端比赛合集卡片（仅>1024px生效） ================= */
         @media screen and (min-width: 1025px) {
           #bannerGroup {
             width: 50% !important;
@@ -1207,6 +1207,7 @@ inject:
           }
         }
 
+        /* 隐藏电脑端默认多余的标语、纸飞机等残留 */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1215,80 +1216,22 @@ inject:
           display: none !important;
         }
 
-        /* 电脑端坚决隐藏多余的卡片 */
+        /* 电脑端坚决隐藏移动端专属卡片 */
         @media screen and (min-width: 1025px) {
           .mobile-competition-card {
             display: none !important;
           }
         }
 
-        /* ================= 移动端：横向画卷滑动手势终极放行 + 比赛合集对齐 ================= */
+        /* ================= 移动端/iPad“比赛合集”卡片（仅对这一个卡片控制，不碰顶部） ================= */
         @media screen and (max-width: 1024px) {
-          /* 1. 彻底解开外层所有容器的手势拦截与溢出裁剪 */
-          #home_top,
-          #home_top .swiper_container_card,
-          #home_top #bannerGroup,
-          .topGroup {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            width: 100% !important;
-            max-width: 100vw !important;
-            overflow-x: auto !important;              /* 强制放行横向手势 */
-            overflow-y: hidden !important;
-            -webkit-overflow-scrolling: touch !important; /* iOS 惯性滑动 */
-            touch-action: pan-x pan-y !important;     /* 允许横向拖拽 */
-            scroll-snap-type: x mandatory !important;
-            gap: 12px !important;
-            padding: 0 15px 10px 15px !important;     /* 与文章左右完全同宽的版心边距 */
-            box-sizing: border-box !important;
-          }
-
-          /* 隐藏原生的丑陋横向滚动条 */
-          #home_top::-webkit-scrollbar,
-          .topGroup::-webkit-scrollbar {
-            display: none !important;
-          }
-
-          /* 2. 左侧两个胶囊（场下、冰迷朋友）坚决不被压缩 */
-          .categoryGroup,
-          .category-group,
-          div:has(> a[title*="场下"]) {
-            flex-shrink: 0 !important;
-            width: 48vw !important;
-            min-width: 160px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            gap: 10px !important;
-            scroll-snap-align: start !important;
-          }
-
-          /* 3. 右侧图集大卡片：撑出屏幕（80vw），右手一划即可顺滑拉出 */
-          .topGroup .recent-top-post,
-          .topGroup .bannerGroup,
-          #custom-gallery-card,
-          div:has(> #custom-gallery-card),
-          a[href*="gallery"],
-          div:has(> a[href*="gallery"]) {
-            display: block !important;
-            flex-shrink: 0 !important;
-            width: 82vw !important;                  /* 关键：宽度 82vw，露出一半引诱滑动 */
-            min-width: 280px !important;
-            height: 250px !important;                /* 与左边两个胶囊的总高严丝合缝 */
-            min-height: 250px !important;
-            border-radius: 12px !important;
-            scroll-snap-align: start !important;
-            touch-action: pan-x !important;
-          }
-
-          /* 4. 移动端“比赛合集”卡片：完美对齐文章列表版心，增加0.5倍高度 */
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
-            width: calc(100% - 30px) !important;     /* 左右各留 15px，绝对严丝合缝对齐 */
+            /* 严格与文章卡片边距同步 */
+            width: calc(100% - 30px) !important;
             margin: 0 auto 20px auto !important;
-            height: 240px !important;                /* 竖向增加 0.5 倍 */
+            height: 240px !important;                /* 高度增加0.5倍 */
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
@@ -1315,7 +1258,7 @@ inject:
     - |
       <script>
         function setupCompetitionCards() {
-          // 电脑端绑定
+          // 电脑端绑定左上角卡片跳转
           var randomLink = document.getElementById("random-hover");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1327,7 +1270,7 @@ inject:
             };
           }
 
-          // 移动端插入卡片（严格限制 <= 1024px，电脑端坚决不插入）
+          // 移动端插入逻辑：电脑端坚决不插入
           var existCards = document.querySelectorAll(".mobile-competition-card");
           if (window.innerWidth > 1024) {
             existCards.forEach(function(el) { el.remove(); });
