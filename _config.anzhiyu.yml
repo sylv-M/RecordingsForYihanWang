@@ -18,7 +18,7 @@ menu:
   # 关于:
   #   关于本人: /about/ || anzhiyu-icon-paper-plane
   #   闲言碎语: /essay/ || anzhiyu-icon-lightbulb
-      比赛合集： /RecordingsForYihanWang/competitions/ || anzhiyu-icon-trophy
+  比赛合集： /RecordingsForYihanWang/competitions/ || anzhiyu-icon-trophy
 
 # nav相关配置
 nav:
