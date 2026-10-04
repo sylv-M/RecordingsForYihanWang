@@ -322,111 +322,89 @@ div:has(> a[href*="gallery"]),
   border-radius: 12px !important;
 }
 
-/* ================= 3. 大桌面端 (宽度 >= 1400px) ================= */
-@media screen and (min-width: 1400px) {
-  /* 整个顶部容器：左右并排 */
-  .topGroup {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important; /* 【核心】顶部对齐，让高度自动撑开 */
-    gap: 16px !important;
-  }
+/* =========================================================
+   终极统一布局：电脑 / iPad / 手机 全部统一
+   左半部分：上1（比赛合集）下2（场下、冰迷）
+   右半部分：图集
+   左右比例：1:1
+   ========================================================= */
 
-  /* 左侧小卡片组：上下排布 */
-  .categoryGroup,
-  .category-group,
-  div:has(> a[title*="场下"]) {
-    display: flex !important;
-    flex-direction: column !important; /* 上下排布，回到最初的样子 */
-    flex: 0 0 320px !important;        /* 固定左侧宽度为 320px（可自行修改） */
-    gap: 16px !important;
-    min-width: 0 !important;
-  }
-
-  /* 左侧的两个小卡片（场下、冰迷） */
-  .categoryGroup > a,
-  .category-group > a,
-  .categoryItem,
-  .category-item,
-  div:has(> a[title*="场下"]) > a {
-    width: 100% !important;
-    /* 注意：这里删除了任何 height 设定，让它们自动使用主题自带的高度（通常是自适应） */
-    min-height: 0 !important; 
-    box-sizing: border-box !important;
-  }
-
-  /* 右侧图集卡片：占据剩余空间，高度自动撑开 */
-  .topGroup .recent-top-post,
-  .topGroup .bannerGroup,
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]) {
-    display: block !important;
-    flex: 1 !important;             /* 占据右侧剩余宽度 */
-    width: auto !important;
-    /* 同样删除了高度设定 */
-    min-height: 0 !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    position: relative !important;
-  }
-  
-  #custom-gallery-card {
-    /* 让内部图集卡片的高度跟随父容器自动适应 */
-    height: 100% !important;
-    width: 100% !important;
-  }
+/* --- 1. 基础布局（左右并排，1:1）--- */
+.topGroup {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
 }
 
-/* ================= 2. iPad / 平板端 (宽度 769px - 1399px) ================= */
-@media screen and (min-width: 769px) and (max-width: 1399px) {
-  /* 1. 左侧两个小卡片：改为上下排布（和手机一样） */
-  .categoryGroup,
-  .category-group,
-  div:has(> a[title*="场下"]) {
-    display: flex !important;
-    flex-direction: column !important; /* 【核心修改】垂直排列，上下堆叠 */
-    justify-content: space-between !important;
-    width: 100% !important;
-    gap: 16px !important; /* 上下卡片之间的间距 */
-    height: 100% !important; /* 撑满左侧高度 */
-  }
+/* 左侧区域：2x2 网格 */
+.categoryGroup,
+.category-group,
+div:has(> a[title*="场下"]) {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 两列 */
+  grid-template-rows: auto auto !important;  /* 两行 */
+  gap: 16px !important;
+  flex: 1 1 50% !important; /* 左侧占 50% */
+  min-width: 0 !important;
+}
 
-  /* 2. 左侧的小卡片：自适应高度，平分上下空间 */
-  .categoryGroup > a,
-  .category-group > a,
-  .categoryItem,
-  .category-item,
-  div:has(> a[title*="场下"]) > a {
-    flex: 1 !important; /* 上下两个卡片各占一半高度 */
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
+/* 左侧所有卡片基础样式 */
+.categoryGroup > a,
+.category-group > a,
+.categoryItem,
+.category-item,
+div:has(> a[title*="场下"]) > a {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+}
 
-  /* 3. 右侧图集卡片：占据剩余空间，高度与左侧对齐 */
-  .topGroup .recent-top-post,
-  .topGroup .bannerGroup,
-  a[href*="gallery"],
-  div:has(> a[href*="gallery"]) {
-    display: block !important;
-    flex: 1 !important;           
-    min-width: 0 !important;      
-    height: 100% !important;      
-    min-height: 190px !important; 
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    position: relative !important;
-  }
-  
-  #custom-gallery-card {
-    min-height: 190px !important;
-    height: 100% !important;
-    width: 100% !important;
-  }
+/* 第一张卡片（比赛合集）占据上方整行 */
+.categoryGroup > a:first-child,
+.category-group > a:first-child,
+div:has(> a[title*="场下"]) > a:first-child {
+  grid-column: span 2 !important;
+  grid-row: 1 !important;
+}
+
+/* 下方两张卡片并排 */
+.categoryGroup > a:nth-child(2),
+.category-group > a:nth-child(2),
+div:has(> a[title*="场下"]) > a:nth-child(2) {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+.categoryGroup > a:nth-child(3),
+.category-group > a:nth-child(3),
+div:has(> a[title*="场下"]) > a:nth-child(3) {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+}
+
+/* 右侧图集卡片：占 50%，高度与左侧齐平 */
+.topGroup .recent-top-post,
+.topGroup .bannerGroup,
+a[href*="gallery"],
+div:has(> a[href*="gallery"]) {
+  display: block !important;
+  flex: 1 1 50% !important; /* 右侧占 50% */
+  width: auto !important;
+  min-height: 100% !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#custom-gallery-card {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 
-/* ================= 3. 手机端 (打通手势链 & 开启横向滑动画卷) ================= */
+/* --- 2. 手机端专属：开启横向滑动（左右 1:1 且滑动查看）--- */
 @media screen and (max-width: 768px) {
   /* 1. 打通安知鱼父级容器的溢出锁，允许内部横向滚动 */
   #home_top,
@@ -438,53 +416,48 @@ div:has(> a[href*="gallery"]),
     width: 100% !important;
     overflow-x: auto !important;          /* 强制开启横向滚动条 */
     overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important; /* 开启 iOS 原生弹性平滑惯性手势 */
-    touch-action: pan-x pan-y !important; /* 强制浏览器放行横向拖拽手势 */
-    scroll-snap-type: x mandatory !important;     /* 磁贴效果：滑过去自动对齐卡片 */
+    -webkit-overflow-scrolling: touch !important; /* iOS 原生平滑惯性手势 */
+    touch-action: pan-x pan-y !important; /* 强制放行横向拖拽手势 */
+    scroll-snap-type: x mandatory !important;     /* 磁贴效果：滑过去自动对齐 */
     gap: 12px !important;
     padding-bottom: 8px !important;
   }
 
-
-  /* 2. 左侧两个胶囊容器：固定在第一屏 */
+  /* 2. 左侧两个胶囊容器（变成 2x2 网格，宽度占 50vw） */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
-    flex-shrink: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
+    flex: 0 0 50vw !important; /* 固定占 50% 视口宽 */
+    width: 50vw !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
     gap: 10px !important;
-    width: 48vw !important;              /* 占屏幕宽度的 48% */
     scroll-snap-align: start !important;
+    height: auto !important;
   }
 
-  /* 【数值 120px】两个胶囊的高度与尺寸 */
+  /* 手机端卡片高度控制 */
+  .categoryGroup > a,
+  .category-group > a,
   .categoryItem,
   .category-item,
-  .categoryButton,
-  .categoryGroup > a,
   div:has(> a[title*="场下"]) > a {
     width: 100% !important;
-    height: 120px !important;
-    min-height: 120px !important;
-    max-height: 120px !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0 16px !important;
+    min-height: 80px !important;
+    padding: 12px !important;
     border-radius: 12px !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. 右侧选手照片卡片：宽度设为 80vw（超出屏幕），滑动就能完全拖出来 */
+  /* 3. 右侧图集卡片：固定占 50vw，横向滑出 */
   .topGroup .recent-top-post,
   .topGroup .bannerGroup,
   a[href*="gallery"],
   div:has(> a[href*="gallery"]) {
-    flex-shrink: 0 !important;
-    width: 82vw !important;              /* 给足 82% 视口宽，横向露出一半，右手一滑即可全屏看清 */
-    min-width: 280px !important;
-    height: 250px !important;            /* 120px * 2 + 10px 间距，高度与左边严丝合缝对齐 */
+    flex: 0 0 50vw !important; /* 固定占 50% 视口宽，配合滑动 */
+    width: 50vw !important;
+    height: 100% !important;
     min-height: 250px !important;
     border-radius: 12px !important;
     scroll-snap-align: start !important;
@@ -492,7 +465,7 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* 彻底隐藏原来主题自带的杂乱遮罩、404背景和横线 */
+/* 隐藏原来主题自带的杂乱遮罩、404背景和横线 */
 #swiper_container_blog .blog-slider,
 #home_top .category-group a::before,
 .category-item-text::before {
