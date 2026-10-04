@@ -738,3 +738,36 @@ div:has(> a[href*="gallery"]),
   background-repeat: no-repeat !important;
   background-position: center !important;
 }
+
+/* 1. 隐藏原有的“随便逛逛”文字与箭头 */
+.todayCard .todayCard-title,
+.topGroup .todayCard-title,
+.topGroup .recent-post-item .card-random-title,
+#todayCard .todayCard-title {
+  font-size: 0 !important;
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+/* 2. 伪元素注入新标题：比赛合集 ➔ */
+.todayCard .todayCard-title::after,
+.topGroup .todayCard-title::after,
+.topGroup .recent-post-item .card-random-title::after,
+#todayCard .todayCard-title::after {
+  content: "比赛合集" !important;
+  font-size: 1.6rem !important;
+  visibility: visible !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  display: inline-block !important;
+  letter-spacing: 1px !important;
+}
+
+/* 3. 隐藏左上角默认的纸飞机图标（让画面更干净） */
+.todayCard .todayCard-icon,
+.topGroup .todayCard-icon,
+.topGroup .recent-post-item .todayCard-icon {
+  display: none !important;
+}
