@@ -118,7 +118,7 @@ theme_config:
         class: blue
         icon: anzhiyu-icon-dove
       - name: 冰迷朋友有话说
-        path: /RecordingsForYihanWang/message/
+        path: /RecordingsForYihanWang/comments/
         shadow: var(--anzhiyu-shadow-red)
         class: red
         icon: anzhiyu-icon-fire
