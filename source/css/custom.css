@@ -365,7 +365,7 @@ div:has(> a[href*="gallery"]),
   .category-item,
   div:has(> a[title*="场下"]) > a {
     flex: 1 !important; /* 上下两个卡片各占一半高度 */
-    width: 48vw !important;
+    width: 40vw !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
   }
