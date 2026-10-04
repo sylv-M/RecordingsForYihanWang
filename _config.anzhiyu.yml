@@ -1164,43 +1164,49 @@ inject:
           content: none !important;
         }
 
-        /* 轮播图集容器样式 */
-        #swiper_container_blog .blog-slider__content,
-        #swiper_container .blog-slider__content {
-          background: transparent !important;
-          box-shadow: none !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          bottom: 14px !important;
-          left: 18px !important;
+        /* ================= 电脑端比赛合集卡片（仅>1024px生效，绝不污染移动端） ================= */
+        @media screen and (min-width: 1025px) {
+          #bannerGroup {
+            width: 50% !important;
+          }
+          #random-banner,
+          #random-hover {
+            position: relative !important;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
+                        url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            height: 100% !important;
+            box-sizing: border-box !important;
+          }
+          #random-banner .bannerText {
+            position: absolute !important;
+            left: 24px !important;
+            bottom: 20px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: auto !important;
+            height: auto !important;
+            font-size: 0 !important;
+            color: transparent !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            z-index: 10 !important;
+          }
+          #random-banner .bannerText::before {
+            content: "比赛合集 ➔" !important;
+            font-size: 2.2rem !important;
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+            letter-spacing: 2px !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+          }
         }
 
-        /* 轮播图集标题文字重写 */
-        #swiper_container_blog .blog-slider__title,
-        #swiper_container .blog-slider__title {
-          font-size: 0 !important;
-        }
-        #swiper_container_blog .blog-slider__title::after,
-        #swiper_container .blog-slider__title::after {
-          content: "图集 ➜" !important;
-          font-size: 18px !important;
-          color: #fff !important;
-          font-weight: bold !important;
-          letter-spacing: 2px !important;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
-        }
-
-        /* 隐藏轮播无用文字与按钮 */
-        #swiper_container_blog .blog-slider__code,
-        #swiper_container_blog .blog-slider__text,
-        #swiper_container_blog .blog-slider__button,
-        #swiper_container .blog-slider__code,
-        #swiper_container .blog-slider__text,
-        #swiper_container .blog-slider__button {
-          display: none !important;
-        }
-
-        /* ================= 电脑端比赛合集（样式锁定） ================= */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1209,62 +1215,80 @@ inject:
           display: none !important;
         }
 
-        #random-banner,
-        #random-hover {
-          position: relative !important;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
-                      url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
-          border-radius: 12px !important;
-          overflow: hidden !important;
-          width: 100% !important;
-          height: 100% !important;
-          box-sizing: border-box !important;
-        }
-
-        #random-banner .bannerText {
-          position: absolute !important;
-          left: 24px !important;
-          bottom: 20px !important;
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          width: auto !important;
-          height: auto !important;
-          font-size: 0 !important;
-          color: transparent !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          z-index: 10 !important;
-        }
-
-        #random-banner .bannerText::before {
-          content: "比赛合集 ➔" !important;
-          font-size: 2.2rem !important;
-          color: #ffffff !important;
-          font-weight: 800 !important;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
-          letter-spacing: 2px !important;
-          display: inline-block !important;
-          white-space: nowrap !important;
-        }
-
-        /* 电脑端坚决隐藏多余的移动端卡片和白条 */
+        /* 电脑端坚决隐藏多余的卡片 */
         @media screen and (min-width: 1025px) {
           .mobile-competition-card {
             display: none !important;
           }
         }
 
-        /* ================= 移动端与 iPad（严格横向齐平） ================= */
+        /* ================= 移动端：横向画卷滑动手势终极放行 + 比赛合集对齐 ================= */
         @media screen and (max-width: 1024px) {
+          /* 1. 彻底解开外层所有容器的手势拦截与溢出裁剪 */
+          #home_top,
+          #home_top .swiper_container_card,
+          #home_top #bannerGroup,
+          .topGroup {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+            overflow-x: auto !important;              /* 强制放行横向手势 */
+            overflow-y: hidden !important;
+            -webkit-overflow-scrolling: touch !important; /* iOS 惯性滑动 */
+            touch-action: pan-x pan-y !important;     /* 允许横向拖拽 */
+            scroll-snap-type: x mandatory !important;
+            gap: 12px !important;
+            padding: 0 15px 10px 15px !important;     /* 与文章左右完全同宽的版心边距 */
+            box-sizing: border-box !important;
+          }
+
+          /* 隐藏原生的丑陋横向滚动条 */
+          #home_top::-webkit-scrollbar,
+          .topGroup::-webkit-scrollbar {
+            display: none !important;
+          }
+
+          /* 2. 左侧两个胶囊（场下、冰迷朋友）坚决不被压缩 */
+          .categoryGroup,
+          .category-group,
+          div:has(> a[title*="场下"]) {
+            flex-shrink: 0 !important;
+            width: 48vw !important;
+            min-width: 160px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            gap: 10px !important;
+            scroll-snap-align: start !important;
+          }
+
+          /* 3. 右侧图集大卡片：撑出屏幕（80vw），右手一划即可顺滑拉出 */
+          .topGroup .recent-top-post,
+          .topGroup .bannerGroup,
+          #custom-gallery-card,
+          div:has(> #custom-gallery-card),
+          a[href*="gallery"],
+          div:has(> a[href*="gallery"]) {
+            display: block !important;
+            flex-shrink: 0 !important;
+            width: 82vw !important;                  /* 关键：宽度 82vw，露出一半引诱滑动 */
+            min-width: 280px !important;
+            height: 250px !important;                /* 与左边两个胶囊的总高严丝合缝 */
+            min-height: 250px !important;
+            border-radius: 12px !important;
+            scroll-snap-align: start !important;
+            touch-action: pan-x !important;
+          }
+
+          /* 4. 移动端“比赛合集”卡片：完美对齐文章列表版心，增加0.5倍高度 */
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
-            /* 严格与文章卡片边距同步：左右留出 15px 安全边距，绝不顶出屏幕 */
-            width: calc(100% - 30px) !important;
+            width: calc(100% - 30px) !important;     /* 左右各留 15px，绝对严丝合缝对齐 */
             margin: 0 auto 20px auto !important;
-            /* 竖向高度增加0.5倍 */
-            height: 240px !important;
+            height: 240px !important;                /* 竖向增加 0.5 倍 */
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
@@ -1291,7 +1315,7 @@ inject:
     - |
       <script>
         function setupCompetitionCards() {
-          // 1. 电脑端绑定左上角大图跳转
+          // 电脑端绑定
           var randomLink = document.getElementById("random-hover");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1303,23 +1327,19 @@ inject:
             };
           }
 
-          // 2. 移除可能误插入的白条残留
+          // 移动端插入卡片（严格限制 <= 1024px，电脑端坚决不插入）
           var existCards = document.querySelectorAll(".mobile-competition-card");
-          
-          // 如果屏幕在 1024px 以上（电脑端），彻底清理任何动态插入的卡片
           if (window.innerWidth > 1024) {
             existCards.forEach(function(el) { el.remove(); });
             return;
           }
 
-          // 3. 仅在手机/iPad 端（<=1024px）且未存在时插入卡片
           var recentPosts = document.getElementById("recent-posts");
           if (recentPosts && existCards.length === 0) {
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
             mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
-            // 插入在 recent-posts 正上方
             recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
           }
         }
