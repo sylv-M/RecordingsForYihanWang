@@ -684,25 +684,36 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* 冰迷朋友有话说卡片外观 */
-#home_top .category-group .categoryItem .categoryButton.red {
-  /* 用 background-color 强制纯色，并用 background-image 覆盖渐变 */
+/* 1. 精准匹配【冰迷朋友有话说】按钮（支持多种选择器，确保必中） */
+#home_top .category-group .category-item a.red,
+#home_top a[href*="gallery"].category-button,
+a.category-button.red {
+  background: #e6d7f5 !important;
   background-color: #e6d7f5 !important;
+  /* 库洛米贴纸作为背景图，定位在右侧/右下角 */
   background-image: url('/RecordingsForYihanWang/img/kuromi2.png') !important;
   background-repeat: no-repeat !important;
   background-position: right bottom !important;
-  background-size: contain !important;
-  
-  /* 禁用主题自带的渐变动画尺寸 */
-  background-size: contain !important;
-  
-  position: relative;
-  z-index: 1;
+  background-size: 55px auto !important; /* 可根据需要调整贴纸大小，如 60px、contain 等 */
+  box-shadow: 0 4px 12px rgba(230, 215, 245, 0.5) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-/* 让文字压在图片上面 */
-#home_top .category-group .categoryItem .categoryButton.red span,
-#home_top .category-group .categoryItem .categoryButton.red * {
-  position: relative;
-  z-index: 2;
+/* 2. 彻底禁用/隐藏主题原本自带的橙红色遮罩和伪元素渐变 */
+#home_top .category-group .category-item a.red::before,
+#home_top .category-group .category-item a.red::after,
+a.category-button.red::before,
+a.category-button.red::after {
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+}
+
+/* 3. 确保文字和图标浮在贴纸上面，清晰可见 */
+#home_top .category-group .category-item a.red span,
+#home_top .category-group .category-item a.red i {
+  position: relative !important;
+  z-index: 5 !important;
+  color: #5d3b8e !important; /* 字体建议改成深紫色，淡紫底色上更清晰好看；若想保留白字可改成 #fff */
 }
