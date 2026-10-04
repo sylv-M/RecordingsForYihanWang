@@ -7,54 +7,7 @@ top_img: false
 ---
 
 <style>
-.season-portal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin: 30px 0;
-}
-
-.season-portal-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 36px 20px;
-  border-radius: 16px;
-  text-decoration: none !important;
-  color: #fff !important;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.season-portal-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
-}
-
-.season-portal-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.season-portal-desc {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* 4个赛季专属渐变配色 */
-.card-s2627 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-.card-s2526 { background: linear-gradient(135deg, #2af598 0%, #009efd 100%); }
-.card-s2425 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #444 !important; }
-.card-s2425 .season-portal-title { color: #333 !important; text-shadow: none; }
-.card-s2324 { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
-
-/* 注入 kuromi4 */
+/* 当前页面专属：库洛米4贴纸 */
 .page-title::after {
   content: "" !important;
   display: inline-block !important;
@@ -71,7 +24,61 @@ top_img: false
 .season-portal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-...
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.season-portal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 20px;
+  border-radius: 16px;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.season-portal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.season-portal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #3b4252 !important;  /* 文字颜色 */
+  text-shadow: none !important;
+}
+
+
+/* 26-27赛季 */
+.card-s2627 { 
+  background: linear-gradient(135deg, #e8ddfc 0%, #dcd3fc 100%) !important; 
+  box-shadow: 0 6px 18px rgba(190, 175, 230, 0.25) !important;
+}
+
+/* 25-26赛季 */
+.card-s2526 { 
+  background: linear-gradient(135deg, #dcf0fb 0%, #cce7fc 100%) !important; 
+  box-shadow: 0 6px 18px rgba(170, 205, 235, 0.25) !important;
+}
+
+/* 24-25赛季 */
+.card-s2425 { 
+  background: linear-gradient(135deg, #ffdfe7 0%, #fbd5df 100%) !important; 
+  box-shadow: 0 6px 18px rgba(240, 185, 200, 0.25) !important;
+}
+
+/* 23-24赛季 */
+.card-s2324 { 
+  background: linear-gradient(135deg, #fef2c5 0%, #fde6aa 100%) !important; 
+  box-shadow: 0 6px 18px rgba(235, 210, 150, 0.25) !important;
+}
 </style>
 
 <div class="season-portal-grid">
