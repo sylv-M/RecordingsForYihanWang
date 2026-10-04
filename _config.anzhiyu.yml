@@ -1123,11 +1123,132 @@ dynamicEffect:
 inject:
   head:
     - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
-    - <style>#loading-box .loading-bg,.loading-bg{background:linear-gradient(135deg,#e0c3fc 0%,#fbc2eb 100%)!important;}#aside-content>.card-widget.card-info{background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%)!important;background-color:#d8b4e2!important;}#aside-content>.card-widget.card-info::before{background:transparent!important;}#aside-content>.card-widget.card-announcement{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%)!important;background-color:#bae6fd!important;border:none!important;padding:18px 16px!important;}#aside-content>.card-widget.card-announcement .item-headline{display:none!important;}#card-wechat,.card-widget.card-wechat{display:none!important;}#home_top .category-group .category-item a::before,#home_top .category-group a::before{display:none!important;content:none!important;}#swiper_container_blog .blog-slider__content,#swiper_container .blog-slider__content{background:transparent!important;box-shadow:none!important;padding:0!important;margin:0!important;bottom:14px!important;left:18px!important;}#swiper_container_blog .blog-slider__title,#swiper_container .blog-slider__title{font-size:0!important;}#swiper_container_blog .blog-slider__title::after,#swiper_container .blog-slider__title::after{content:"图集 ➜"!important;font-size:18px!important;color:#fff!important;font-weight:bold!important;letter-spacing:2px!important;text-shadow:0 2px 4px rgba(0,0,0,0.7)!important;}#swiper_container_blog .blog-slider__code,#swiper_container_blog .blog-slider__text,#swiper_container_blog .blog-slider__button,#swiper_container .blog-slider__code,#swiper_container .blog-slider__text,#swiper_container .blog-slider__button{display:none!important;}/* 修改随便逛逛为比赛合集 */.topGroup .recent-post-item .content-item .card-random-title{font-size:0!important;}.topGroup .recent-post-item .content-item .card-random-title::after{content:"比赛合集 ➔"!important;font-size:1.6rem!important;color:#fff!important;font-weight:bold;letter-spacing:1px;}</style>
-bottom:
+    - |
+      <style>
+        /* 加载动画背景 */
+        #loading-box .loading-bg,
+        .loading-bg {
+          background: linear-gradient(135deg, #e0c3fc 0%, #fbc2eb 100%) !important;
+        }
+
+        /* 侧边栏卡片：作者卡片背景 */
+        #aside-content > .card-widget.card-info {
+          background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%) !important;
+          background-color: #d8b4e2 !important;
+        }
+        #aside-content > .card-widget.card-info::before {
+          background: transparent !important;
+        }
+
+        /* 侧边栏卡片：公告栏背景与内边距 */
+        #aside-content > .card-widget.card-announcement {
+          background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%) !important;
+          background-color: #bae6fd !important;
+          border: none !important;
+          padding: 18px 16px !important;
+        }
+        #aside-content > .card-widget.card-announcement .item-headline {
+          display: none !important;
+        }
+
+        /* 隐藏微信卡片 */
+        #card-wechat,
+        .card-widget.card-wechat {
+          display: none !important;
+        }
+
+        /* 隐藏顶部推荐分类伪元素 */
+        #home_top .category-group .category-item a::before,
+        #home_top .category-group a::before {
+          display: none !important;
+          content: none !important;
+        }
+
+        /* 轮播图集容器样式 */
+        #swiper_container_blog .blog-slider__content,
+        #swiper_container .blog-slider__content {
+          background: transparent !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          bottom: 14px !important;
+          left: 18px !important;
+        }
+
+        /* 轮播图集标题文字重写 */
+        #swiper_container_blog .blog-slider__title,
+        #swiper_container .blog-slider__title {
+          font-size: 0 !important;
+        }
+        #swiper_container_blog .blog-slider__title::after,
+        #swiper_container .blog-slider__title::after {
+          content: "图集 ➜" !important;
+          font-size: 18px !important;
+          color: #fff !important;
+          font-weight: bold !important;
+          letter-spacing: 2px !important;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+        }
+
+        /* 隐藏轮播无用文字与按钮 */
+        #swiper_container_blog .blog-slider__code,
+        #swiper_container_blog .blog-slider__text,
+        #swiper_container_blog .blog-slider__button,
+        #swiper_container .blog-slider__code,
+        #swiper_container .blog-slider__text,
+        #swiper_container .blog-slider__button {
+          display: none !important;
+        }
+
+        /* --- 修改随便逛逛为比赛合集 --- */
+        /* 1. 隐藏默认纸飞机图标 */
+        #random-banner .anzhiyu-icon-paper-plane {
+          display: none !important;
+        }
+
+        /* 2. 隐藏原有“随便逛逛”文本 */
+        #random-banner .bannerText {
+          font-size: 0 !important;
+          color: transparent !important;
+        }
+
+        /* 3. 伪元素注入“比赛合集 ➔”新标题 */
+        #random-banner .bannerText::before {
+          content: "比赛合集 ➔" !important;
+          font-size: 1.6rem !important;
+          color: #fff !important;
+          font-weight: 700 !important;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+          letter-spacing: 1px !important;
+          display: inline-block !important;
+        }
+
+        /* 4. 隐藏后面自带的原版小箭头图标 */
+        #random-banner .bannerText .anzhiyu-icon-arrow-right {
+          display: none !important;
+        }
+      </style>
+  bottom:
     - <script src="/RecordingsForYihanWang/js/custom_slider.js"></script>
-    - <script>function applyCompetitionCard(){var card=document.getElementById("todayCard")||document.querySelector(".todayCard");if(card){card.onclick=function(e){e.preventDefault();e.stopPropagation();window.location.href="/RecordingsForYihanWang/competitions/";};var title=card.querySelector(".todayCard-title");if(title){title.innerText="比赛合集 ➔";}}}document.addEventListener("DOMContentLoaded",applyCompetitionCard);document.addEventListener("pjax:complete",applyCompetitionCard);setTimeout(applyCompetitionCard,300);setTimeout(applyCompetitionCard,1000);</script>
-    
+    - |
+      <script>
+        function bindCompetitionCard() {
+          var randomLink = document.getElementById("random-hover");
+          if (randomLink) {
+            randomLink.removeAttribute("onclick");
+            randomLink.setAttribute("href", "/RecordingsForYihanWang/competitions/");
+            randomLink.onclick = function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              window.location.href = "/RecordingsForYihanWang/competitions/";
+            };
+          }
+        }
+        document.addEventListener("DOMContentLoaded", bindCompetitionCard);
+        document.addEventListener("pjax:complete", bindCompetitionCard);
+        setTimeout(bindCompetitionCard, 300);
+        setTimeout(bindCompetitionCard, 1000);
+      </script>
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
