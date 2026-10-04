@@ -26,12 +26,12 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
     <div class="comp-title">短节目 (SP)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener">B站高清视频 ➔</a></div>
+    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
   </div>
   <div class="comp-card">
     <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
     <div class="comp-title">自由滑 (FS)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener">B站高清视频 ➔</a></div>
+    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
   </div>
 </div>
 
@@ -40,11 +40,11 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
     <div class="comp-title">短节目 (SP)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener">B站高清视频 ➔</a></div>
+    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
   </div>
   <div class="comp-card">
     <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
     <div class="comp-title">自由滑 (FS)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener">B站高清视频 ➔</a></div>
+    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
   </div>
 </div>
