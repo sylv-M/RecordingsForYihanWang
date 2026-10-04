@@ -703,7 +703,7 @@ div:has(> a[href*="gallery"]),
   background-image: url('/RecordingsForYihanWang/img/kuromi2.png') !important;
   background-repeat: no-repeat !important;
   background-position: right 12px bottom 6px !important;
-  background-size: 58px auto !important; /* 贴纸大小，可按需微调 */
+  background-size: 120px auto !important; /* 贴纸大小，可按需微调 */
   box-shadow: 0 4px 12px rgba(190, 160, 230, 0.4) !important;
   position: relative !important;
   overflow: hidden !important;
