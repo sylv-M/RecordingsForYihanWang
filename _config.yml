@@ -124,3 +124,12 @@ theme_config:
         shadow: var(--anzhiyu-shadow-red)
         class: red
         icon: anzhiyu-icon-fire
+
+  comments:
+    use:
+      - Twikoo
+    lazyload: false
+
+  twikoo:
+    envId: https://bright-strudel-9020d2.netlify.app
+    visitor: true
