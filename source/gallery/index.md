@@ -5,29 +5,33 @@ type: "gallery"
 ---
 
 <style>
-/* 避免 Markdown 空行产生段落 margin 干扰 */
+/* 1. 消除 Markdown 自动加 p 标签的影响 */
 .photo-grid p {
   margin: 0 !important;
-  display: contents !important; /* 消除 p 标签对网格结构的破坏 */
+  display: contents !important;
 }
 
-/* 网格容器：电脑端默认三列 */
+/* 2. 电脑端：默认三列网格 */
 .photo-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 16px !important;
   width: 100% !important;
-  margin-bottom: 40px !important;
+  margin: 20px 0 40px 0 !important;
 }
 
-/* 图片及可能存在的超链接包裹层 */
-.photo-grid img,
+/* 3. 兼容 fancybox 灯箱自动加的 a 标签包裹 */
 .photo-grid a {
-  width: 100% !important;
   display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
 }
 
+/* 4. 图片基础样式 */
 .photo-grid img {
+  width: 100% !important;
   height: 220px !important;
   object-fit: cover !important;
   border-radius: 12px !important;
@@ -35,6 +39,7 @@ type: "gallery"
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   cursor: pointer !important;
   margin: 0 !important;
+  display: block !important;
 }
 
 .photo-grid img:hover {
@@ -42,14 +47,15 @@ type: "gallery"
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 响应式：768px 及以下所有手机屏幕均保持两列，自适应高度 */
-@media (max-width: 768px) {
+/* 5. 手机端（768px 及以下所有手机）：强制两列并调小高度 */
+@media screen and (max-width: 768px) {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
+  .photo-grid a,
   .photo-grid img {
-    height: 150px !important; /* 手机端两列适当降低固定高度，比例更协调 */
+    height: 150px !important;
     border-radius: 8px !important;
   }
 }
