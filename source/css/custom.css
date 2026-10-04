@@ -322,9 +322,59 @@ div:has(> a[href*="gallery"]),
   border-radius: 12px !important;
 }
 
+/* ================= 3. 大桌面端 (宽度 >= 1400px) ================= */
+@media screen and (min-width: 1400px) {
+  /* 整个顶部容器使用 Flex 布局，让左右两边并排 */
+  .topGroup {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
 
+  /* 左侧小卡片组：占据剩余空间 */
+  .categoryGroup,
+  .category-group,
+  div:has(> a[title*="场下"]) {
+    display: flex !important;
+    flex-direction: row !important; /* 电脑端两个卡片并排 */
+    flex: 1 !important;             /* 占据左侧所有剩余宽度 */
+    gap: 16px !important;
+    min-width: 0 !important;
+  }
+
+  .categoryGroup > a,
+  .category-group > a,
+  .categoryItem,
+  .category-item,
+  div:has(> a[title*="场下"]) > a {
+    flex: 1 !important;             /* 两个卡片平分左侧空间 */
+    min-width: 0 !important;
+    height: 260px !important;       /* 【修改这里】电脑端左侧卡片高度，原来190太矮，改成260 */
+    box-sizing: border-box !important;
+  }
+
+  /* 右侧图集卡片：电脑端固定宽度 */
+  .topGroup .recent-top-post,
+  .topGroup .bannerGroup,
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]) {
+    display: block !important;
+    flex: 0 0 600px !important;     /* 固定宽度为 600px */
+    width: 600px !important;
+    height: 300px !important;       /* 【修改这里】电脑端右侧图集高度，必须与左侧保持一致 */
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  
+  #custom-gallery-card {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
 /* ================= 2. 电脑端 & iPad (宽度 > 768px) ================= */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 769px) and (max-width: 1399px)
   /* 左侧两个小卡片（场下、冰迷）：网格布局 */
   .categoryGroup,
   .category-group,
