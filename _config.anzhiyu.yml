@@ -949,7 +949,7 @@ home_top:
       class: blue
       icon: anzhiyu-icon-dove
     - name: 冰迷朋友有话说
-      path: /comments/
+      path: /RecordingsForYihanWang/comments/
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
