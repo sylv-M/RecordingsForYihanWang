@@ -1,7 +1,6 @@
 ---
 title: 图集
 date: 2026-10-04 12:00:00
-type: "gallery"
 ---
 
 <style>
