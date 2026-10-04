@@ -1201,42 +1201,33 @@ inject:
           display: none !important;
         }
 
-        /* ================= 比赛合集卡片精准优化 ================= */
-        /* 1. 彻底隐藏“生活明朗，万物可爱”标题 */
+        /* ================= 比赛合集卡片（左下角超大标题） ================= */
+        /* 1. 彻底隐藏默认生活明朗标语、画布及纸飞机 */
         #random-banner .banners-title,
-        .banners-title {
-          display: none !important;
-        }
-
-        /* 2. 隐藏画布及纸飞机图标 */
+        .banners-title,
         #random-banner #peoplecanvas,
         #random-banner .anzhiyu-icon-paper-plane,
         #random-banner .bannerText .anzhiyu-icon-arrow-right {
           display: none !important;
         }
 
-        /* 3. 选手大图背景铺满与圆角 */
+        /* 2. 背景图片铺满，并强化底部暗色渐变确保大字清晰易读 */
         #random-banner,
         #random-hover {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 60%),
+          position: relative !important;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
                       url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
           border-radius: 12px !important;
           overflow: hidden !important;
-        }
-
-        /* 4. 让链接容器在底部左对齐 */
-        #random-hover {
-          display: flex !important;
-          justify-content: flex-start !important;
-          align-items: flex-end !important;
           width: 100% !important;
           height: 100% !important;
-          padding: 0 0 16px 20px !important;
-          box-sizing: border-box !important;
         }
 
-        /* 5. 清除横条残留，文字居左 */
+        /* 3. 绝对定位强制锁定在左下角 */
         #random-banner .bannerText {
+          position: absolute !important;
+          left: 24px !important;
+          bottom: 20px !important;
           background: transparent !important;
           border: none !important;
           box-shadow: none !important;
@@ -1246,18 +1237,19 @@ inject:
           color: transparent !important;
           margin: 0 !important;
           padding: 0 !important;
-          text-align: left !important;
+          z-index: 10 !important;
         }
 
-        /* 6. 比赛合集文字高亮显示在左下角 */
+        /* 4. 加大字号（2.2rem）并增强文字阴影质感 */
         #random-banner .bannerText::before {
           content: "比赛合集 ➔" !important;
-          font-size: 1.6rem !important;
+          font-size: 2.2rem !important;
           color: #ffffff !important;
-          font-weight: 700 !important;
-          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
-          letter-spacing: 1px !important;
+          font-weight: 800 !important;
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+          letter-spacing: 2px !important;
           display: inline-block !important;
+          white-space: nowrap !important;
         }
       </style>
   bottom:
