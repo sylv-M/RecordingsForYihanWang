@@ -37,14 +37,43 @@ top_img: false
 
 <div class="comp-station-title">JGP 匈牙利站 (布达佩斯)</div>
 <div class="program-grid">
+
+  <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
-    <div class="comp-title">短节目 (SP)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
+    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1SP411b7dV&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">短节目 (SP) 60.43分</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1SP411b7dV/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
   </div>
+
+  <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper"><video src="https://你的视频地址.mp4" controls preload="metadata"></video></div>
-    <div class="comp-title">自由滑 (FS)</div>
-    <div class="comp-link-row">查看高清版请点击：<a href="https://www.bilibili.com" target="_blank" rel="noopener"></a></div>
+    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV12p4y1w74o&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">自由滑 (FS) 94.85分</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV12p4y1w74o/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
   </div>
+
 </div>
