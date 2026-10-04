@@ -131,5 +131,5 @@ theme_config:
     lazyload: false
 
   twikoo:
-    envId: https://bright-strudel-9020d2.netlify.app/.netlify/functions/twikoo
+    envId: https://bright-strudel-9020d2.netlify.app
     visitor: true
