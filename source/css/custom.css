@@ -684,11 +684,9 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* “冰迷朋友有话说”卡片外观*/
-#home_top .category-group .categoryItem a.categoryButton.red {
+/* “冰迷朋友有话说”卡片外观 */
+#home_top .category-group .categoryItem .categoryButton.red {
   background: #e6d7f5 !important;
-
-  /* 背景图：库洛米扣好的图，靠右显示，不重复 */
   background-image: url('/RecordingsForYihanWang/img/kuromi2.png') !important;
   background-repeat: no-repeat !important;
   background-position: right bottom !important;
@@ -696,8 +694,9 @@ div:has(> a[href*="gallery"]),
   position: relative;
   z-index: 1;
 }
-#home_top .category-group .categoryItem a.categoryButton.red span,
-#home_top .category-group .categoryItem a.categoryButton.red * {
+
+#home_top .category-group .categoryItem .categoryButton.red span,
+#home_top .category-group .categoryItem .categoryButton.red * {
   position: relative;
   z-index: 2;
 }
