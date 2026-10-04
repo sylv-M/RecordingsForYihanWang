@@ -1200,7 +1200,7 @@ inject:
           display: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片 ================= */
+        /* ================= 电脑端比赛合集卡片（样式保持不变，修复对齐） ================= */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1209,6 +1209,10 @@ inject:
           display: none !important;
         }
 
+        /* 电脑端严格对齐上下两行宽度 */
+        #bannerGroup {
+          width: 50% !important; /* 保证左侧整列宽度与右侧图集平分 */
+        }
         #random-banner,
         #random-hover {
           position: relative !important;
@@ -1218,8 +1222,10 @@ inject:
           overflow: hidden !important;
           width: 100% !important;
           height: 100% !important;
+          box-sizing: border-box !important;
         }
 
+        /* 电脑端文字排版保持不变 */
         #random-banner .bannerText {
           position: absolute !important;
           left: 24px !important;
@@ -1248,22 +1254,25 @@ inject:
         }
 
         /* ================= 移动端与 iPad 专属“比赛合集”卡片 ================= */
-        /* 电脑端默认彻底隐藏，不占任何位置 */
+        /* 电脑端默认彻底隐藏 */
         .mobile-competition-card {
           display: none;
         }
 
-        /* 平板(iPad)与手机端（宽度小于等于 1024px）独占一整行显示 */
-        @media screen and (max-width: 1280px) {
+        /* 平板(iPad)与手机端（宽度小于等于 1024px） */
+        @media screen and (max-width: 1024px) {
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
+            /* 严格继承文章卡片的宽度与左右居中机制，不再超出版心 */
             width: 100% !important;
-            height: 160px !important;
-            margin-bottom: 20px !important;
+            max-width: 100% !important;
+            /* 竖向高度增加0.5倍（160px -> 240px） */
+            height: 240px !important;
+            margin: 0 0 20px 0 !important;
             border-radius: 12px !important;
             overflow: hidden !important;
-            clear: both !important;
+            box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%),
                         url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
@@ -1273,9 +1282,9 @@ inject:
           .mobile-competition-card .card-title {
             position: absolute !important;
             left: 20px !important;
-            bottom: 16px !important;
+            bottom: 20px !important;
             color: #ffffff !important;
-            font-size: 1.8rem !important;
+            font-size: 2.0rem !important;
             font-weight: 800 !important;
             letter-spacing: 1.5px !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
@@ -1299,15 +1308,15 @@ inject:
             };
           }
 
-          // 2. 移动端/iPad 端：将比赛合集卡片独立插在整个文章列表（#recent-posts）的最上方，独占一整行
-          var recentPosts = document.getElementById("recent-posts");
-          if (recentPosts && !document.querySelector(".mobile-competition-card")) {
+          // 2. 移动端/iPad 端：将比赛合集卡片包裹在第一篇主文章卡片相同的容器层级里，确保两边完全对齐
+          var firstPost = document.querySelector("#recent-posts .recent-post-item") || document.getElementById("recent-posts");
+          if (firstPost && !document.querySelector(".mobile-competition-card")) {
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
             mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
-            // 作为独立大容器直接插入在 #recent-posts 正上方
-            recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
+            // 插入在第一篇文章的正上方，自动继承第一篇文章的左右安全边距
+            firstPost.parentNode.insertBefore(mobileCard, firstPost);
           }
         }
 
