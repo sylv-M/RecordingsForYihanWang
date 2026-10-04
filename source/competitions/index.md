@@ -53,6 +53,25 @@ top_img: false
 .card-s2425 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #444 !important; }
 .card-s2425 .season-portal-title { color: #333 !important; text-shadow: none; }
 .card-s2324 { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+
+/* 注入 kuromi4 */
+.page-title::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 2.5em !important;  
+  height: 2.5em !important; 
+  margin-left: 8px !important;
+  vertical-align: -0.15em !important;  
+  background-image: url('/RecordingsForYihanWang/img/kuromi4.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.season-portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+...
 </style>
 
 <div class="season-portal-grid">
