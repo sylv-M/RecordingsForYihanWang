@@ -18,7 +18,7 @@ menu:
   # 关于:
   #   关于本人: /about/ || anzhiyu-icon-paper-plane
   #   闲言碎语: /essay/ || anzhiyu-icon-lightbulb
-  比赛合集： /RecordingsForYihanWang/competitions/ || anzhiyu-icon-trophy
+  #   比赛合集： /RecordingsForYihanWang/competitions/ || anzhiyu-icon-trophy
 
 # nav相关配置
 nav:
@@ -1200,13 +1200,7 @@ inject:
           display: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片（仅在大于1024px宽屏生效） ================= */
-        @media screen and (min-width: 1025px) {
-          #bannerGroup {
-            width: 50% !important;
-          }
-        }
-
+        /* ================= 电脑端比赛合集（样式锁定） ================= */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1254,19 +1248,23 @@ inject:
           white-space: nowrap !important;
         }
 
-        /* ================= 移动端与 iPad 专属“比赛合集”卡片 ================= */
-        .mobile-competition-card {
-          display: none;
+        /* 电脑端坚决隐藏多余的移动端卡片和白条 */
+        @media screen and (min-width: 1025px) {
+          .mobile-competition-card {
+            display: none !important;
+          }
         }
 
+        /* ================= 移动端与 iPad（严格横向齐平） ================= */
         @media screen and (max-width: 1024px) {
-          /* 直接作为文章卡片展示，独占一整行，天然继承文章宽度与左右内边距 */
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
-            width: 100% !important;
-            height: 240px !important; /* 竖向长度增加0.5倍 */
-            margin-bottom: 20px !important;
+            /* 严格与文章卡片边距同步：左右留出 15px 安全边距，绝不顶出屏幕 */
+            width: calc(100% - 30px) !important;
+            margin: 0 auto 20px auto !important;
+            /* 竖向高度增加0.5倍 */
+            height: 240px !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
@@ -1293,7 +1291,7 @@ inject:
     - |
       <script>
         function setupCompetitionCards() {
-          // 1. 电脑端绑定原有卡片跳转
+          // 1. 电脑端绑定左上角大图跳转
           var randomLink = document.getElementById("random-hover");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1305,20 +1303,30 @@ inject:
             };
           }
 
-          // 2. 移动端/iPad 端：直接插入到文章列表容器 #recent-posts 内部第一位
+          // 2. 移除可能误插入的白条残留
+          var existCards = document.querySelectorAll(".mobile-competition-card");
+          
+          // 如果屏幕在 1024px 以上（电脑端），彻底清理任何动态插入的卡片
+          if (window.innerWidth > 1024) {
+            existCards.forEach(function(el) { el.remove(); });
+            return;
+          }
+
+          // 3. 仅在手机/iPad 端（<=1024px）且未存在时插入卡片
           var recentPosts = document.getElementById("recent-posts");
-          if (recentPosts && !document.querySelector(".mobile-competition-card")) {
+          if (recentPosts && existCards.length === 0) {
             var mobileCard = document.createElement("a");
-            // 加上 recent-post-item，使其与文章卡片拥有 100% 相同的对齐宽度与边距
-            mobileCard.className = "mobile-competition-card recent-post-item";
+            mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
             mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
-            recentPosts.insertBefore(mobileCard, recentPosts.firstChild);
+            // 插入在 recent-posts 正上方
+            recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
           }
         }
 
         document.addEventListener("DOMContentLoaded", setupCompetitionCards);
         document.addEventListener("pjax:complete", setupCompetitionCards);
+        window.addEventListener("resize", setupCompetitionCards);
         setTimeout(setupCompetitionCards, 300);
         setTimeout(setupCompetitionCards, 1000);
       </script>
