@@ -323,8 +323,9 @@ div:has(> a[href*="gallery"]),
 }
 
 
-/* ================= 2. 电脑端 (宽度 > 768px) ================= */
+/* ================= 2. 电脑端 & iPad (宽度 > 768px) ================= */
 @media screen and (min-width: 769px) {
+  /* 左侧两个小卡片（场下、冰迷）：网格布局 */
   .categoryGroup,
   .category-group,
   div:has(> a[title*="场下"]) {
@@ -342,6 +343,28 @@ div:has(> a[href*="gallery"]),
     width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  /* 【新增】右侧图集卡片：在 iPad 和电脑端占据剩余空间 */
+  .topGroup .recent-top-post,
+  .topGroup .bannerGroup,
+  a[href*="gallery"],
+  div:has(> a[href*="gallery"]) {
+    display: block !important;
+    flex: 1 !important;           /* 占据右侧剩余宽度 */
+    min-width: 0 !important;      /* 防止内容撑破 */
+    height: 100% !important;      /* 高度拉伸与左侧对齐 */
+    min-height: 190px !important; /* 保证最小高度 */
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  
+  /* 确保自定义图集卡片的内部布局在 iPad 下也正常 */
+  #custom-gallery-card {
+    min-height: 190px !important;
+    height: 100% !important;
+    width: 100% !important;
   }
 }
 
