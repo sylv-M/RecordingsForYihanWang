@@ -1120,6 +1120,7 @@ dynamicEffect:
   pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
+# Inject
 inject:
   head:
     - <link rel="stylesheet" href="/RecordingsForYihanWang/css/custom.css">
@@ -1200,30 +1201,48 @@ inject:
           display: none !important;
         }
 
-        /* --- 修改随便逛逛为比赛合集 --- */
-        /* 1. 隐藏默认纸飞机图标 */
-        #random-banner .anzhiyu-icon-paper-plane {
+        /* ================= 比赛合集卡片重构 ================= */
+        /* 1. 将整个容器的背景设置为选手照片，并加暗色渐变确保文字对比度 */
+        #random-banner,
+        #random-hover {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%),
+                      url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
+          border-radius: 12px !important;
+          overflow: hidden !important;
+        }
+
+        /* 2. 彻底隐藏画布，防止干扰背景 */
+        #random-banner #peoplecanvas {
           display: none !important;
         }
 
-        /* 2. 隐藏原有“随便逛逛”文本 */
+        /* 3. 清理那条横缝：去掉 .bannerText 默认的胶囊底色、边框、阴影和撑满宽度 */
         #random-banner .bannerText {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          width: auto !important;
+          height: auto !important;
           font-size: 0 !important;
           color: transparent !important;
+          margin: 0 !important;
+          padding: 0 0 16px 20px !important;
+          align-self: flex-end !important; /* 沉底显示 */
         }
 
-        /* 3. 伪元素注入“比赛合集 ➔”新标题 */
+        /* 4. 注入清晰的“比赛合集 ➔”文字 */
         #random-banner .bannerText::before {
           content: "比赛合集 ➔" !important;
           font-size: 1.6rem !important;
-          color: #fff !important;
+          color: #ffffff !important;
           font-weight: 700 !important;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
           letter-spacing: 1px !important;
           display: inline-block !important;
         }
 
-        /* 4. 隐藏后面自带的原版小箭头图标 */
+        /* 5. 隐藏多余的原生纸飞机和箭头图标 */
+        #random-banner .anzhiyu-icon-paper-plane,
         #random-banner .bannerText .anzhiyu-icon-arrow-right {
           display: none !important;
         }
