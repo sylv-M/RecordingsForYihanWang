@@ -684,17 +684,23 @@ div:has(> a[href*="gallery"]),
   }
 }
 
-/* “冰迷朋友有话说”卡片外观 */
+/* 冰迷朋友有话说卡片外观 */
 #home_top .category-group .categoryItem .categoryButton.red {
-  background: #e6d7f5 !important;
+  /* 用 background-color 强制纯色，并用 background-image 覆盖渐变 */
+  background-color: #e6d7f5 !important;
   background-image: url('/RecordingsForYihanWang/img/kuromi2.png') !important;
   background-repeat: no-repeat !important;
   background-position: right bottom !important;
   background-size: contain !important;
+  
+  /* 禁用主题自带的渐变动画尺寸 */
+  background-size: contain !important;
+  
   position: relative;
   z-index: 1;
 }
 
+/* 让文字压在图片上面 */
 #home_top .category-group .categoryItem .categoryButton.red span,
 #home_top .category-group .categoryItem .categoryButton.red * {
   position: relative;
