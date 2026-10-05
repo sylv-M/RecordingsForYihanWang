@@ -1186,7 +1186,7 @@ inject:
             position: relative !important;
             /* 叠加一层半透明暗色渐变，让“比赛合集 ➔”更清晰，底层直接运行动图 */
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
-                        url("/RecordingsForYihanWang/img/comp-preview.webp") center center / cover no-repeat !important;
+                        url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             width: 100% !important;
