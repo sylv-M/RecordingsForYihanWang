@@ -1164,7 +1164,19 @@ inject:
           content: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片（仅>1024px生效） ================= */
+        /* ================= 彻底清除图集等页面标题的贴纸残留 ================= */
+        .page-title::after,
+        .article-title::after,
+        #page-header .page-title::after,
+        #page h1::after,
+        h1.page-title::after,
+        #page .page-title::after {
+          content: none !important;
+          display: none !important;
+          background-image: none !important;
+        }
+
+        /* ================= 电脑端比赛合集卡片（仅>1024px生效）：动态WebP背景 ================= */
         @media screen and (min-width: 1025px) {
           #bannerGroup {
             width: 50% !important;
@@ -1172,8 +1184,9 @@ inject:
           #random-banner,
           #random-hover {
             position: relative !important;
-            /* 去掉静态背景图，改用纯黑底避免闪烁 */
-            background: #000 !important;
+            /* 叠加一层半透明暗色渐变，让“比赛合集 ➔”更清晰，底层直接运行动图 */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
+                        url("/RecordingsForYihanWang/img/comp-preview.webp") center center / cover no-repeat !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             width: 100% !important;
@@ -1193,7 +1206,7 @@ inject:
             color: transparent !important;
             margin: 0 !important;
             padding: 0 !important;
-            z-index: 10 !important; /* 确保文字浮在视频上方 */
+            z-index: 10 !important;
           }
           #random-banner .bannerText::before {
             content: "比赛合集 ➔" !important;
@@ -1223,7 +1236,7 @@ inject:
           }
         }
 
-        /* ================= 移动端/iPad“比赛合集”卡片 ================= */
+        /* ================= 移动端/iPad“比赛合集”卡片：同步动态WebP背景 ================= */
         @media screen and (max-width: 1024px) {
           .mobile-competition-card {
             display: block !important;
@@ -1235,7 +1248,8 @@ inject:
             overflow: hidden !important;
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
-            background: #000 !important;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
+                        url("/RecordingsForYihanWang/img/comp-preview.webp") center center / cover no-repeat !important;
             text-decoration: none !important;
           }
 
@@ -1251,41 +1265,13 @@ inject:
             z-index: 10 !important;
           }
         }
-
-        /* 比赛合集动态视频层：铺满卡片、裁剪填充 */
-        .comp-bg-video {
-          position: absolute !important;
-          top: 0 !important;
-          left: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          object-fit: cover !important;
-          z-index: 1 !important;
-          pointer-events: none !important;
-        }
-
-        /* 暗色半透明渐变遮罩：保证白色的“比赛合集 ➔”永远清晰 */
-        .comp-video-mask {
-          position: absolute !important;
-          top: 0 !important;
-          left: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0) 100%) !important;
-          z-index: 2 !important;
-          pointer-events: none !important;
-        }
       </style>
-bottom:
+  bottom:
     - <script src="/RecordingsForYihanWang/js/custom_slider.js"></script>
     - |
       <script>
         function setupCompetitionCards() {
-          // 精确指向你在 source/videos/ 里的 comp-preview.mp4
-          var videoUrl = "/RecordingsForYihanWang/videos/comp-preview.mp4";
-          var posterUrl = "/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg";
-
-          // 1. 电脑端逻辑
+          // 电脑端绑定左上角卡片跳转
           var randomLink = document.getElementById("random-hover") || document.getElementById("random-banner");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1295,36 +1281,9 @@ bottom:
               e.stopPropagation();
               window.location.href = "/RecordingsForYihanWang/competitions/";
             };
-
-            // 如果已有旧的黑屏 video，先移除重新建
-            var oldVideo = randomLink.querySelector(".comp-bg-video");
-            if (oldVideo) oldVideo.remove();
-            var oldMask = randomLink.querySelector(".comp-video-mask");
-            if (oldMask) oldMask.remove();
-
-            var v = document.createElement("video");
-            v.className = "comp-bg-video";
-            v.src = videoUrl;
-            v.poster = posterUrl;
-            v.autoplay = true;
-            v.loop = true;
-            v.muted = true;
-            v.defaultMuted = true;
-            v.playsInline = true;
-            v.setAttribute("playsinline", "");
-            v.setAttribute("webkit-playsinline", "");
-            v.setAttribute("x5-playsinline", "");
-
-            var mask = document.createElement("div");
-            mask.className = "comp-video-mask";
-
-            randomLink.insertBefore(mask, randomLink.firstChild);
-            randomLink.insertBefore(v, randomLink.firstChild);
-
-            v.play().catch(function(e) { console.log(e); });
           }
 
-          // 2. 移动端逻辑
+          // 移动端插入逻辑：电脑端坚决不插入
           var existCards = document.querySelectorAll(".mobile-competition-card");
           if (window.innerWidth > 1024) {
             existCards.forEach(function(el) { el.remove(); });
@@ -1336,15 +1295,8 @@ bottom:
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
-            mobileCard.innerHTML = '<video class="comp-bg-video" src="' + videoUrl + '" poster="' + posterUrl + '" autoplay loop muted playsinline webkit-playsinline x5-playsinline></video><div class="comp-video-mask"></div><span class="card-title">比赛合集 ➔</span>';
+            mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
             recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
-
-            var mobV = mobileCard.querySelector("video");
-            if (mobV) {
-              mobV.muted = true;
-              mobV.defaultMuted = true;
-              mobV.play().catch(function(){});
-            }
           }
         }
 
