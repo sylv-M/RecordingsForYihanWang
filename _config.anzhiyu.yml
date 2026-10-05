@@ -1231,15 +1231,19 @@ inject:
           display: none !important;
         }
 
-        /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
+       /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
         @media screen and (max-width: 1400px) {
           .mobile-competition-card {
-            display: block !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-end !important;   /* 强制内容沉在最底部 */
+            align-items: flex-start !important;      /* 强制靠左 */
             position: relative !important;
             width: calc(100% - 30px) !important;
             max-width: 100% !important;
             margin: 16px auto 20px auto !important;
             height: 230px !important;
+            padding: 0 0 20px 20px !important;       /* 距离左边和底边各留 20px 的精致边距 */
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
@@ -1249,19 +1253,19 @@ inject:
             text-decoration: none !important;
           }
 
-          /* 手机与 iPad 端：绝对定位居于左下角，去除箭头 */
+          /* 手机与 iPad 端：普通文档流，依靠父容器的 flex-end 稳稳贴在左下角 */
           .mobile-competition-card .card-title {
-            position: absolute !important;
-            left: 20px !important;
-            bottom: 18px !important;
-            top: auto !important;
+            position: static !important;
+            margin: 0 !important;
+            padding: 0 !important;
             color: #ffffff !important;
             font-size: 1.8rem !important;
             font-weight: 800 !important;
             letter-spacing: 1.5px !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
             z-index: 10 !important;
-            line-height: 1 !important;
+            line-height: 1.2 !important;
+            display: inline-block !important;
           }
         }
       </style>
