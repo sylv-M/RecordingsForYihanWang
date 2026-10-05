@@ -1176,15 +1176,14 @@ inject:
           background-image: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片（仅>1024px生效）：动态WebP背景 ================= */
-        @media screen and (min-width: 1025px) {
+        /* ================= 电脑端（>1400px）比赛合集卡片 ================= */
+        @media screen and (min-width: 1401px) {
           #bannerGroup {
             width: 50% !important;
           }
           #random-banner,
           #random-hover {
             position: relative !important;
-            /* 叠加一层半透明暗色渐变，让“比赛合集 ➔”更清晰，底层直接运行动图 */
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
                         url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             border-radius: 12px !important;
@@ -1195,8 +1194,8 @@ inject:
           }
           #random-banner .bannerText {
             position: absolute !important;
-            left: 24px !important;
-            bottom: 20px !important;
+            left: 20px !important;
+            bottom: 18px !important;
             background: transparent !important;
             border: none !important;
             box-shadow: none !important;
@@ -1208,9 +1207,10 @@ inject:
             padding: 0 !important;
             z-index: 10 !important;
           }
+          /* 电脑端文字靠左下角，去除箭头 */
           #random-banner .bannerText::before {
-            content: "比赛合集 ➔" !important;
-            font-size: 2.2rem !important;
+            content: "比赛合集" !important;
+            font-size: 2.1rem !important;
             color: #ffffff !important;
             font-weight: 800 !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
@@ -1218,9 +1218,11 @@ inject:
             display: inline-block !important;
             white-space: nowrap !important;
           }
+          .mobile-competition-card {
+            display: none !important;
+          }
         }
 
-        /* 隐藏电脑端默认多余的标语、纸飞机等残留 */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1229,40 +1231,37 @@ inject:
           display: none !important;
         }
 
-        /* 电脑端坚决隐藏移动端专属卡片 */
-        @media screen and (min-width: 1025px) {
-          .mobile-competition-card {
-            display: none !important;
-          }
-        }
-
-        /* ================= 移动端/iPad“比赛合集”卡片：同步动态WebP背景 ================= */
-        @media screen and (max-width: 1024px) {
+        /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
+        @media screen and (max-width: 1400px) {
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
             width: calc(100% - 30px) !important;
-            margin: 0 auto 20px auto !important;
-            height: 240px !important;
+            max-width: 100% !important;
+            margin: 16px auto 20px auto !important;
+            height: 230px !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%),
                         url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             text-decoration: none !important;
           }
 
+          /* 手机与 iPad 端：绝对定位居于左下角，去除箭头 */
           .mobile-competition-card .card-title {
             position: absolute !important;
             left: 20px !important;
-            bottom: 20px !important;
+            bottom: 18px !important;
+            top: auto !important;
             color: #ffffff !important;
             font-size: 1.8rem !important;
             font-weight: 800 !important;
             letter-spacing: 1.5px !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
             z-index: 10 !important;
+            line-height: 1 !important;
           }
         }
       </style>
@@ -1271,7 +1270,7 @@ inject:
     - |
       <script>
         function setupCompetitionCards() {
-          // 电脑端绑定左上角卡片跳转
+          // 电脑端绑定跳转
           var randomLink = document.getElementById("random-hover") || document.getElementById("random-banner");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1283,19 +1282,20 @@ inject:
             };
           }
 
-          // 移动端插入逻辑：电脑端坚决不插入
+          // 宽屏电脑端（>1400px）移除移动端卡片
           var existCards = document.querySelectorAll(".mobile-competition-card");
-          if (window.innerWidth > 1024) {
+          if (window.innerWidth > 1400) {
             existCards.forEach(function(el) { el.remove(); });
             return;
           }
 
+          // iPad 横屏/竖屏及手机端（<=1400px）：若不存在卡片，则稳固插入在文章列表最上方
           var recentPosts = document.getElementById("recent-posts");
           if (recentPosts && existCards.length === 0) {
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
-            mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
+            mobileCard.innerHTML = '<span class="card-title">比赛合集</span>';
             recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
           }
         }
@@ -1304,7 +1304,7 @@ inject:
         document.addEventListener("pjax:complete", setupCompetitionCards);
         window.addEventListener("resize", setupCompetitionCards);
         setTimeout(setupCompetitionCards, 300);
-        setTimeout(setupCompetitionCards, 1000);
+        setTimeout(setupCompetitionCards, 800);
       </script>
 # CDN
 # Don't modify the following settings unless you know how they work
