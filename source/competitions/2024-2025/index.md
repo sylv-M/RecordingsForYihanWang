@@ -218,7 +218,6 @@ top_img: false
       查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-</div>
 
 <!-- 颁奖典礼 (自动与短节目对齐) -->
   <div class="comp-card">
@@ -280,7 +279,6 @@ top_img: false
       查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-</div>
 
 <!-- 颁奖典礼 -->
   <div class="comp-card">
