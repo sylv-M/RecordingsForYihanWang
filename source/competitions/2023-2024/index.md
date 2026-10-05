@@ -42,7 +42,7 @@ top_img: false
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <div class="comp-station-title">JGP 波兰站 (格但斯克)</div>
 <div class="program-grid">
