@@ -7,8 +7,33 @@ top_img: false
 ---
 
 <style>
-.back-btn { display: inline-block; margin-bottom: 20px; font-weight: 600; color: #425AEF; text-decoration: none; }
-.back-btn:hover { text-decoration: underline; }
+/* 椭圆形气泡返回按钮 */
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 8px 18px; 
+  border-radius: 9999px; /* 胶囊/椭圆圆角 */
+  background: var(--anzhiyu-theme-op, rgba(66, 90, 239, 0.1)); /* 主题浅色气泡背景 */
+  color: var(--anzhiyu-theme, #425AEF) !important; 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  text-decoration: none !important; 
+  border: 1px solid var(--anzhiyu-theme-op, rgba(66, 90, 239, 0.2)); 
+  box-shadow: 0 2px 6px rgba(66, 90, 239, 0.08); 
+  transition: all 0.3s ease; 
+  margin-bottom: 20px; 
+}
+
+/* 悬停动效：微向上浮动、阴影加深、背景更饱满 */
+.back-btn:hover { 
+  background: var(--anzhiyu-theme, #425AEF); 
+  color: #fff !important; 
+  border-color: transparent; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 16px rgba(66, 90, 239, 0.3); 
+  text-decoration: none !important; 
+}
 .comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
 
 /* 电脑端与 iPad 端：固定一行两列 */
