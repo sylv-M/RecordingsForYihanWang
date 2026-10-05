@@ -77,16 +77,27 @@
   }
 }
 
-/* ================= 3. 王一涵关于页面卡片（纯净浅紫渐变 + 纯白高亮文字） ================= */
+/* ================= 3. 王一涵关于页面卡片 ================= */
 .yihan-card {
   position: relative !important;
-  /* 梦幻浅紫色轻柔渐变，绝无一丝暗色 */
   background: linear-gradient(135deg, #e0c3fc 0%, #c8b6ff 100%) !important;
   border-radius: 24px !important;
   padding: 36px 28px 28px 28px !important;
   margin: 20px 0 !important;
-  box-shadow: 0 8px 24px rgba(200, 182, 255, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(180, 150, 220, 0.25) !important;
+  color: #fff !important;
   border: none !important;
+  overflow: visible !important;
+}
+
+/* 强制清除任何意外挂在这个卡片上的黑色伪元素遮罩 */
+.yihan-card::before,
+.yihan-card::after,
+.yihan-text::before,
+.yihan-text::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
 }
 
 /* 库洛米1：扒在关于页卡片左上角 */
@@ -111,80 +122,62 @@
 .yihan-text {
   flex: 1 1 0 !important;
   min-width: 0 !important;
+  color: #fff !important;
   font-size: 1rem !important;
   line-height: 1.8 !important;
 }
 
-/* ！！！核心修复：强制卡片内所有子元素全部变纯白，消灭任何深黑文字 ！！！ */
-.yihan-card,
-.yihan-text,
-.yihan-text *,
-.yihan-text p,
-.yihan-text span,
-.yihan-text h3,
-.yihan-text h4,
-.yihan-text li,
-.yihan-text strong {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important; /* 彻底粉碎主题自带的渐变字/深色字 */
-  text-shadow: 0 1px 3px rgba(130, 90, 180, 0.45) !important; /* 浅紫柔光字影，文字极度清晰立体 */
-  opacity: 1 !important;
-}
-
 .yihan-text p {
+  color: #fff !important;
   margin-bottom: 16px !important;
 }
 
 .yihan-text h3 {
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  margin: 22px 0 12px !important;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.6) !important;
+  color: #fff !important;
+  font-size: 1.2rem !important;
+  margin: 20px 0 12px !important;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5) !important;
   padding-bottom: 6px !important;
 }
 
-/* 赛季分块：通透的半透明奶白背景 */
 .yihan-season {
   margin-bottom: 18px !important;
-  padding: 14px 18px !important;
-  background: rgba(255, 255, 255, 0.2) !important;
+  padding: 12px 16px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 16px !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 .yihan-season h4 {
-  font-size: 1.08rem !important;
-  font-weight: 700 !important;
+  color: #fff !important;
+  font-size: 1.05rem !important;
   margin: 0 0 8px !important;
 }
 
 .yihan-season ul {
   margin: 0 0 10px !important;
   padding-left: 20px !important;
+  color: #fff !important;
 }
 
 .yihan-season li {
-  margin-bottom: 5px !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
 }
 
-/* 查看更多按钮：晶莹半透明白 */
 .yihan-link {
   display: inline-block !important;
   padding: 6px 16px !important;
-  background: rgba(255, 255, 255, 0.3) !important;
-  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.28) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 18px !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: #fff !important;
   font-size: 0.9rem !important;
-  font-weight: 600 !important;
   text-decoration: none !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.3s !important;
 }
 
 .yihan-link:hover {
-  background: rgba(255, 255, 255, 0.5) !important;
-  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.45) !important;
   transform: translateX(4px) !important;
 }
 
@@ -197,8 +190,8 @@
   width: 100% !important;
   height: auto !important;
   border-radius: 18px !important;
-  border: 4px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 6px 18px rgba(160, 130, 200, 0.3) !important;
+  border: 4px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
   display: block !important;
 }
 
