@@ -255,11 +255,9 @@ a[href*="life"],
   display: none !important;
 }
 
-/* 统一背景图 */
-a[href*="gallery"],
-div:has(> a[href*="gallery"]),
-.bannerGroup,
-[class*="banner"] {
+#home_top a[href*="gallery"],
+#home_top div:has(> a[href*="gallery"]),
+#home_top .bannerGroup {
   background-image: url('/RecordingsForYihanWang/img/image_surface.jpg') !important;
   background-size: cover !important;
   background-position: center top !important;
@@ -587,19 +585,4 @@ a[href*="competitions"] > *:not(.card-bg-video),
 a[title*="比赛合集"] > *:not(.card-bg-video) {
   position: relative !important;
   z-index: 2 !important;
-}
-
-/* 添加微弱暗色渐变遮罩，防止白色标题看不清 */
-a[href*="competitions"]::after,
-a[title*="比赛合集"]::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, transparent 60%) !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
-  border-radius: 12px !important;
 }
