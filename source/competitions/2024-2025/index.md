@@ -60,7 +60,7 @@ top_img: false
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">返回赛季列表</a>
 
 <!-- 世界青少年花样滑冰锦标赛 (世青赛) -->
-<div class="comp-station-title">世界青少年花样滑冰锦标赛 (世青赛)</div>
+<div class="comp-station-title">2025世界青少年花样滑冰锦标赛 (世青赛)</div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
