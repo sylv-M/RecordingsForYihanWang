@@ -81,25 +81,23 @@ top_img: false
     </div>
   </div>
 
-  <!-- 自由滑 (FS) -->
+ <!-- 自由滑 (FS) -->
   <div class="comp-card">
     <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1VZizYPEqS&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
+      <video 
+        controls 
+        preload="metadata"
+        playsinline
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000;">
+        <source src="/RecordingsForYihanWang/competitions/2024-2025/25世青赛自由滑.mp4" type="video/mp4">
+        您的浏览器不支持 HTML5 视频播放。
+      </video>
     </div>
     <div class="comp-title">自由滑 (FS) 112.07分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://video.weibo.com/show?fid=1034:5139516181381226" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-</div>
 
 
 <!-- 青少年大奖赛总决赛 (JGPF) -->
