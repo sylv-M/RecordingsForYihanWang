@@ -586,3 +586,21 @@ a[title*="比赛合集"] > *:not(.card-bg-video) {
   position: relative !important;
   z-index: 2 !important;
 }
+
+/* ================= 8. 比赛合集标题贴纸 ================= */
+/* 通过页面内特有的赛季按钮或链接，精准让比赛合集页的标题显示 kuromi4 */
+body:has(a[href*="2026-2027"], a[href*="2025-2026"], a[href*="2024-2025"]) .page-title::after,
+body:has(a[href*="2026-2027"], a[href*="2025-2026"], a[href*="2024-2025"]) #page h1::after,
+body:has(a[href*="2026-2027"], a[href*="2025-2026"], a[href*="2024-2025"]) h1.page-title::after {
+  content: "" !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  width: 2.5em !important;
+  height: 2.5em !important;
+  margin-left: 10px !important;
+  vertical-align: -0.2em !important;
+  background-image: url('/RecordingsForYihanWang/img/kuromi4.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
