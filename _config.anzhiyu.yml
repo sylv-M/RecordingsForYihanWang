@@ -1164,7 +1164,7 @@ inject:
           content: none !important;
         }
 
-        /* ================= 首页电脑端专属（严格限定在 #home_top 内，绝不外溢） ================= */
+        /* ================= 电脑端比赛合集卡片（仅>1400px） ================= */
         @media screen and (min-width: 1401px) {
           #home_top #bannerGroup {
             width: 50% !important;
@@ -1172,12 +1172,23 @@ inject:
           #home_top #random-banner,
           #home_top #random-hover {
             position: relative !important;
-            background: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
+            /* 纯动图，绝无黑色遮罩 */
+            background-image: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             width: 100% !important;
             height: 100% !important;
             box-sizing: border-box !important;
+          }
+          #home_top #random-banner::before,
+          #home_top #random-banner::after,
+          #home_top #random-hover::before,
+          #home_top #random-hover::after {
+            display: none !important;
+            content: none !important;
           }
           #home_top #random-banner .bannerText {
             position: absolute !important;
@@ -1199,7 +1210,7 @@ inject:
             font-size: 2.1rem !important;
             color: #ffffff !important;
             font-weight: 800 !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
             letter-spacing: 2px !important;
             display: inline-block !important;
             white-space: nowrap !important;
@@ -1217,7 +1228,7 @@ inject:
           display: none !important;
         }
 
-        /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
+        /* ================= 移动端/iPad（<=1400px）统一卡片 ================= */
         @media screen and (max-width: 1400px) {
           .mobile-competition-card {
             display: flex !important;
@@ -1234,8 +1245,17 @@ inject:
             overflow: hidden !important;
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
-            background: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
+            /* 纯动图，绝无黑色遮罩 */
+            background-image: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
             text-decoration: none !important;
+          }
+          .mobile-competition-card::before,
+          .mobile-competition-card::after {
+            display: none !important;
+            content: none !important;
           }
 
           .mobile-competition-card .card-title {
@@ -1246,7 +1266,7 @@ inject:
             font-size: 1.8rem !important;
             font-weight: 800 !important;
             letter-spacing: 1.5px !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
             z-index: 10 !important;
             line-height: 1.2 !important;
             display: inline-block !important;
