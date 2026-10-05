@@ -188,3 +188,23 @@ top_img: false
     </div>
   </div>
 </div>
+
+<!-- 颁奖典礼 (自动与短节目对齐) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1TjYuzuEqU&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1TjYuzuEqU/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+</div>
