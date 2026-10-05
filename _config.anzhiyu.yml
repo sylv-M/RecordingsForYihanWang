@@ -1164,13 +1164,13 @@ inject:
           content: none !important;
         }
 
-        /* ================= 电脑端比赛合集卡片（仅>1400px生效） ================= */
+        /* ================= 首页电脑端专属（严格限定在 #home_top 内，绝不外溢） ================= */
         @media screen and (min-width: 1401px) {
-          #bannerGroup {
+          #home_top #bannerGroup {
             width: 50% !important;
           }
-          #random-banner,
-          #random-hover {
+          #home_top #random-banner,
+          #home_top #random-hover {
             position: relative !important;
             background: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             border-radius: 12px !important;
@@ -1179,7 +1179,7 @@ inject:
             height: 100% !important;
             box-sizing: border-box !important;
           }
-          #random-banner .bannerText {
+          #home_top #random-banner .bannerText {
             position: absolute !important;
             left: 20px !important;
             bottom: 18px !important;
@@ -1194,7 +1194,7 @@ inject:
             padding: 0 !important;
             z-index: 10 !important;
           }
-          #random-banner .bannerText::before {
+          #home_top #random-banner .bannerText::before {
             content: "比赛合集" !important;
             font-size: 2.1rem !important;
             color: #ffffff !important;
@@ -1209,12 +1209,11 @@ inject:
           }
         }
 
-        /* 隐藏电脑端默认多余的标语、纸飞机等残留 */
-        #random-banner .banners-title,
-        .banners-title,
-        #random-banner #peoplecanvas,
-        #random-banner .anzhiyu-icon-paper-plane,
-        #random-banner .bannerText .anzhiyu-icon-arrow-right {
+        #home_top #random-banner .banners-title,
+        #home_top .banners-title,
+        #home_top #random-banner #peoplecanvas,
+        #home_top #random-banner .anzhiyu-icon-paper-plane,
+        #home_top #random-banner .bannerText .anzhiyu-icon-arrow-right {
           display: none !important;
         }
 
