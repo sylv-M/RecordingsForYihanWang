@@ -7,8 +7,31 @@ top_img: false
 ---
 
 <style>
-.back-btn { display: inline-block; margin-bottom: 20px; font-weight: 600; color: #425AEF; text-decoration: none; }
-.back-btn:hover { text-decoration: underline; }
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 8px 20px; 
+  border-radius: 9999px; 
+  background: #c084fc;   
+  color: #ffffff !important; 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  text-decoration: none !important; 
+  border: 2px solid #ffffff; 
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
+  transition: all 0.3s ease; 
+  margin-bottom: 20px; 
+}
+
+.back-btn:hover { 
+  background: #a855f7;   
+  color: #ffffff !important; 
+  border-color: #ffffff; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
+  text-decoration: none !important; 
+}
 .comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
 
 /* 电脑端与 iPad 端：固定一行两列 */
