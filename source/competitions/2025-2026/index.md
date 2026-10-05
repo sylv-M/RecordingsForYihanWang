@@ -43,7 +43,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1Lq9KYnEbP&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV17UPszhEDb&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -54,7 +54,7 @@ top_img: false
     </div>
     <div class="comp-title">短节目 (SP) 63.44分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1Lq9KYnEbP/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV17UPszhEDb/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 
@@ -62,7 +62,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1VZizYPEqS&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1GA5Y6nEAr&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -71,9 +71,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 112.07分</div>
+    <div class="comp-title">自由滑 (FS) 121.93分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1GA5Y6nEAr/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 </div>
@@ -86,7 +86,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1SP2mYBE75&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1wgnpzqEwq&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -95,9 +95,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">短节目 (SP) 63.15分</div>
+    <div class="comp-title">短节目 (SP) 60.96分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1SP2mYBE75/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1wgnpzqEwq/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 
@@ -105,7 +105,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1JV28YzEg6&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1Efn3zNEMc&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -114,9 +114,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 128.96分</div>
+    <div class="comp-title">自由滑 (FS) 115.67分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1Efn3zNEMc/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 </div>
@@ -129,7 +129,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1F14pedEDq&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1k2oPBdEtS&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -138,9 +138,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">短节目 (SP) 65.39分</div>
+    <div class="comp-title">短节目 (SP) 60.91分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1F14pedEDq/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1k2oPBdEtS/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 
