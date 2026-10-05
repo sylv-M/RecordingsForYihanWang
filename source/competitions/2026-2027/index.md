@@ -84,7 +84,44 @@ top_img: false
       查看高清版请点击：<a href="https://www.bilibili.com/video/BV1b3tK6TEsF/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
+  
+<!-- 颁奖典礼 -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV12ehd6LEcQ=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV12ehd6LEcQ/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
 
+  <!-- 赛后采访 (第二行右侧，与自由滑对齐) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV183aY6dEUM&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">赛后采访</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV183aY6dEUM/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
 </div>
 
 <div class="comp-station-title">JGP 拉脱维亚站（里加）</div>
