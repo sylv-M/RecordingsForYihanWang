@@ -33,7 +33,21 @@ top_img: false
   text-decoration: none !important; 
 }
 .comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
-.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+/* 电脑端 & iPad：锁定一行两个 */
+.program-grid { 
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
+}
+
+/* 手机端：自动折叠为一行一个 */
+@media screen and (max-width: 768px) {
+  .program-grid { 
+    grid-template-columns: 1fr !important; 
+    gap: 16px !important;
+  }
+}
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
 .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
