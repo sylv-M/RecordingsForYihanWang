@@ -1164,19 +1164,7 @@ inject:
           content: none !important;
         }
 
-        /* ================= 彻底清除图集等页面标题的贴纸残留 ================= */
-        .page-title::after,
-        .article-title::after,
-        #page-header .page-title::after,
-        #page h1::after,
-        h1.page-title::after,
-        #page .page-title::after {
-          content: none !important;
-          display: none !important;
-          background-image: none !important;
-        }
-
-        /* ================= 电脑端（>1400px）比赛合集卡片 ================= */
+        /* ================= 电脑端比赛合集卡片（仅>1400px生效） ================= */
         @media screen and (min-width: 1401px) {
           #bannerGroup {
             width: 50% !important;
@@ -1184,8 +1172,7 @@ inject:
           #random-banner,
           #random-hover {
             position: relative !important;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
-                        url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
+            background: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             width: 100% !important;
@@ -1207,7 +1194,6 @@ inject:
             padding: 0 !important;
             z-index: 10 !important;
           }
-          /* 电脑端文字靠左下角，去除箭头 */
           #random-banner .bannerText::before {
             content: "比赛合集" !important;
             font-size: 2.1rem !important;
@@ -1223,6 +1209,7 @@ inject:
           }
         }
 
+        /* 隐藏电脑端默认多余的标语、纸飞机等残留 */
         #random-banner .banners-title,
         .banners-title,
         #random-banner #peoplecanvas,
@@ -1231,29 +1218,27 @@ inject:
           display: none !important;
         }
 
-       /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
+        /* ================= iPad（横屏+竖屏）与手机端（<=1400px）统一卡片 ================= */
         @media screen and (max-width: 1400px) {
           .mobile-competition-card {
             display: flex !important;
             flex-direction: column !important;
-            justify-content: flex-end !important;   /* 强制内容沉在最底部 */
-            align-items: flex-start !important;      /* 强制靠左 */
+            justify-content: flex-end !important;
+            align-items: flex-start !important;
             position: relative !important;
             width: calc(100% - 30px) !important;
             max-width: 100% !important;
             margin: 16px auto 20px auto !important;
             height: 230px !important;
-            padding: 0 0 20px 20px !important;       /* 距离左边和底边各留 20px 的精致边距 */
+            padding: 0 0 20px 20px !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%),
-                        url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
+            background: url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             text-decoration: none !important;
           }
 
-          /* 手机与 iPad 端：普通文档流，依靠父容器的 flex-end 稳稳贴在左下角 */
           .mobile-competition-card .card-title {
             position: static !important;
             margin: 0 !important;
