@@ -529,8 +529,18 @@ div:has(> a[href*="gallery"]),
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* ================= 7. 留言板标题贴纸（精准独占 kuromi3） ================= */
-#page:has(#twikoo, #waline, #artalk, .comment-wrap) .page-title::after {
+/* ================= 7. 留言板标题贴纸（仅对留言板生效） ================= */
+
+/* 1. 先全局强制关闭所有页面的标题伪元素，避免图集等页面误伤 */
+.page-title::after,
+#page .page-title::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 2. 仅在留言板页面（URL 包含 comments 或页面内包含评论区）激活库洛米 */
+body:has(#twikoo, #waline, #artalk, #vcomments, .comment-wrap) #page .page-title::after,
+body[data-type="comments"] #page .page-title::after {
   content: "" !important;
   display: inline-block !important;
   width: 2.5em !important;  
