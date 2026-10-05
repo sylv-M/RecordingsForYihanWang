@@ -1276,15 +1276,16 @@ inject:
           pointer-events: none !important;
         }
       </style>
-  bottom:
+bottom:
     - <script src="/RecordingsForYihanWang/js/custom_slider.js"></script>
     - |
       <script>
         function setupCompetitionCards() {
-          // 这里使用你已上传的视频（如果截取了轻量版小视频，替换这里的文件名即可）
-          var videoUrl = "/RecordingsForYihanWang/competitions/2024-2025/25世青赛自由滑.mp4";
+          // 精确指向你在 source/videos/ 里的 comp-preview.mp4
+          var videoUrl = "/RecordingsForYihanWang/videos/comp-preview.mp4";
+          var posterUrl = "/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg";
 
-          // 1. 电脑端逻辑：定位 #random-hover / #random-banner
+          // 1. 电脑端逻辑
           var randomLink = document.getElementById("random-hover") || document.getElementById("random-banner");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
@@ -1295,27 +1296,35 @@ inject:
               window.location.href = "/RecordingsForYihanWang/competitions/";
             };
 
-            // 动态注入视频和遮罩层
-            if (!randomLink.querySelector(".comp-bg-video")) {
-              var v = document.createElement("video");
-              v.className = "comp-bg-video";
-              v.src = videoUrl;
-              v.autoplay = true;
-              v.loop = true;
-              v.muted = true;
-              v.playsInline = true;
-              v.setAttribute("webkit-playsinline", "true");
-              v.setAttribute("x5-playsinline", "true");
+            // 如果已有旧的黑屏 video，先移除重新建
+            var oldVideo = randomLink.querySelector(".comp-bg-video");
+            if (oldVideo) oldVideo.remove();
+            var oldMask = randomLink.querySelector(".comp-video-mask");
+            if (oldMask) oldMask.remove();
 
-              var mask = document.createElement("div");
-              mask.className = "comp-video-mask";
+            var v = document.createElement("video");
+            v.className = "comp-bg-video";
+            v.src = videoUrl;
+            v.poster = posterUrl;
+            v.autoplay = true;
+            v.loop = true;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.playsInline = true;
+            v.setAttribute("playsinline", "");
+            v.setAttribute("webkit-playsinline", "");
+            v.setAttribute("x5-playsinline", "");
 
-              randomLink.insertBefore(mask, randomLink.firstChild);
-              randomLink.insertBefore(v, randomLink.firstChild);
-            }
+            var mask = document.createElement("div");
+            mask.className = "comp-video-mask";
+
+            randomLink.insertBefore(mask, randomLink.firstChild);
+            randomLink.insertBefore(v, randomLink.firstChild);
+
+            v.play().catch(function(e) { console.log(e); });
           }
 
-          // 2. 移动端逻辑：屏幕宽度 <= 1024 时在文章列表上方插入带视频卡片
+          // 2. 移动端逻辑
           var existCards = document.querySelectorAll(".mobile-competition-card");
           if (window.innerWidth > 1024) {
             existCards.forEach(function(el) { el.remove(); });
@@ -1327,8 +1336,15 @@ inject:
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
-            mobileCard.innerHTML = '<video class="comp-bg-video" src="' + videoUrl + '" autoplay loop muted playsinline webkit-playsinline x5-playsinline></video><div class="comp-video-mask"></div><span class="card-title">比赛合集 ➔</span>';
+            mobileCard.innerHTML = '<video class="comp-bg-video" src="' + videoUrl + '" poster="' + posterUrl + '" autoplay loop muted playsinline webkit-playsinline x5-playsinline></video><div class="comp-video-mask"></div><span class="card-title">比赛合集 ➔</span>';
             recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
+
+            var mobV = mobileCard.querySelector("video");
+            if (mobV) {
+              mobV.muted = true;
+              mobV.defaultMuted = true;
+              mobV.play().catch(function(){});
+            }
           }
         }
 
