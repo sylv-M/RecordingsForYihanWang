@@ -10,20 +10,38 @@ top_img: false
 .back-btn { display: inline-block; margin-bottom: 20px; font-weight: 600; color: #425AEF; text-decoration: none; }
 .back-btn:hover { text-decoration: underline; }
 .comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
-.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+/* 电脑端与 iPad 端：固定一行两列 */
+.program-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  margin-bottom: 30px; 
+}
+
+/* 手机端（屏幕宽度小于 768px）：一行一列 */
+@media screen and (max-width: 768px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
-.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">返回赛季列表</a>
 
+<!-- 世界青少年花样滑冰锦标赛 (世青赛) -->
 <div class="comp-station-title">世界青少年花样滑冰锦标赛 (世青赛)</div>
-<<div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+<div class="program-grid">
+  <!-- 短节目 (SP) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1Lq9KYnEbP&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -42,7 +60,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1VZizYPEqS&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -53,15 +71,20 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 123.38分</div>
+    <div class="comp-title">自由滑 (FS) 112.07分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">B站原视频 ➔</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
+</div>
 
+
+<!-- 青少年大奖赛总决赛 (JGPF) -->
 <div class="comp-station-title">青少年大奖赛总决赛 (JGPF)</div>
-<div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+<div class="program-grid">
+  <!-- 短节目 (SP) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1p5ifYNETf&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -80,7 +103,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1VZizYPEqS&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -93,17 +116,18 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 123.38分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">B站原视频 ➔</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1VZizYPEqS/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-
 </div>
+
+
+<!-- JGP 无锡站 -->
 <div class="comp-station-title">JGP 无锡站</div>
 <div class="program-grid">
-
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1SP2mYBE75&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -122,7 +146,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1JV28YzEg6&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -135,19 +159,18 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 128.96分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">B站原视频 ➔</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-
 </div>
 
 
+<!-- JGP 泰国站 (曼谷) -->
 <div class="comp-station-title">JGP 泰国站 (曼谷)</div>
 <div class="program-grid">
-
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1F14pedEDq&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -164,9 +187,9 @@ top_img: false
     </div>
   </div>
 
-  <!-- 自由滑 (FS) 129.32分-->
+  <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1QdSMY3EYK&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -179,8 +202,7 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 129.32分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">B站原视频 ➔</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
-
 </div>
