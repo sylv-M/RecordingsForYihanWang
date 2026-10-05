@@ -77,3 +77,36 @@ function changeRandomToCompetition() {
 
 document.addEventListener('DOMContentLoaded', changeRandomToCompetition);
 document.addEventListener('pjax:complete', changeRandomToCompetition);
+
+document.addEventListener('DOMContentLoaded', function () {
+  initCompVideoCard();
+});
+// 兼容 anzhiyu 的 PJAX 无刷新跳转
+document.addEventListener('pjax:complete', function () {
+  initCompVideoCard();
+});
+
+function initCompVideoCard() {
+  // 精准定位到首页的“比赛合集”卡片链接
+  const compCard = document.querySelector('a[href*="competitions"], a[title*="比赛合集"]');
+  if (!compCard) return;
+
+  // 避免 PJAX 切换后重复插入
+  if (compCard.querySelector('.card-bg-video')) return;
+
+  // 创建视频元素
+  const video = document.createElement('video');
+  video.className = 'card-bg-video';
+  video.src = '/RecordingsForYihanWang/videos/comp-preview.mp4'; // 换成你的视频路径
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;             // 必须静音，浏览器才允许自动播放
+  video.playsInline = true;       // 保证 iOS / Safari 手机端不全屏跳出
+  video.setAttribute('webkit-playsinline', 'true');
+  video.setAttribute('x5-playsinline', 'true');
+
+  // 将视频插入到卡片内部最底层
+  compCard.style.position = 'relative';
+  compCard.style.overflow = 'hidden';
+  compCard.insertBefore(video, compCard.firstChild);
+}
