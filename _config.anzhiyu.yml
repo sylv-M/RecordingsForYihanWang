@@ -1172,8 +1172,8 @@ inject:
           #random-banner,
           #random-hover {
             position: relative !important;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
-                        url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
+            /* 去掉静态背景图，改用纯黑底避免闪烁 */
+            background: #000 !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             width: 100% !important;
@@ -1193,7 +1193,7 @@ inject:
             color: transparent !important;
             margin: 0 !important;
             padding: 0 !important;
-            z-index: 10 !important;
+            z-index: 10 !important; /* 确保文字浮在视频上方 */
           }
           #random-banner .bannerText::before {
             content: "比赛合集 ➔" !important;
@@ -1223,21 +1223,19 @@ inject:
           }
         }
 
-        /* ================= 移动端/iPad“比赛合集”卡片（仅对这一个卡片控制，不碰顶部） ================= */
+        /* ================= 移动端/iPad“比赛合集”卡片 ================= */
         @media screen and (max-width: 1024px) {
           .mobile-competition-card {
             display: block !important;
             position: relative !important;
-            /* 严格与文章卡片边距同步 */
             width: calc(100% - 30px) !important;
             margin: 0 auto 20px auto !important;
-            height: 240px !important;                /* 高度增加0.5倍 */
+            height: 240px !important;
             border-radius: 12px !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%),
-                        url("/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg") center center / cover no-repeat !important;
+            background: #000 !important;
             text-decoration: none !important;
           }
 
@@ -1250,7 +1248,32 @@ inject:
             font-weight: 800 !important;
             letter-spacing: 1.5px !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+            z-index: 10 !important;
           }
+        }
+
+        /* 比赛合集动态视频层：铺满卡片、裁剪填充 */
+        .comp-bg-video {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          z-index: 1 !important;
+          pointer-events: none !important;
+        }
+
+        /* 暗色半透明渐变遮罩：保证白色的“比赛合集 ➔”永远清晰 */
+        .comp-video-mask {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0) 100%) !important;
+          z-index: 2 !important;
+          pointer-events: none !important;
         }
       </style>
   bottom:
@@ -1258,8 +1281,11 @@ inject:
     - |
       <script>
         function setupCompetitionCards() {
-          // 电脑端绑定左上角卡片跳转
-          var randomLink = document.getElementById("random-hover");
+          // 这里使用你已上传的视频（如果截取了轻量版小视频，替换这里的文件名即可）
+          var videoUrl = "/RecordingsForYihanWang/competitions/2024-2025/25世青赛自由滑.mp4";
+
+          // 1. 电脑端逻辑：定位 #random-hover / #random-banner
+          var randomLink = document.getElementById("random-hover") || document.getElementById("random-banner");
           if (randomLink) {
             randomLink.removeAttribute("onclick");
             randomLink.setAttribute("href", "/RecordingsForYihanWang/competitions/");
@@ -1268,9 +1294,28 @@ inject:
               e.stopPropagation();
               window.location.href = "/RecordingsForYihanWang/competitions/";
             };
+
+            // 动态注入视频和遮罩层
+            if (!randomLink.querySelector(".comp-bg-video")) {
+              var v = document.createElement("video");
+              v.className = "comp-bg-video";
+              v.src = videoUrl;
+              v.autoplay = true;
+              v.loop = true;
+              v.muted = true;
+              v.playsInline = true;
+              v.setAttribute("webkit-playsinline", "true");
+              v.setAttribute("x5-playsinline", "true");
+
+              var mask = document.createElement("div");
+              mask.className = "comp-video-mask";
+
+              randomLink.insertBefore(mask, randomLink.firstChild);
+              randomLink.insertBefore(v, randomLink.firstChild);
+            }
           }
 
-          // 移动端插入逻辑：电脑端坚决不插入
+          // 2. 移动端逻辑：屏幕宽度 <= 1024 时在文章列表上方插入带视频卡片
           var existCards = document.querySelectorAll(".mobile-competition-card");
           if (window.innerWidth > 1024) {
             existCards.forEach(function(el) { el.remove(); });
@@ -1282,7 +1327,7 @@ inject:
             var mobileCard = document.createElement("a");
             mobileCard.className = "mobile-competition-card";
             mobileCard.href = "/RecordingsForYihanWang/competitions/";
-            mobileCard.innerHTML = '<span class="card-title">比赛合集 ➔</span>';
+            mobileCard.innerHTML = '<video class="comp-bg-video" src="' + videoUrl + '" autoplay loop muted playsinline webkit-playsinline x5-playsinline></video><div class="comp-video-mask"></div><span class="card-title">比赛合集 ➔</span>';
             recentPosts.parentNode.insertBefore(mobileCard, recentPosts);
           }
         }
