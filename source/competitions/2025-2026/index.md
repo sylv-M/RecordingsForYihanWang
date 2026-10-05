@@ -59,7 +59,7 @@ top_img: false
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <!-- 世界青少年花样滑冰锦标赛 (世青赛) -->
 <div class="comp-station-title">2026世界青少年花样滑冰锦标赛 (世青赛)</div>
