@@ -1249,7 +1249,7 @@ inject:
             box-sizing: border-box !important;
             box-shadow: var(--anzhiyu-shadow-border) !important;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%),
-                        url("/RecordingsForYihanWang/img/comp-preview.webp") center center / cover no-repeat !important;
+                        url("/RecordingsForYihanWang/img/ezgif.com-video-to-webp-converter.webp") center center / cover no-repeat !important;
             text-decoration: none !important;
           }
 
