@@ -272,15 +272,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267728-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267705-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267662-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-9.jpg">
 </div>
 
 <h2 class="gallery-section-title">2026-2027赛季JGP拉脱维亚站（里加）</h2>
@@ -298,9 +289,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2291696017-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695951-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695705-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga-3.jpg">
 </div>
 
 <h2 class="gallery-section-title">2025-2026赛季WJC塔林世青赛</h2>
@@ -313,17 +301,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2265260225-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946366-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946365-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-10.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-11.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-9.jpg">
 </div>
 
 <h2 class="gallery-section-title">2025-2026赛季JGP阿塞拜疆站（巴库）</h2>
@@ -338,7 +315,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738388-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738368-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26BaKu/Baku-1.jpg">
 </div>
 
 <h2 class="gallery-section-title">2025-2026赛季JGP意大利站（瓦雷泽）</h2>
@@ -376,48 +352,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614448-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614431-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614096-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-10.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-11.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-12.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-13.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-14.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-15.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-16.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-17.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-18.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-19.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-20.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-21.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-22.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-23.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-24.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-25.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-26.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-27.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-28.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-29.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-30.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-31.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-32.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-33.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-34.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-35.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-36.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-37.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-38.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-39.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-40.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-41.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-42.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/25WJC/25WJC-9.jpg">
 </div>
 
 <h2 class="gallery-section-title">2024-2025赛季JGPF</h2>
@@ -454,15 +388,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749520-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749188-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749082-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-9.jpg">
 </div>
 
 <h2 class="gallery-section-title">2024-2025赛季JGP中国站（无锡）</h2>
@@ -496,8 +421,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876679-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876593-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876301-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24Wuxi/Wuxi1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24Wuxi/Wuxi2.jpg">
 </div>
 
 <h2 class="gallery-section-title">2024-2025赛季JGP泰国站（曼谷）</h2>
@@ -528,8 +451,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500489-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500466-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500426-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24Bangkok/Bangkok1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24Bangkok/Bangkok2.jpg">
 </div>
 
 <h2 class="gallery-section-title">2024年四大洲锦标赛表演滑</h2>
@@ -562,9 +483,4 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-1680299532-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1680298917-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1680298879-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/23Budapest/Budapest-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/23Budapest/Budapest-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/23Budapest/Budapest-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/23Budapest/Budapest-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/23Budapest/Budapest-5.jpg">
 </div>
