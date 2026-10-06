@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2024-2025赛季JGP中国站（无锡）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2178169285-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2178169276-594x594.jpg">
