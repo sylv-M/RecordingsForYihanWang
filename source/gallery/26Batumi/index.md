@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2026-2027赛季JGP格鲁吉亚站（巴统）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703911-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703845-594x594.jpg">
