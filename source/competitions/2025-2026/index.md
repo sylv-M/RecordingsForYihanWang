@@ -105,7 +105,7 @@ top_img: false
 
 
 <!-- JGP 阿塞拜疆站 -->
-<div class="comp-station-title">JGP阿塞拜疆站（巴库）</div>
+<div class="comp-station-title">JGP 阿塞拜疆站（巴库）</div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -148,7 +148,7 @@ top_img: false
 
 
 <!-- JGP 意大利站 (瓦雷泽) -->
-<div class="comp-station-title">JGP 意大利站 (瓦雷泽))</div>
+<div class="comp-station-title">JGP 意大利站 (瓦雷泽)</div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
