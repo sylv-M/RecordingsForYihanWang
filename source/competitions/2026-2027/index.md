@@ -23,7 +23,6 @@ top_img: false
   transition: all 0.3s ease; 
   margin-bottom: 20px; 
 }
-
 .back-btn:hover { 
   background: #a855f7;   
   color: #ffffff !important; 
@@ -33,39 +32,15 @@ top_img: false
   text-decoration: none !important; 
 }
 
-/* 比赛标题与按钮同行排列 */
 .comp-station-title { 
-  display: inline-flex !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 10px !important;
   font-size: 1.3rem; 
   font-weight: 700; 
   margin: 25px 0 15px 0; 
   color: var(--anzhiyu-fontcolor, #333); 
-}
-
-/* 按钮样式：强制行内紧凑，杜绝拉伸 */
-.view-photos-btn {
-  display: inline-block !important;
-  flex-shrink: 0 !important;
-  width: max-content !important;
-  white-space: nowrap !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-  padding: 2px 10px !important;
-  border-radius: 9999px !important;
-  background: #f1f5f9 !important;
-  color: #425aef !important;
-  border: 1px solid #c7d2fe !important;
-  text-decoration: none !important;
-  line-height: 1.4 !important;
-  box-sizing: border-box !important;
-}
-
-.view-photos-btn:hover {
-  background: #425aef !important;
-  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
 }
 
 /* 电脑端 & iPad：锁定一行两个 */
@@ -95,7 +70,7 @@ top_img: false
 
 <div class="comp-station-title">
   <span>JGP 格鲁吉亚站(巴统)</span>
-  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/26Batumi/">查看该场比赛图片</a>
+  <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="display:inline-block !important; width:fit-content !important; max-width:max-content !important; white-space:nowrap !important; font-size:0.8rem !important; font-weight:normal !important; padding:3px 12px !important; border-radius:9999px !important; background:#f1f5f9 !important; color:#425aef !important; border:1px solid #c7d2fe !important; text-decoration:none !important; line-height:1.4 !important; box-sizing:border-box !important;">查看该场比赛图片</a>
 </div>
 <div class="program-grid">
 
@@ -139,7 +114,7 @@ top_img: false
   
   <!-- 颁奖典礼 -->
   <div class="comp-card">
-    <div class="video-wrapper">
+    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV12ehd6LEcQ=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -158,7 +133,7 @@ top_img: false
 
   <!-- 赛后采访 (第二行右侧，与自由滑对齐) -->
   <div class="comp-card">
-    <div class="video-wrapper">
+    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV183aY6dEUM&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -178,7 +153,7 @@ top_img: false
 
 <div class="comp-station-title">
   <span>JGP 拉脱维亚站（里加）</span>
-  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/26Riga/">查看该场比赛图片</a>
+  <a href="/RecordingsForYihanWang/gallery/26Riga/" style="display:inline-block !important; width:fit-content !important; max-width:max-content !important; white-space:nowrap !important; font-size:0.8rem !important; font-weight:normal !important; padding:3px 12px !important; border-radius:9999px !important; background:#f1f5f9 !important; color:#425aef !important; border:1px solid #c7d2fe !important; text-decoration:none !important; line-height:1.4 !important; box-sizing:border-box !important;">查看该场比赛图片</a>
 </div>
 <div class="program-grid">
 
@@ -203,4 +178,39 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class
+    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1b3tK6TEsF&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">自由滑 (FS) 126.42分</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1b3tK6TEsF/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+  
+  <!-- 颁奖典礼 (自动与短节目对齐) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1YAtK6kEJu&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1YAtK6kEJu/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+</div>
