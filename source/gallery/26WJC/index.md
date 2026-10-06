@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2025-2026赛季WJC塔林世青赛</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2265354947-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2265281699-594x594.jpg">
