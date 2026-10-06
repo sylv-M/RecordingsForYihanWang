@@ -42,13 +42,22 @@ top_img: false
   margin-bottom: 30px !important; 
 }
 
-/* 手机端：自动折叠为一行一个 */
+/* 手机端：单列竖排，并消除任何空标签占位 */
 @media screen and (max-width: 768px) {
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
   .program-grid { 
-    grid-template-columns: 1fr !important; 
-    gap: 16px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-bottom: 25px !important;
+  }
+  .program-grid > :not(.comp-card) {
+    display: none !important;
   }
 }
+
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
 .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
