@@ -55,24 +55,11 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
-  
-.comp-station-title + p {
-  display: none !important;
-}
-@media screen and (max-width: 768px) {
-  .comp-station-title {
-    margin: 20px 0 10px 0 !important;
-    line-height: 1.35 !important;
-  }
-}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<div class="comp-station-title">
-  JGP 格鲁吉亚站(巴统)
-  <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a>
-</div>
+<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -153,10 +140,7 @@ top_img: false
 
 </div>
 
-<div class="comp-station-title">
-  JGP 拉脱维亚站（里加）
-  <a href="/RecordingsForYihanWang/gallery/26Riga/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a>
-</div>
+<div class="comp-station-title">JGP 拉脱维亚站（里加） <a href="/RecordingsForYihanWang/gallery/26Riga/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -203,4 +187,17 @@ top_img: false
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1YAtK6kEJu&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
-        border="0
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1YAtK6kEJu/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+
+</div>
