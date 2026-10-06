@@ -42,19 +42,21 @@ top_img: false
   margin-bottom: 30px !important; 
 }
 
-/* 手机端：单列竖排，并消除任何空标签占位 */
+/* 消除所有非 .comp-card 标签（包括 Hexo 误生成的空段落/文本节点） */
+.program-grid > :not(.comp-card) {
+  display: none !important;
+}
+
+/* 手机端：单列竖排 */
 @media screen and (max-width: 768px) {
   .comp-station-title {
     margin: 20px 0 10px 0 !important;
   }
   .program-grid { 
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    margin-bottom: 25px !important;
-  }
-  .program-grid > :not(.comp-card) {
-    display: none !important;
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
   }
 }
 
@@ -64,28 +66,13 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
-  @media screen and (max-width: 768px) {
-  /* 隐藏被渲染出来的空文本/空格/空节点 */
-  .program-grid {
-    font-size: 0 !important;
-  }
-  .program-grid > *:empty,
-  .program-grid p:empty,
-  .program-grid br {
-    display: none !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-}
-  
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
 <div class="program-grid">
-  
+
   <!-- 短节目 (SP) -->
   <div class="comp-card">
     <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
