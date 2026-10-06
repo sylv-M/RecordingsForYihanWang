@@ -64,6 +64,24 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+  
+  /* 强制消除标题与网格之间的所有多余空隙 */
+.comp-station-title {
+  margin-top: 25px !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.comp-station-title + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.program-grid {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
