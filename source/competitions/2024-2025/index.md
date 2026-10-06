@@ -7,46 +7,48 @@ top_img: false
 ---
 
 <style>
+/* 浅紫色背景 + 白色文字 + 白色边框的椭圆气泡按钮 */
 .back-btn { 
   display: inline-flex; 
   align-items: center; 
   gap: 6px; 
   padding: 8px 20px; 
   border-radius: 9999px; 
-  background: #c084fc;   
+  background: #c084fc; 
   color: #ffffff !important; 
   font-size: 0.95rem; 
   font-weight: 600; 
   text-decoration: none !important; 
   border: 2px solid #ffffff; 
-  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35); 
   transition: all 0.3s ease; 
-  margin-bottom: 20px; 
+  margin-bottom: 25px; 
 }
-
 .back-btn:hover { 
-  background: #a855f7;   
+  background: #a855f7; 
   color: #ffffff !important; 
   border-color: #ffffff; 
   transform: translateY(-2px); 
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
   text-decoration: none !important; 
 }
-.comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
-.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
-.comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
-.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
-.comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
-.comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
-.comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
 
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 30px 0 15px 0; 
+  color: var(--anzhiyu-fontcolor, #333); 
+  display: block;
+  clear: both;
+}
+
+/* 查看该场比赛图片按钮样式 */
 .view-photos-btn {
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: normal;
   padding: 2px 10px;
   border-radius: 9999px;
   background: #f1f5f9;
@@ -59,6 +61,56 @@ top_img: false
   background: #425aef;
   color: #ffffff !important;
 }
+
+/* 电脑端与 iPad 端：固定一行两列 */
+.program-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  margin-bottom: 30px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 手机端（屏幕宽度小于 768px）：一行一列 */
+@media screen and (max-width: 768px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+.comp-card { 
+  background: var(--anzhiyu-card-bg, #fff); 
+  border: 1px solid var(--anzhiyu-card-border, #e3e8f7); 
+  border-radius: 14px; 
+  padding: 14px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+}
+.video-wrapper { 
+  position: relative; 
+  width: 100%; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  background: #000; 
+}
+.comp-title { 
+  font-size: 1.05rem; 
+  font-weight: 600; 
+  margin-top: 12px; 
+}
+.comp-link-row { 
+  margin-top: 6px; 
+  font-size: 0.9rem; 
+  color: #666; 
+}
+.comp-link-row a { 
+  color: #fb7299 !important; 
+  font-weight: 600; 
+  text-decoration: none; 
+}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
@@ -68,7 +120,7 @@ top_img: false
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1Lq9KYnEbP&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -85,9 +137,9 @@ top_img: false
     </div>
   </div>
 
-  <!-- 自由滑 (FS) -->
+  <!-- 自由滑 (FS) - 本地仓库视频 -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <video 
         controls 
         preload="metadata"
@@ -109,7 +161,7 @@ top_img: false
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1p5ifYNETf&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -128,7 +180,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1VZizYPEqS&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -152,7 +204,7 @@ top_img: false
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1SP2mYBE75&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -171,7 +223,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1JV28YzEg6&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -188,9 +240,9 @@ top_img: false
     </div>
   </div>
 
-  <!-- 颁奖典礼 -->
+  <!-- 颁奖典礼 (自动与短节目对齐) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1wu28YVE5w&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -214,7 +266,7 @@ top_img: false
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1F14pedEDq&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -233,7 +285,7 @@ top_img: false
 
   <!-- 自由滑 (FS) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1QdSMY3EYK&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -252,7 +304,7 @@ top_img: false
 
   <!-- 颁奖典礼 -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1w4tFeYEom&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
@@ -269,9 +321,9 @@ top_img: false
     </div>
   </div>
 
-  <!-- 赛后采访 -->
+  <!-- 赛后采访 (第二行右侧，与自由滑对齐) -->
   <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
+    <div class="video-wrapper">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1XatAedEeL&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
