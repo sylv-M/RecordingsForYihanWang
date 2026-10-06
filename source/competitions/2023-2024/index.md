@@ -51,29 +51,28 @@ top_img: false
 
 /* 查看该场比赛图片 按钮样式 */
 .view-photos-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 12px;
-  border-radius: 9999px;
-  background: #f1f5f9;
+  display: inline-block !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  margin-left: 10px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  padding: 3px 12px !important;
+  border-radius: 9999px !important;
+  background: #f1f5f9 !important;
   color: #425aef !important;
-  border: 1px solid #c7d2fe;
-  font-size: 0.85rem;
-  font-weight: 600;
+  border: 1px solid #c7d2fe !important;
   text-decoration: none !important;
-  transition: all 0.25s ease;
-  line-height: 1.5;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
 }
 
 .view-photos-btn:hover {
-  background: #425aef;
+  background: #425aef !important;
   color: #ffffff !important;
-  border-color: #425aef;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(66, 90, 239, 0.25);
 }
-
 .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
