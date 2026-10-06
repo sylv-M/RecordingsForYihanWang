@@ -32,7 +32,48 @@ top_img: false
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
   text-decoration: none !important; 
 }
-.comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
+
+/* 比赛标题与按钮的横向容器 */
+.comp-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0 15px 0;
+}
+
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 0 !important; 
+  color: var(--anzhiyu-fontcolor, #333); 
+}
+
+/* 查看该场比赛图片 按钮样式 */
+.view-photos-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #425aef !important;
+  border: 1px solid #c7d2fe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  line-height: 1.5;
+}
+
+.view-photos-btn:hover {
+  background: #425aef;
+  color: #ffffff !important;
+  border-color: #425aef;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 90, 239, 0.25);
+}
+
 .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
@@ -44,7 +85,11 @@ top_img: false
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<div class="comp-station-title">JGP 波兰站 (格但斯克)</div>
+<!-- JGP 波兰站 -->
+<div class="comp-header">
+  <div class="comp-station-title">JGP 波兰站 (格但斯克)</div>
+  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/23Gdansk/">查看该场比赛图片</a>
+</div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -87,7 +132,11 @@ top_img: false
 
 </div>
 
-<div class="comp-station-title">JGP 匈牙利站 (布达佩斯)</div>
+<!-- JGP 匈牙利站 -->
+<div class="comp-header">
+  <div class="comp-station-title">JGP 匈牙利站 (布达佩斯)</div>
+  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/23Budapest/">查看该场比赛图片</a>
+</div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
