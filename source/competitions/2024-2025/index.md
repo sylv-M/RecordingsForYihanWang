@@ -42,23 +42,28 @@ top_img: false
   clear: both;
 }
 
-/* 查看该场比赛图片按钮样式 */
+/* 查看该场比赛图片按钮 */
 .view-photos-btn {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
-  font-size: 0.8rem;
-  font-weight: normal;
-  padding: 2px 10px;
-  border-radius: 9999px;
-  background: #f1f5f9;
+  display: inline-block !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  margin-left: 10px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  padding: 3px 12px !important;
+  border-radius: 9999px !important;
+  background: #f1f5f9 !important;
   color: #425aef !important;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #c7d2fe !important;
   text-decoration: none !important;
-  line-height: 1.4;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
 }
+
 .view-photos-btn:hover {
-  background: #425aef;
+  background: #425aef !important;
   color: #ffffff !important;
 }
 
