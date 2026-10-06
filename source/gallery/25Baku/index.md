@@ -75,4 +75,5 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738388-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738368-594x594.jpg">
+  <img src="/RecordingsForYihanWang/gallery/26BaKu/Baku-1.jpg">
 </div>
