@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2023-2024赛季JGP波兰站（格但斯克）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-1697759492-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1697756871-594x594.jpg">
