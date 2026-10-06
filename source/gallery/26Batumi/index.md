@@ -5,73 +5,85 @@ comments: false
 ---
 
 <style>
-/* 1. 彻底清空 Hexo 自动包裹的 p 标签影响 */
-#article-container .photo-grid p {
-  display: contents !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* 1. 标题样式 */
+.gallery-page-title {
+  display: block !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--font-color, #333) !important;
+  margin: 10px 0 20px 0 !important;
+  padding-left: 12px !important;
+  border-left: 4px solid var(--anzhiyu-theme, #425AEF) !important;
+  line-height: 1.4 !important;
 }
 
-/* 2. 电脑端：强制 3 列，高度 220px */
-#article-container .photo-grid {
+/* 2. 消除 Markdown 自动加 p 标签的影响 */
+.photo-grid p {
+  margin: 0 !important;
+  display: contents !important;
+}
+
+/* 3. 电脑端：默认三列网格，高度 220px */
+.photo-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 16px !important;
   width: 100% !important;
   margin: 20px 0 40px 0 !important;
-  clear: both !important;
 }
 
-#article-container .photo-grid a,
-#article-container .photo-grid img {
+.photo-grid a {
+  display: block !important;
   width: 100% !important;
   height: 220px !important;
-  max-height: 220px !important;
-  object-fit: cover !important;
   border-radius: 12px !important;
   overflow: hidden !important;
-  display: block !important;
-  margin: 0 !important;
 }
 
-/* 3. 手机端：权重加满，死死锁死一行两张（2列），高度 140px */
+.photo-grid img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 4. 手机端：两列，完全恢复你最初指定的 150px 高度 */
 @media screen and (max-width: 768px) {
-  #article-container .photo-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 强制两列平分 */
+  .gallery-page-title {
+    font-size: 1.3rem !important;
+    margin: 5px 0 15px 0 !important;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
-    width: 100% !important;
-    clear: both !important;
   }
 
-  /* 彻底干掉主题默认的 100% 全宽，强制跟随网格单元格 */
-  #article-container .photo-grid a,
-  #article-container .photo-grid img,
-  #article-container .photo-grid a img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 140px !important;
-    max-height: 140px !important;
-    object-fit: cover !important; /* 解决新加竖图长一截问题，自动居中裁齐 */
+  .photo-grid a,
+  .photo-grid img {
+    height: 150px !important;
     border-radius: 8px !important;
-    overflow: hidden !important;
-    display: block !important;
-    margin: 0 !important;
   }
 
-  /* 侧边栏（名片和联系我们）在手机端顺延排在相册最末尾 */
-  #article-container {
-    clear: both !important;
-  }
+  /* 仅修复侧边栏：让名片卡片沉到相册最下方末尾，不盖在图片上 */
   #aside-content {
-    display: block !important;
     clear: both !important;
     position: static !important;
     margin-top: 30px !important;
   }
 }
 
-/* 4. 隐藏评论区 */
+/* 5. 隐藏评论区 */
 #post-comment,
 .comment-wrap,
 #twikoo,
@@ -80,7 +92,6 @@ comments: false
   display: none !important;
 }
 </style>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703911-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703845-594x594.jpg">
