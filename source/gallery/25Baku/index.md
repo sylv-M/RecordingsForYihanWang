@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2025-2026赛季JGP阿塞拜疆站（巴库）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2237171218-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2237171175-594x594.jpg">
