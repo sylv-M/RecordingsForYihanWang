@@ -34,46 +34,42 @@ top_img: false
   box-shadow: 0 6px 16px rgba(66, 90, 239, 0.3); 
   text-decoration: none !important; 
 }
-.comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
-
-/* 查看该场比赛图片按钮 */
-.view-photos-btn {
-  display: inline-block !important;
-  width: auto !important;
-  max-width: fit-content !important;
-  white-space: nowrap !important;
-  vertical-align: middle !important;
-  margin-left: 10px !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-  padding: 3px 12px !important;
-  border-radius: 9999px !important;
-  background: #f1f5f9 !important;
-  color: #425aef !important;
-  border: 1px solid #c7d2fe !important;
-  text-decoration: none !important;
-  line-height: 1.4 !important;
-  box-sizing: border-box !important;
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 25px 0 15px 0; 
+  color: var(--anzhiyu-fontcolor, #333); 
+  display: block !important;
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+  padding: 0 !important;
 }
 
-.view-photos-btn:hover {
-  background: #425aef !important;
-  color: #ffffff !important;
-}
-
-/* 电脑端与 iPad 端：固定一行两列 */
+/* 电脑端 & iPad：锁定一行两个 */
 .program-grid { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
-  margin-bottom: 30px; 
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
 }
 
-/* 手机端（屏幕宽度小于 768px）：一行一列 */
+.program-grid > p:empty,
+.program-grid > br {
+  display: none !important;
+}
+
+/* 手机端：单列竖排 */
 @media screen and (max-width: 768px) {
-  .program-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
+  .program-grid { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
   }
 }
 
@@ -82,12 +78,39 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
+.comp-gallery-link {
+  display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  cursor: pointer !important;
+}
+.comp-gallery-link::before,
+.comp-gallery-link::after {
+  display: none !important;
+  content: none !important;
+}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <!-- 世界青少年花样滑冰锦标赛 (世青赛) -->
-<div class="comp-station-title">2026世界青少年花样滑冰锦标赛 (世青赛)<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/26WJC/">查看该场比赛图片</a></div>
+<div class="comp-station-title">2026世界青少年花样滑冰锦标赛 (世青赛) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26WJC/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -130,7 +153,7 @@ top_img: false
 
 
 <!-- JGP 阿塞拜疆站 -->
-<div class="comp-station-title">JGP 阿塞拜疆站（巴库）<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/25Baku/">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 阿塞拜疆站（巴库） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/25Baku/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -173,7 +196,7 @@ top_img: false
 
 
 <!-- JGP 意大利站 (瓦雷泽) -->
-<div class="comp-station-title">JGP 意大利站 (瓦雷泽)<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/25Varese/">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 意大利站 (瓦雷泽) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/25Varese/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
