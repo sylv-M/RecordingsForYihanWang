@@ -70,7 +70,7 @@
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
 
-/* 只针对标题里的图片链接，精确重写样式 */
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
 .comp-gallery-link {
   display: inline !important;
   font-size: 0.82rem !important;
@@ -89,6 +89,7 @@
   height: auto !important;
   min-height: 0 !important;
   max-height: none !important;
+  cursor: pointer !important;
 }
 .comp-gallery-link::before,
 .comp-gallery-link::after {
@@ -100,7 +101,7 @@
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a class="comp-gallery-link" href="/RecordingsForYihanWang/gallery/26Batumi/">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -181,7 +182,7 @@
 
 </div>
 
-<div class="comp-station-title">JGP 拉脱维亚站（里加） <a class="comp-gallery-link" href="/RecordingsForYihanWang/gallery/26Riga/">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 拉脱维亚站（里加） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Riga/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
