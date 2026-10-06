@@ -94,4 +94,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876679-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876593-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876301-594x594.jpg">
+  <img src="/RecordingsForYihanWang/gallery/24Wuxi/Wuxi1.jpg">
+  <img src="/RecordingsForYihanWang/gallery/24Wuxi/Wuxi2.jpg">
 </div>
