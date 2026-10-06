@@ -55,6 +55,16 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+  
+.comp-station-title + p {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+    line-height: 1.35 !important;
+  }
+}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
