@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2024-2025赛季WJC德布勒森世青赛</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2202020336-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2202020225-594x594.jpg">
