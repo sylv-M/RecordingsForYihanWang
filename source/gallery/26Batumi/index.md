@@ -144,13 +144,4 @@ comments: false
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267728-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267705-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267662-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26Batumi/Batumi-9.jpg">
 </div>
