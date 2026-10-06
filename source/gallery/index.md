@@ -87,8 +87,8 @@ date: 2026-10-04 12:00:00
 }
 
 .gallery-search-item:hover {
-  background: rgba(66, 90, 239, 0.08);
-  color: var(--anzhiyu-theme, #425AEF) !important;
+  background: #f1f5f9 !important;
+  color: #333333 !important;
 }
 
 .gallery-search-item-hint {
