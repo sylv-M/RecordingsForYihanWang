@@ -303,6 +303,9 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2291696017-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695951-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695705-594x594.jpg">
+  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga (1).jpg">
+  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga (2).jpg">
+  <img src="/RecordingsForYihanWang/gallery/26Riga/Riga (3).jpg">
 </div>
 
 <h2 class="gallery-section-title">2025-2026赛季WJC塔林世青赛</h2>
