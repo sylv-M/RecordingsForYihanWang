@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2026-2027赛季JGP拉脱维亚站（里加）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291901131-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291900985-594x594.jpg">
