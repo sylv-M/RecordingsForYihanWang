@@ -7,14 +7,13 @@ top_img: false
 ---
 
 <style>
-/* 浅紫色背景 + 白色文字 + 白色边框的椭圆气泡按钮 */
 .back-btn { 
   display: inline-flex; 
   align-items: center; 
   gap: 6px; 
   padding: 8px 20px; 
   border-radius: 9999px; 
-  background: #c084fc; 
+  background: #c084fc;   
   color: #ffffff !important; 
   font-size: 0.95rem; 
   font-weight: 600; 
@@ -22,10 +21,11 @@ top_img: false
   border: 2px solid #ffffff; 
   box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35); 
   transition: all 0.3s ease; 
-  margin-bottom: 25px; 
+  margin-bottom: 20px; 
 }
+
 .back-btn:hover { 
-  background: #a855f7; 
+  background: #a855f7;   
   color: #ffffff !important; 
   border-color: #ffffff; 
   transform: translateY(-2px); 
@@ -36,92 +36,81 @@ top_img: false
 .comp-station-title { 
   font-size: 1.3rem; 
   font-weight: 700; 
-  margin: 30px 0 15px 0; 
+  margin: 25px 0 15px 0; 
   color: var(--anzhiyu-fontcolor, #333); 
-  display: block;
-  clear: both;
+  display: block !important;
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+  padding: 0 !important;
 }
 
-/* 查看该场比赛图片按钮 */
-.view-photos-btn {
-  display: inline-block !important;
-  width: auto !important;
-  max-width: fit-content !important;
-  white-space: nowrap !important;
-  vertical-align: middle !important;
-  margin-left: 10px !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-  padding: 3px 12px !important;
-  border-radius: 9999px !important;
-  background: #f1f5f9 !important;
-  color: #425aef !important;
-  border: 1px solid #c7d2fe !important;
-  text-decoration: none !important;
-  line-height: 1.4 !important;
-  box-sizing: border-box !important;
-}
-
-.view-photos-btn:hover {
-  background: #425aef !important;
-  color: #ffffff !important;
-}
-
-/* 电脑端与 iPad 端：固定一行两列 */
+/* 电脑端 & iPad：锁定一行两个 */
 .program-grid { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
-  margin-bottom: 30px; 
-  width: 100%;
-  box-sizing: border-box;
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
 }
 
-/* 手机端（屏幕宽度小于 768px）：一行一列 */
+.program-grid > p:empty,
+.program-grid > br {
+  display: none !important;
+}
+
+/* 手机端：单列竖排 */
 @media screen and (max-width: 768px) {
-  .program-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
+  .program-grid { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
   }
 }
 
-.comp-card { 
-  background: var(--anzhiyu-card-bg, #fff); 
-  border: 1px solid var(--anzhiyu-card-border, #e3e8f7); 
-  border-radius: 14px; 
-  padding: 14px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+.comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
+.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+.comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
+.comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
+.comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
+.comp-gallery-link {
+  display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  cursor: pointer !important;
 }
-.video-wrapper { 
-  position: relative; 
-  width: 100%; 
-  padding-bottom: 56.25%; 
-  height: 0; 
-  border-radius: 10px; 
-  overflow: hidden; 
-  background: #000; 
-}
-.comp-title { 
-  font-size: 1.05rem; 
-  font-weight: 600; 
-  margin-top: 12px; 
-}
-.comp-link-row { 
-  margin-top: 6px; 
-  font-size: 0.9rem; 
-  color: #666; 
-}
-.comp-link-row a { 
-  color: #fb7299 !important; 
-  font-weight: 600; 
-  text-decoration: none; 
+.comp-gallery-link::before,
+.comp-gallery-link::after {
+  display: none !important;
+  content: none !important;
 }
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <!-- 1. 世界青少年花样滑冰锦标赛 (世青赛) -->
-<div class="comp-station-title">2025世界青少年花样滑冰锦标赛 (世青赛)<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/25WJC/">查看该场比赛图片</a></div>
+<div class="comp-station-title">2025世界青少年花样滑冰锦标赛 (世青赛) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/25WJC/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -162,7 +151,7 @@ top_img: false
 
 
 <!-- 2. 青少年大奖赛总决赛 (JGPF) -->
-<div class="comp-station-title">青少年大奖赛总决赛 (JGPF)<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/24JGPF/">查看该场比赛图片</a></div>
+<div class="comp-station-title">青少年大奖赛总决赛 (JGPF) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24JGPF/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -205,7 +194,7 @@ top_img: false
 
 
 <!-- 3. JGP 无锡站 -->
-<div class="comp-station-title">JGP 无锡站<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/24Wuxi/">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 无锡站 <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Wuxi/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
@@ -241,107 +230,4 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 128.96分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-
-  <!-- 颁奖典礼 (自动与短节目对齐) -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1wu28YVE5w&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">颁奖仪式</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1wu28YVE5w/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- 4. JGP 泰国站 (曼谷) -->
-<div class="comp-station-title">JGP 泰国站 (曼谷)<a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/24Bangkok/">查看该场比赛图片</a></div>
-<div class="program-grid">
-  <!-- 短节目 (SP) -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1F14pedEDq&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">短节目 (SP) 65.39分</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1F14pedEDq/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-
-  <!-- 自由滑 (FS) -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1QdSMY3EYK&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">自由滑 (FS) 129.32分</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-
-  <!-- 颁奖典礼 -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1w4tFeYEom&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">颁奖仪式</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1w4tFeYEom/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-
-  <!-- 赛后采访 (第二行右侧，与自由滑对齐) -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1XatAedEeL&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">赛后采访</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1XatAedEeL/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-</div>
+      查看高清版请点击：<a href="
