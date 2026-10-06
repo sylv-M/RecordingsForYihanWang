@@ -4,6 +4,18 @@ date: 2026-10-04 12:00:00
 ---
 
 <style>
+/* 0. 比赛分类标题样式（确保页面上清晰可见） */
+.gallery-section-title {
+  display: block !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--font-color, #333) !important;
+  margin: 35px 0 15px 0 !important;
+  padding-left: 12px !important;
+  border-left: 4px solid var(--anzhiyu-theme, #425AEF) !important;
+  line-height: 1.4 !important;
+}
+
 /* 1. 消除 Markdown 自动加 p 标签的影响 */
 .photo-grid p {
   margin: 0 !important;
@@ -16,7 +28,7 @@ date: 2026-10-04 12:00:00
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 16px !important;
   width: 100% !important;
-  margin: 20px 0 40px 0 !important;
+  margin: 15px 0 35px 0 !important;
 }
 
 /* 3. 兼容 fancybox 灯箱自动加的 a 标签包裹 */
@@ -48,6 +60,10 @@ date: 2026-10-04 12:00:00
 
 /* 5. 手机端（768px 及以下所有手机）：强制两列并调小高度 */
 @media screen and (max-width: 768px) {
+  .gallery-section-title {
+    font-size: 1.2rem !important;
+    margin: 25px 0 12px 0 !important;
+  }
   .photo-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
@@ -60,6 +76,7 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
+<h2 class="gallery-section-title">2026-2027赛季JGP格鲁吉亚站（巴统）</h2>
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703911-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703845-594x594.jpg">
@@ -84,6 +101,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267728-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267705-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296267662-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2026-2027赛季JGP拉脱维亚站（里加）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291901131-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291900985-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291899506-594x594.jpg">
@@ -97,6 +118,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2291696017-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695951-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2291695705-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2025-2026赛季WJC塔林世青赛</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2265354947-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2265281699-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2265281698-594x594.jpg">
@@ -105,6 +130,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2265260225-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946366-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946365-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2025-2026赛季JGP阿塞拜疆站（巴库）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2237171218-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2237171175-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2237171075-594x594.jpg">
@@ -115,6 +144,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738388-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738371-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2236738368-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2025-2026赛季JGP意大利站（瓦雷泽）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2233450159-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2233449913-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2233449887-594x594.jpg">
@@ -137,6 +170,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2233180446-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2233180280-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2233180276-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2024-2025赛季WJC德布勒森世青赛</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2202020336-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2202020225-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2202020202-594x594.jpg">
@@ -144,6 +181,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614448-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614431-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2201614096-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2024-2025赛季JGPF</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2188439659-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2188399142-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2188399141-594x594.jpg">
@@ -176,6 +217,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749520-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749188-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749082-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2024-2025赛季JGP中国站（无锡）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2178169285-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2178169276-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2178169267-594x594.jpg">
@@ -205,6 +250,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876679-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876593-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2176876301-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2024-2025赛季JGP泰国站（曼谷）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2172113593-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2172104378-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2172104315-594x594.jpg">
@@ -231,7 +280,15 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500489-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500466-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500426-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2024年四大洲锦标赛表演滑</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-1986227681-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2023-2024赛季JGP波兰站（格但斯克）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-1697759492-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1697756871-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1697756808-594x594.jpg">
@@ -241,6 +298,10 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-1694440051-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1694439877-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1694439696-594x594.jpg">
+</div>
+
+<h2 class="gallery-section-title">2023-2024赛季JGP匈牙利站（布达佩斯）</h2>
+<div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-1684047005-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1684041641-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1684041150-594x594.jpg">
