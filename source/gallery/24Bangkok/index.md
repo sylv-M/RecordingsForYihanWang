@@ -92,4 +92,6 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500489-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500466-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2171500426-594x594.jpg">
+  <img src="/RecordingsForYihanWang/gallery/24Bangkok/Bangkok1.jpg">
+  <img src="/RecordingsForYihanWang/gallery/24Bangkok/Bangkok2.jpg">
 </div>
