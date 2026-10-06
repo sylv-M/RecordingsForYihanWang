@@ -136,8 +136,8 @@ top_img: false
     <div class="video-wrapper">
       <video 
         controls 
-        preload="metadata"
-        playsinline
+        preload="metadata" 
+        playsinline 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000;">
         <source src="/RecordingsForYihanWang/competitions/2024-2025/25世青赛自由滑.mp4" type="video/mp4">
       </video>
@@ -148,7 +148,6 @@ top_img: false
     </div>
   </div>
 </div>
-
 
 <!-- 2. 青少年大奖赛总决赛 (JGPF) -->
 <div class="comp-station-title">青少年大奖赛总决赛 (JGPF) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24JGPF/'">查看该场比赛图片</span></div>
@@ -191,7 +190,6 @@ top_img: false
     </div>
   </div>
 </div>
-
 
 <!-- 3. JGP 无锡站 -->
 <div class="comp-station-title">JGP 无锡站 <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Wuxi/'">查看该场比赛图片</span></div>
@@ -253,7 +251,6 @@ top_img: false
     </div>
   </div>
 </div>
-
 
 <!-- 4. JGP 泰国站 (曼谷) -->
 <div class="comp-station-title">JGP 泰国站 (曼谷) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Bangkok/'">查看该场比赛图片</span></div>
