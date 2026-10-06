@@ -64,7 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2024-2025赛季JGP泰国站（曼谷）</h1>
 
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2172113593-594x594.jpg">
