@@ -5,14 +5,26 @@ comments: false
 ---
 
 <style>
-/* 1. 瓦解 Markdown 自动生成的 p 标签包裹 */
+/* 1. 标题 */
+.gallery-page-title {
+  display: block !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--font-color, #333) !important;
+  margin: 10px 0 20px 0 !important;
+  padding-left: 12px !important;
+  border-left: 4px solid var(--anzhiyu-theme, #425AEF) !important;
+  line-height: 1.4 !important;
+}
+
+/* 2. 消除 p 标签干扰 */
 #article-container .photo-grid p {
   display: contents !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* 2. 电脑端：默认 3 列，高度 220px */
+/* 3. 电脑端：默认 3 列，高度 220px */
 #article-container .photo-grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -24,12 +36,13 @@ comments: false
 
 #article-container .photo-grid a,
 #article-container .photo-grid img {
+  display: block !important;
   width: 100% !important;
   height: 220px !important;
+  max-height: 220px !important;
   object-fit: cover !important;
   border-radius: 12px !important;
   overflow: hidden !important;
-  display: block !important;
   margin: 0 !important;
   box-sizing: border-box !important;
 }
@@ -45,53 +58,59 @@ comments: false
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 3. 手机端：锁死一行两张（2列）+ 150px高度 + 侧边栏规矩排在最末尾 */
+/* 4. 手机端：彻底压平那个 250px 的 a 标签，死锁 150px 高度，侧边栏归位 */
 @media screen and (max-width: 768px) {
-  /* 网格两列强制锁定，严禁子项把单列撑大 */
   #article-container .photo-grid {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
     width: 100% !important;
-    box-sizing: border-box !important;
     clear: both !important;
     margin-bottom: 30px !important;
   }
 
-  /* 彻底解决 328px 宽度的核心：min-width: 0 阻断图片撑破单元格，高度锁定 150px */
-  #article-container .photo-grid > *,
+  /* 核心修复：直接把外层 a 和里层 img 的高度同时焊死在 150px，绝不许撑到 250px */
   #article-container .photo-grid a,
-  #article-container .photo-grid img,
-  #article-container .photo-grid a img {
+  #article-container .photo-grid a:hover,
+  #article-container .photo-grid img {
+    display: block !important;
     width: 100% !important;
-    min-width: 0 !important;
     max-width: 100% !important;
     height: 150px !important;
     max-height: 150px !important;
-    object-fit: cover !important;
+    min-height: 150px !important;
+    overflow: hidden !important;
     border-radius: 8px !important;
-    display: block !important;
-    margin: 0 !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
   }
 
-  /* 核心防线：撑开文章容器，杜绝塌陷 */
+  #article-container .photo-grid a img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* 让整个文章主卡片撑开，阻断侧边栏逆流 */
+  #page, 
   #article-container {
-    display: flow-root !important;
+    display: block !important;
     clear: both !important;
+    overflow: visible !important;
   }
 
-  /* 强制把侧边栏（名片卡片、联系我们）推到所有相片正下方的最末尾 */
+  /* 彻底解决侧边栏悬浮：强制名片卡片排在整篇图集最底部 */
   #aside-content {
     display: block !important;
     position: static !important;
+    float: none !important;
     clear: both !important;
     width: 100% !important;
     margin-top: 40px !important;
+    z-index: 1 !important;
   }
 }
 
-/* 4. 隐藏留言板 */
+/* 5. 隐藏留言板 */
 #post-comment,
 .comment-wrap,
 #twikoo,
