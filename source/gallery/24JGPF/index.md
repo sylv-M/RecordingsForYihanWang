@@ -97,13 +97,4 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749520-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749188-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187749082-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/24JGPF/JGPF-9.jpg">
 </div>
