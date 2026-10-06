@@ -32,7 +32,16 @@ top_img: false
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
   text-decoration: none !important; 
 }
-.comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 25px 0 15px 0; 
+  color: var(--anzhiyu-fontcolor, #333); 
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+}
 
 /* 电脑端 & iPad：锁定一行两个 */
 .program-grid { 
@@ -42,8 +51,8 @@ top_img: false
   margin-bottom: 30px !important; 
 }
 
-/* 消除所有非 .comp-card 标签（包括 Hexo 误生成的空段落/文本节点） */
-.program-grid > :not(.comp-card) {
+.program-grid > p:empty,
+.program-grid > br {
   display: none !important;
 }
 
@@ -66,6 +75,7 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+  
   /* 强制消除标题内跳转链接的所有主题默认卡片样式和多余占位 */
 .comp-station-title a {
   display: inline !important;
