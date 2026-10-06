@@ -1,6 +1,7 @@
 ---
 title: 2026-2027赛季JGP格鲁吉亚站（巴统）图集
 date: 2026-10-04 12:00:00
+comments: false
 ---
 
 <style>
