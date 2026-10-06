@@ -230,4 +230,107 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 128.96分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1JV28YzEg6/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+
+  <!-- 颁奖典礼 (自动与短节目对齐) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1wu28YVE5w&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1wu28YVE5w/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- 4. JGP 泰国站 (曼谷) -->
+<div class="comp-station-title">JGP 泰国站 (曼谷) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Bangkok/'">查看该场比赛图片</span></div>
+<div class="program-grid">
+  <!-- 短节目 (SP) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1F14pedEDq&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">短节目 (SP) 65.39分</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1F14pedEDq/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+
+  <!-- 自由滑 (FS) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1QdSMY3EYK&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">自由滑 (FS) 129.32分</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+
+  <!-- 颁奖典礼 -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1w4tFeYEom&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">颁奖仪式</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1w4tFeYEom/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+
+  <!-- 赛后采访 (第二行右侧，与自由滑对齐) -->
+  <div class="comp-card">
+    <div class="video-wrapper">
+      <iframe 
+        src="//player.bilibili.com/player.html?bvid=BV1XatAedEeL&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <div class="comp-title">赛后采访</div>
+    <div class="comp-link-row">
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1XatAedEeL/" target="_blank" rel="noopener noreferrer">原视频</a>
+    </div>
+  </div>
+</div>
