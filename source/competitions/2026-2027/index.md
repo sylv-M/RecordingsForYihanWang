@@ -37,10 +37,12 @@ top_img: false
   font-weight: 700; 
   margin: 25px 0 15px 0; 
   color: var(--anzhiyu-fontcolor, #333); 
+  display: block !important;
   height: auto !important; 
   min-height: 0 !important; 
   max-height: none !important;
   line-height: 1.4 !important; 
+  padding: 0 !important;
 }
 
 /* 电脑端 & iPad：锁定一行两个 */
@@ -86,6 +88,8 @@ top_img: false
   max-height: none !important;
   padding: 0 !important;
   margin: 0 0 0 10px !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
   box-shadow: none !important;
   background: transparent !important;
   border: none !important;
@@ -93,10 +97,10 @@ top_img: false
 .comp-station-title a::before,
 .comp-station-title a::after {
   display: none !important;
+  content: none !important;
 }
 
 </style>
-
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
