@@ -85,20 +85,6 @@ top_img: false
   display: none !important;
 }
 
-.comp-station-title {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  line-height: normal !important;
-  height: auto !important;
-}
-
-.comp-station-title a {
-  display: inline-block !important;
-  vertical-align: baseline !important;
-  line-height: normal !important;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
