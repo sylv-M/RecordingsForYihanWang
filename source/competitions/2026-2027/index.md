@@ -64,30 +64,30 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+  @media screen and (max-width: 768px) {
+  /* 隐藏被渲染出来的空文本/空格/空节点 */
+  .program-grid {
+    font-size: 0 !important;
+  }
+  .program-grid > *:empty,
+  .program-grid p:empty,
+  .program-grid br {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
   
-  /* 强制消除标题与网格之间的所有多余空隙 */
-.comp-station-title {
-  margin-top: 25px !important;
-  margin-bottom: 10px !important;
-  padding-bottom: 0 !important;
-  line-height: 1.4 !important;
-}
-
-.comp-station-title + * {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.program-grid {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
 <div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
-<div class="program-grid"><!-- 短节目 (SP) --><div class="comp-card">
+<div class="program-grid">
+  
+  <!-- 短节目 (SP) -->
+  <div class="comp-card">
     <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
         src="//player.bilibili.com/player.html?bvid=BV1xaaT6jENj&page=1&high_quality=1&danmaku=0&autoplay=0" 
