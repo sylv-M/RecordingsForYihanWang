@@ -64,8 +64,6 @@ date: 2026-10-04 12:00:00
 }
 </style>
 
-<h1 class="gallery-page-title">2023-2024赛季JGP匈牙利站（布达佩斯）</h1>
-
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-1684047005-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-1684041641-594x594.jpg">
