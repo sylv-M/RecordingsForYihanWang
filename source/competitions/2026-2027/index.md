@@ -32,7 +32,48 @@ top_img: false
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
   text-decoration: none !important; 
 }
-.comp-station-title { font-size: 1.3rem; font-weight: 700; margin: 25px 0 15px 0; color: var(--anzhiyu-fontcolor, #333); }
+
+/* 比赛标题与按钮横向排列容器 */
+.comp-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0 15px 0;
+}
+
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 0 !important; 
+  color: var(--anzhiyu-fontcolor, #333); 
+}
+
+/* 查看该场比赛图片 按钮样式 */
+.view-photos-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #425aef !important;
+  border: 1px solid #c7d2fe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  line-height: 1.5;
+}
+
+.view-photos-btn:hover {
+  background: #425aef;
+  color: #ffffff !important;
+  border-color: #425aef;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 90, 239, 0.25);
+}
+
 /* 电脑端 & iPad：锁定一行两个 */
 .program-grid { 
   display: grid !important; 
@@ -45,7 +86,7 @@ top_img: false
 @media screen and (max-width: 768px) {
   .program-grid { 
     grid-template-columns: 1fr !important; 
-    gap: 16px !important;
+    gap: 16px !important; 
   }
 }
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
@@ -58,7 +99,11 @@ top_img: false
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<div class="comp-station-title">JGP 格鲁吉亚站(巴统)</div>
+<!-- JGP 格鲁吉亚站(巴统) -->
+<div class="comp-header">
+  <div class="comp-station-title">JGP 格鲁吉亚站(巴统)</div>
+  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/26Batumi/">查看该场比赛图片</a>
+</div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -99,7 +144,7 @@ top_img: false
     </div>
   </div>
   
-<!-- 颁奖典礼 -->
+  <!-- 颁奖典礼 -->
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
@@ -138,63 +183,6 @@ top_img: false
   </div>
 </div>
 
-<div class="comp-station-title">JGP 拉脱维亚站（里加）</div>
-<div class="program-grid">
-
-  <!-- 短节目 (SP) -->
-  <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1a14R65EB8&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">短节目 (SP) 68.61分</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1a14R65EB8/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-
-  <!-- 自由滑 (FS) -->
-  <div class="comp-card">
-    <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1b3tK6TEsF&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">自由滑 (FS) 126.42分</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1b3tK6TEsF/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-  
-<!-- 颁奖典礼 (自动与短节目对齐) -->
-  <div class="comp-card">
-    <div class="video-wrapper">
-      <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1YAtK6kEJu&page=1&high_quality=1&danmaku=0&autoplay=0" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
-    </div>
-    <div class="comp-title">颁奖仪式</div>
-    <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1YAtK6kEJu/" target="_blank" rel="noopener noreferrer">原视频</a>
-    </div>
-  </div>
-</div>
+<!-- JGP 拉脱维亚站（里加） -->
+<div class="comp-header">
+  <div class="comp-station
