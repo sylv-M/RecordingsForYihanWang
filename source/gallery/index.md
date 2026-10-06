@@ -108,54 +108,55 @@ date: 2026-10-04 12:00:00
   line-height: 1.4 !important;
 }
 
-/* 彻底瓦解 Hexo 自动插入的 p 标签对网格的破坏 */
+/* 1. 消除 Markdown 自动加 p 标签的影响 */
 .photo-grid p {
-  display: contents !important;
   margin: 0 !important;
-  padding: 0 !important;
+  display: contents !important;
 }
 
-/* 电脑端默认 3 列 */
+/* 2. 电脑端：默认三列网格 */
 .photo-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 16px !important;
   width: 100% !important;
-  margin: 20px 0 35px 0 !important;
-  clear: both !important;
+  margin: 15px 0 35px 0 !important;
 }
 
-/* 统一控制卡片高度，无论是 a 标签包裹还是单独的 img */
-.photo-grid a,
-.photo-grid > img,
-.photo-grid p > img,
-.photo-grid p > a {
+/* 3. 兼容 fancybox 灯箱自动加的 a 标签包裹 */
+.photo-grid a {
   display: block !important;
   width: 100% !important;
   height: 220px !important;
   border-radius: 12px !important;
   overflow: hidden !important;
-  margin: 0 !important;
 }
 
+/* 4. 图片基础样式 */
 .photo-grid img {
   width: 100% !important;
-  height: 100% !important;
+  height: 220px !important;
   object-fit: cover !important;
-  display: block !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
   margin: 0 !important;
+  display: block !important;
 }
 
-/* 手机端：强制 2 列，防止被挤爆重叠 */
+/* 5. 手机端（768px 及以下所有手机）：强制两列并调小高度 */
 @media screen and (max-width: 768px) {
+  .gallery-section-title {
+    font-size: 1.2rem !important;
+    margin: 25px 0 12px 0 !important;
+  }
   .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
   .photo-grid a,
-  .photo-grid > img,
-  .photo-grid p > img,
-  .photo-grid p > a {
+  .photo-grid img {
     height: 150px !important;
     border-radius: 8px !important;
   }
