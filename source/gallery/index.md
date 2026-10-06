@@ -4,7 +4,99 @@ date: 2026-10-04 12:00:00
 ---
 
 <style>
-/* 0. 比赛分类标题样式（确保页面上清晰可见） */
+/* ================= 搜索栏区域样式 ================= */
+.gallery-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto 30px auto;
+}
+
+.gallery-search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.gallery-search-input {
+  width: 100% !important;
+  padding: 12px 90px 12px 18px !important;
+  font-size: 0.95rem !important;
+  border-radius: 9999px !important;
+  border: 2px solid var(--anzhiyu-theme, #425AEF) !important;
+  background: var(--anzhiyu-card-bg, #fff) !important;
+  color: var(--font-color, #333) !important;
+  outline: none !important;
+  box-shadow: 0 4px 12px rgba(66, 90, 239, 0.12) !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+}
+
+.gallery-search-input:focus {
+  box-shadow: 0 6px 18px rgba(66, 90, 239, 0.25) !important;
+}
+
+.gallery-search-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  background: var(--anzhiyu-theme, #425AEF);
+  color: #fff !important;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gallery-search-btn:hover {
+  background: #3146c8;
+}
+
+/* 下拉搜索匹配建议列表 */
+.gallery-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: var(--anzhiyu-card-bg, #fff);
+  border: 1px solid var(--anzhiyu-card-border, #e3e8f7);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  padding: 6px 0;
+}
+
+.gallery-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: var(--font-color, #333);
+  text-decoration: none !important;
+  font-size: 0.92rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.gallery-search-item:hover {
+  background: rgba(66, 90, 239, 0.08);
+  color: var(--anzhiyu-theme, #425AEF) !important;
+}
+
+.gallery-search-item-hint {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+/* 0. 比赛分类标题样式 */
 .gallery-section-title {
   display: block !important;
   font-size: 1.4rem !important;
@@ -75,6 +167,90 @@ date: 2026-10-04 12:00:00
   }
 }
 </style>
+
+<!-- 搜索栏容器 -->
+<div class="gallery-search-container">
+  <div class="gallery-search-box">
+    <input type="text" id="gallerySearchInput" class="gallery-search-input" placeholder="输入比赛名称/关键词跳转（如：巴统、无锡、世青赛）..." autocomplete="off">
+    <button type="button" class="gallery-search-btn" onclick="executeGallerySearch()">搜索</button>
+  </div>
+  <div id="gallerySearchResults" class="gallery-search-results"></div>
+</div>
+
+<script>
+(function() {
+  // 所有比赛数据库与其对应的独立页面路径（根据您仓库中的真实文件夹路径配置）
+  const compList = [
+    { title: "2026-2027赛季JGP格鲁吉亚站（巴统）", keywords: ["格鲁吉亚", "巴统", "2026", "2027", "jgp", "batumi"], url: "/RecordingsForYihanWang/gallery/26Batumi/" },
+    { title: "2026-2027赛季JGP拉脱维亚站（里加）", keywords: ["拉脱维亚", "里加", "2026", "2027", "jgp", "riga"], url: "/RecordingsForYihanWang/gallery/26Riga/" },
+    { title: "2025-2026赛季WJC塔林世青赛", keywords: ["塔林", "世青赛", "wjc", "2025", "2026", "tallinn"], url: "/RecordingsForYihanWang/gallery/26WJC/" },
+    { title: "2025-2026赛季JGP阿塞拜疆站（巴库）", keywords: ["阿塞拜疆", "巴库", "2025", "2026", "jgp", "baku"], url: "/RecordingsForYihanWang/gallery/25Baku/" },
+    { title: "2025-2026赛季JGP意大利站（瓦雷泽）", keywords: ["意大利", "瓦雷泽", "2025", "2026", "jgp", "varese"], url: "/RecordingsForYihanWang/gallery/25Varese/" },
+    { title: "2024-2025赛季WJC德布勒森世青赛", keywords: ["德布勒森", "世青赛", "wjc", "2024", "2025", "debrecen"], url: "/RecordingsForYihanWang/gallery/25WJC/" },
+    { title: "2024-2025赛季JGPF", keywords: ["jgpf", "总决赛", "大奖赛总决赛", "2024", "2025"], url: "/RecordingsForYihanWang/gallery/24JGPF/" },
+    { title: "2024-2025赛季JGP中国站（无锡）", keywords: ["无锡", "中国站", "2024", "2025", "jgp", "wuxi"], url: "/RecordingsForYihanWang/gallery/24Wuxi/" },
+    { title: "2024-2025赛季JGP泰国站（曼谷）", keywords: ["泰国", "曼谷", "2024", "2025", "jgp", "bangkok"], url: "/RecordingsForYihanWang/gallery/24Bangkok/" },
+    { title: "2023-2024赛季JGP波兰站（格但斯克）", keywords: ["波兰", "格但斯克", "2023", "2024", "jgp", "gdansk"], url: "/RecordingsForYihanWang/gallery/23Gdansk/" },
+    { title: "2023-2024赛季JGP匈牙利站（布达佩斯）", keywords: ["匈牙利", "布达佩斯", "2023", "2024", "jgp", "budapest"], url: "/RecordingsForYihanWang/gallery/23Budapest/" }
+  ];
+
+  const searchInput = document.getElementById("gallerySearchInput");
+  const resultsBox = document.getElementById("gallerySearchResults");
+
+  function filterMatches(val) {
+    if (!val) return [];
+    val = val.trim().toLowerCase();
+    return compList.filter(item => {
+      const matchTitle = item.title.toLowerCase().includes(val);
+      const matchKey = item.keywords.some(k => k.toLowerCase().includes(val));
+      return matchTitle || matchKey;
+    });
+  }
+
+  // 实时输入展示下拉推荐
+  searchInput.addEventListener("input", function() {
+    const val = this.value.trim();
+    const matches = filterMatches(val);
+
+    if (val && matches.length > 0) {
+      resultsBox.innerHTML = matches.map(m => `
+        <a class="gallery-search-item" href="${m.url}">
+          <span>${m.title}</span>
+          <span class="gallery-search-item-hint">前往 ➔</span>
+        </a>
+      `).join("");
+      resultsBox.style.display = "block";
+    } else {
+      resultsBox.style.display = "none";
+    }
+  });
+
+  // 按回车键或点击按钮执行跳转
+  window.executeGallerySearch = function() {
+    const val = searchInput.value.trim();
+    if (!val) return;
+    const matches = filterMatches(val);
+    if (matches.length > 0) {
+      window.location.href = matches[0].url; // 直接跳入首选匹配比赛
+    } else {
+      alert("未找到与【" + val + "】相关的比赛单独图集，请尝试输入地名（如：巴统、无锡、曼谷、世青赛等）");
+    }
+  };
+
+  searchInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      executeGallerySearch();
+    }
+  });
+
+  // 点击外部隐藏下拉框
+  document.addEventListener("click", function(e) {
+    if (!e.target.closest(".gallery-search-container")) {
+      resultsBox.style.display = "none";
+    }
+  });
+})();
+</script>
 
 <h2 class="gallery-section-title">2026-2027赛季JGP格鲁吉亚站（巴统）</h2>
 <div class="photo-grid">
@@ -194,7 +370,7 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2187969431-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187969308-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187966367-594x594.jpg">
-  <img src="/RecordingsForYihanWang/img/gettyimages-2187966258-594x594.jpg">
+  <img src="/RecordingsForYihanWang/img/gettyimages-2287966258-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187966072-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187965972-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2187965923-594x594.jpg">
