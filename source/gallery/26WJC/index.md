@@ -73,15 +73,4 @@ date: 2026-10-04 12:00:00
   <img src="/RecordingsForYihanWang/img/gettyimages-2265260225-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946366-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2264946365-594x594.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-1.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-10.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-11.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-2.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-3.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-4.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-5.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-6.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-7.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-8.jpg">
-  <img src="/RecordingsForYihanWang/gallery/26WJC/26WJC-9.jpg">
 </div>
