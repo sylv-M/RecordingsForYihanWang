@@ -1,11 +1,3 @@
----
-title: 2026–2027 赛季比赛合集
-date: 2026-10-04 12:00:00
-type: page
-comments: false
-top_img: false
----
-
 <style>
 .back-btn { 
   display: inline-flex; 
@@ -77,33 +69,38 @@ top_img: false
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
-  
-  /* 强制消除标题内跳转链接的所有主题默认卡片样式和多余占位 */
-.comp-station-title a {
+
+/* 只针对标题里的图片链接，精确重写样式 */
+.comp-gallery-link {
   display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
   position: static !important;
   width: auto !important;
   height: auto !important;
   min-height: 0 !important;
   max-height: none !important;
-  padding: 0 !important;
-  margin: 0 0 0 10px !important;
-  line-height: inherit !important;
-  vertical-align: baseline !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  border: none !important;
 }
-.comp-station-title a::before,
-.comp-station-title a::after {
+.comp-gallery-link::before,
+.comp-gallery-link::after {
   display: none !important;
   content: none !important;
 }
 
 </style>
+
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a href="/RecordingsForYihanWang/gallery/26Batumi/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <a class="comp-gallery-link" href="/RecordingsForYihanWang/gallery/26Batumi/">查看该场比赛图片</a></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -184,7 +181,7 @@ top_img: false
 
 </div>
 
-<div class="comp-station-title">JGP 拉脱维亚站（里加） <a href="/RecordingsForYihanWang/gallery/26Riga/" style="font-size: 0.82rem; font-weight: normal; color: #fb7299 !important; text-decoration: underline !important; margin-left: 10px;">查看该场比赛图片</a></div>
+<div class="comp-station-title">JGP 拉脱维亚站（里加） <a class="comp-gallery-link" href="/RecordingsForYihanWang/gallery/26Riga/">查看该场比赛图片</a></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
