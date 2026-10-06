@@ -5,7 +5,6 @@ comments: false
 ---
 
 <style>
-/* 1. 标题样式 */
 .gallery-page-title {
   display: block !important;
   font-size: 1.6rem !important;
@@ -17,16 +16,14 @@ comments: false
   line-height: 1.4 !important;
 }
 
-/* 2. 消除 Markdown 自动加 p 标签的影响 */
 .photo-grid p {
   margin: 0 !important;
   display: contents !important;
 }
 
-/* 3. 电脑端：默认三列网格，高度 220px */
 .photo-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 16px !important;
   width: 100% !important;
   margin: 20px 0 40px 0 !important;
@@ -57,33 +54,29 @@ comments: false
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 4. 手机端：两列，完全恢复你最初指定的 150px 高度 */
 @media screen and (max-width: 768px) {
   .gallery-page-title {
     font-size: 1.3rem !important;
     margin: 5px 0 15px 0 !important;
   }
-
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
   }
-
   .photo-grid a,
   .photo-grid img {
+    width: 100% !important;
+    max-width: 100% !important;
     height: 150px !important;
+    max-height: 150px !important;
+    object-fit: cover !important;
     border-radius: 8px !important;
-  }
-
-  /* 仅修复侧边栏：让名片卡片沉到相册最下方末尾，不盖在图片上 */
-  #aside-content {
-    clear: both !important;
-    position: static !important;
-    margin-top: 30px !important;
+    margin: 0 !important;
+    display: block !important;
   }
 }
 
-/* 5. 隐藏评论区 */
+/* 隐藏评论区 */
 #post-comment,
 .comment-wrap,
 #twikoo,
@@ -92,6 +85,7 @@ comments: false
   display: none !important;
 }
 </style>
+
 <div class="photo-grid">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703911-594x594.jpg">
   <img src="/RecordingsForYihanWang/img/gettyimages-2296703845-594x594.jpg">
