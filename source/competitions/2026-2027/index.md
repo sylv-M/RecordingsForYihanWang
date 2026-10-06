@@ -84,7 +84,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1b3tK6TEsF&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV15zah6fEUL&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -93,9 +93,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 126.42分</div>
+    <div class="comp-title">自由滑 (FS) 128.44分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1b3tK6TEsF/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV15zah6fEUL/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
   
@@ -164,7 +164,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV15zah6fEUL&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1b3tK6TEsF&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -173,9 +173,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 128.44分</div>
+    <div class="comp-title">自由滑 (FS) 126.42分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV15zah6fEUL/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1b3tK6TEsF/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
   
