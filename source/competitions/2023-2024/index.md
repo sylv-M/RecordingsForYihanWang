@@ -19,7 +19,7 @@ top_img: false
   font-weight: 600; 
   text-decoration: none !important; 
   border: 2px solid #ffffff; 
-  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35); 
   transition: all 0.3s ease; 
   margin-bottom: 20px; 
 }
@@ -33,53 +33,78 @@ top_img: false
   text-decoration: none !important; 
 }
 
-/* 比赛标题与按钮的横向容器 */
-.comp-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 25px 0 15px 0;
-}
-
 .comp-station-title { 
   font-size: 1.3rem; 
   font-weight: 700; 
-  margin: 0 !important; 
+  margin: 25px 0 15px 0; 
   color: var(--anzhiyu-fontcolor, #333); 
+  display: block !important;
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+  padding: 0 !important;
 }
 
-/* 查看该场比赛图片 按钮样式 */
-.view-photos-btn {
-  display: inline-block !important;
-  width: auto !important;
-  max-width: fit-content !important;
-  white-space: nowrap !important;
-  vertical-align: middle !important;
-  margin-left: 10px !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-  padding: 3px 12px !important;
-  border-radius: 9999px !important;
-  background: #f1f5f9 !important;
-  color: #425aef !important;
-  border: 1px solid #c7d2fe !important;
-  text-decoration: none !important;
-  line-height: 1.4 !important;
-  box-sizing: border-box !important;
+/* 电脑端 & iPad：锁定一行两个 */
+.program-grid { 
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
 }
 
-.view-photos-btn:hover {
-  background: #425aef !important;
-  color: #ffffff !important;
+.program-grid > p:empty,
+.program-grid > br {
+  display: none !important;
 }
-.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+/* 手机端：单列竖排 */
+@media screen and (max-width: 768px) {
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
+  .program-grid { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
+  }
+}
+
 .comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
 .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
 .comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
 .comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
 .comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
+.comp-gallery-link {
+  display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  cursor: pointer !important;
+}
+.comp-gallery-link::before,
+.comp-gallery-link::after {
+  display: none !important;
+  content: none !important;
+}
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
