@@ -107,7 +107,7 @@ top_img: false
 }
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">←返回赛季列表</a>
 
 <!-- 世界青少年花样滑冰锦标赛 (世青赛) -->
 <div class="comp-station-title">2026世界青少年花样滑冰锦标赛 (世青赛) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26WJC/'">查看该场比赛图片</span></div>
