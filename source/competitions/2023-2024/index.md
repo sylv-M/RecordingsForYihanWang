@@ -19,7 +19,7 @@ top_img: false
   font-weight: 600; 
   text-decoration: none !important; 
   border: 2px solid #ffffff; 
-  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35); 
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
   transition: all 0.3s ease; 
   margin-bottom: 20px; 
 }
@@ -32,7 +32,6 @@ top_img: false
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
   text-decoration: none !important; 
 }
-
 .comp-station-title { 
   font-size: 1.3rem; 
   font-weight: 700; 
@@ -105,15 +104,115 @@ top_img: false
   display: none !important;
   content: none !important;
 }
+
 </style>
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
 
-<!-- JGP 波兰站 -->
-<div class="comp-header">
-  <div class="comp-station-title">JGP 波兰站 (格但斯克)</div>
-  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/23Gdansk/">查看该场比赛图片</a>
-</div>
+<style>
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 8px 20px; 
+  border-radius: 9999px; 
+  background: #c084fc;   
+  color: #ffffff !important; 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  text-decoration: none !important; 
+  border: 2px solid #ffffff; 
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
+  transition: all 0.3s ease; 
+  margin-bottom: 20px; 
+}
+
+.back-btn:hover { 
+  background: #a855f7;   
+  color: #ffffff !important; 
+  border-color: #ffffff; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
+  text-decoration: none !important; 
+}
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 25px 0 15px 0; 
+  color: var(--anzhiyu-fontcolor, #333); 
+  display: block !important;
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+  padding: 0 !important;
+}
+
+/* 电脑端 & iPad：锁定一行两个 */
+.program-grid { 
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
+}
+
+.program-grid > p:empty,
+.program-grid > br {
+  display: none !important;
+}
+
+/* 手机端：单列竖排 */
+@media screen and (max-width: 768px) {
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
+  .program-grid { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
+  }
+}
+
+.comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
+.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+.comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
+.comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
+.comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
+.comp-gallery-link {
+  display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  cursor: pointer !important;
+}
+.comp-gallery-link::before,
+.comp-gallery-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+</style>
+
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+
+<div class="comp-station-title">JGP 波兰站(格但斯克) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/23Gdansk/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -157,10 +256,110 @@ top_img: false
 </div>
 
 <!-- JGP 匈牙利站 -->
-<div class="comp-header">
-  <div class="comp-station-title">JGP 匈牙利站 (布达佩斯)</div>
-  <a class="view-photos-btn" href="/RecordingsForYihanWang/gallery/23Budapest/">查看该场比赛图片</a>
-</div>
+<style>
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 8px 20px; 
+  border-radius: 9999px; 
+  background: #c084fc;   
+  color: #ffffff !important; 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  text-decoration: none !important; 
+  border: 2px solid #ffffff; 
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.35);
+  transition: all 0.3s ease; 
+  margin-bottom: 20px; 
+}
+
+.back-btn:hover { 
+  background: #a855f7;   
+  color: #ffffff !important; 
+  border-color: #ffffff; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45); 
+  text-decoration: none !important; 
+}
+.comp-station-title { 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  margin: 25px 0 15px 0; 
+  color: var(--anzhiyu-fontcolor, #333); 
+  display: block !important;
+  height: auto !important; 
+  min-height: 0 !important; 
+  max-height: none !important;
+  line-height: 1.4 !important; 
+  padding: 0 !important;
+}
+
+/* 电脑端 & iPad：锁定一行两个 */
+.program-grid { 
+  display: grid !important; 
+  grid-template-columns: repeat(2, 1fr) !important; 
+  gap: 20px !important; 
+  margin-bottom: 30px !important; 
+}
+
+.program-grid > p:empty,
+.program-grid > br {
+  display: none !important;
+}
+
+/* 手机端：单列竖排 */
+@media screen and (max-width: 768px) {
+  .comp-station-title {
+    margin: 20px 0 10px 0 !important;
+  }
+  .program-grid { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    margin-bottom: 25px !important; 
+  }
+}
+
+.comp-card { background: var(--anzhiyu-card-bg, #fff); border: 1px solid var(--anzhiyu-card-border, #e3e8f7); border-radius: 14px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
+.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+.comp-title { font-size: 1.05rem; font-weight: 600; margin-top: 12px; }
+.comp-link-row { margin-top: 6px; font-size: 0.9rem; color: #666; }
+.comp-link-row a { color: #fb7299 !important; font-weight: 600; text-decoration: none; }
+
+/* 标题里的图片链接，用 span 绕过主题的 a 样式 */
+.comp-gallery-link {
+  display: inline !important;
+  font-size: 0.82rem !important;
+  font-weight: normal !important;
+  color: #fb7299 !important;
+  text-decoration: underline !important;
+  margin-left: 10px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  cursor: pointer !important;
+}
+.comp-gallery-link::before,
+.comp-gallery-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+</style>
+
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+
+<div class="comp-station-title">JGP 匈牙利站(布达佩斯) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/23Budapest/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
