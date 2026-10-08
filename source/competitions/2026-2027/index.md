@@ -107,7 +107,7 @@ top_img: false
 
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">←返回赛季列表</a>
 
 <div class="comp-station-title">JGP 格鲁吉亚站(巴统) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
 <div class="program-grid">
