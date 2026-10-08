@@ -107,7 +107,7 @@ top_img: false
 
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
+<a class="back-btn" href="/RecordingsForYihanWang/competitions/">←返回赛季列表</a>
 
 <style>
 .back-btn { 
