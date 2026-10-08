@@ -221,7 +221,7 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV1QdSMY3EYK&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1A3YGzgEq3&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -230,9 +230,9 @@ top_img: false
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
       </iframe>
     </div>
-    <div class="comp-title">自由滑 (FS) 129.32分</div>
+    <div class="comp-title">自由滑 (FS) 120.30分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1QdSMY3EYK/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1A3YGzgEq3/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
 
