@@ -1272,15 +1272,15 @@ inject:
             display: inline-block !important;
           }
         }
-        /* 禁用首页胶囊标签的点击跳转 */
-        .todayCard-tips,
-        #top-post-group a,
-        .banner-button-group a,
-        #home_top .todayCard a {
-          pointer-events: none !important;
-          cursor: default !important;
-          text-decoration: none !important;
+        /* 仅针对首页文章列表上方的分类条里的“首页”按钮 */
+         #categoryBar a:first-child,
+         #category-bar a:first-child {
+         pointer-events: none !important;
+         cursor: default !important;
+         text-decoration: none !important;
         }
+      
+
       </style>
   bottom:
     - <script src="/RecordingsForYihanWang/js/custom_slider.js"></script>
