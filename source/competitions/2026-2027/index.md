@@ -109,7 +109,7 @@ top_img: false
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">←返回赛季列表</a>
 
-<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
+<div class="comp-station-title">JGP格鲁吉亚站（巴统） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -135,9 +135,9 @@ top_img: false
   <div class="comp-card">
     <div class="video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden;">
       <iframe 
-        src="//player.bilibili.com/player.html?bvid=BV15zah6fEUL&page=1&high_quality=1&danmaku=0&autoplay=0" 
+        src="//player.bilibili.com/player.html?bvid=BV1sahd6mEby&page=1&high_quality=1&danmaku=0&autoplay=0" 
         scrolling="no" 
-        border="0" 
+        border="0"
         frameborder="no" 
         framespacing="0" 
         allowfullscreen="true" 
@@ -146,7 +146,7 @@ top_img: false
     </div>
     <div class="comp-title">自由滑 (FS) 128.44分</div>
     <div class="comp-link-row">
-      查看高清版请点击：<a href="https://www.bilibili.com/video/BV15zah6fEUL/" target="_blank" rel="noopener noreferrer">原视频</a>
+      查看高清版请点击：<a href="https://www.bilibili.com/video/BV1sahd6mEby/" target="_blank" rel="noopener noreferrer">原视频</a>
     </div>
   </div>
   
@@ -190,7 +190,7 @@ top_img: false
 
 </div>
 
-<div class="comp-station-title">JGP 拉脱维亚站（里加） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Riga/'">查看该场比赛图片</span></div>
+<div class="comp-station-title">JGP拉脱维亚站（里加） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Riga/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
