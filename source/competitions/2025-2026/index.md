@@ -27,7 +27,7 @@ top_img: false
 
 /* 悬停动效：微向上浮动、阴影加深、背景更饱满 */
 .back-btn:hover { 
-  background: var(--anzhiyu-theme, #425AEF); 
+  background: var(--anzhiyu-theme, #a855f7); 
   color: #fff !important; 
   border-color: transparent; 
   transform: translateY(-2px); 
