@@ -253,7 +253,7 @@ top_img: false
 </div>
 
 <!-- 4. JGP 泰国站 (曼谷) -->
-<div class="comp-station-title">JGP 泰国站 (曼谷) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Bangkok/'">查看该场比赛图片</span></div>
+<div class="comp-station-title">JGP 泰国站(曼谷) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/24Bangkok/'">查看该场比赛图片</span></div>
 <div class="program-grid">
   <!-- 短节目 (SP) -->
   <div class="comp-card">
