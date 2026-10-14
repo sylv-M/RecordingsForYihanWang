@@ -109,7 +109,7 @@ top_img: false
 
 <a class="back-btn" href="/RecordingsForYihanWang/competitions/">←返回赛季列表</a>
 
-<div class="comp-station-title">JGP格鲁吉亚站（巴统） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
+<div class="comp-station-title">JGP 格鲁吉亚站(巴统) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Batumi/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
@@ -190,7 +190,7 @@ top_img: false
 
 </div>
 
-<div class="comp-station-title">JGP拉脱维亚站（里加） <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Riga/'">查看该场比赛图片</span></div>
+<div class="comp-station-title">JGP 拉脱维亚站(里加) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/26Riga/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
   <!-- 短节目 (SP) -->
