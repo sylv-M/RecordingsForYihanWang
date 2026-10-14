@@ -355,8 +355,6 @@ top_img: false
 
 </style>
 
-<a class="back-btn" href="/RecordingsForYihanWang/competitions/">⬅ 返回赛季列表</a>
-
 <div class="comp-station-title">JGP 匈牙利站(布达佩斯) <span class="comp-gallery-link" onclick="window.location.href='/RecordingsForYihanWang/gallery/23Budapest/'">查看该场比赛图片</span></div>
 <div class="program-grid">
 
