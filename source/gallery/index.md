@@ -75,15 +75,23 @@ date: 2026-10-04 12:00:00
 }
 
 .gallery-search-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  color: var(--font-color, #333);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  
+  /* 关键修复：强制重置高度与行高，避免继承 250px */
+  height: auto !important;
+  min-height: unset !important;
+  max-height: none !important;
+  line-height: 1.5 !important;
+  
+  padding: 10px 16px !important;
+  color: var(--font-color, #333) !important;
   text-decoration: none !important;
-  font-size: 0.92rem;
-  transition: background 0.2s ease;
-  cursor: pointer;
+  font-size: 0.92rem !important;
+  transition: background 0.2s ease !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
 }
 
 .gallery-search-item:hover {
